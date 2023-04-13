@@ -1,14 +1,11 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack.plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 
-
-module.export = {
-  entry: [
-    './src/index.js'
-  ],
+module.exports = {
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
+    publicPath: '/',
     filename: 'bundle.js',
   },
   resolve: {
@@ -20,11 +17,9 @@ module.export = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
+        use: [{ loader: 'babel-loader' }],
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
       },
       {
         test: /\.(scss|css)$/,
@@ -37,14 +32,14 @@ module.export = {
           },
           {
             loader: 'sass-loader',
-          }
+          },
         ],
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
     }),
   ],
-}
+};
