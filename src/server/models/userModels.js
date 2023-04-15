@@ -1,10 +1,10 @@
-const { Pool } = require('pg');
+// const { Pool } = require('pg');
 
 
 // create a new pool here using the connection string above
-const pool = new Pool({
-  connectionString: PG_URI
-});
+// const pool = new Pool({
+//   connectionString: PG_URI
+// });
 
 // Adding some notes about the database here will be helpful for future you or other developers.
 // Schema for the database can be found below:
@@ -13,12 +13,14 @@ const pool = new Pool({
 // We export an object that contains a property called query,
 // which is a function that returns the invocation of pool.query() after logging the query
 // This will be required in the controllers to be the access point to the database
-module.exports = {
-  query: (text, params, callback) => {
-    console.log('executed query', text);
-    return pool.query(text, params, callback);
-  }
-};
+// module.exports = {
+//   query: (text, params, callback) => {
+//     console.log('executed query', text);
+//     return pool.query(text, params, callback);
+//   }
+// };
+
+
 /// start
 
 
@@ -26,10 +28,10 @@ module.exports = {
 
 
 
-const pgp = require('pg-promise')();
+// const pgp = require('pg-promise')();
 
-// Create a new PostgreSQL database connection
-const db = pgp('postgres://username:password@localhost:5432/mydatabase');
+// // Create a new PostgreSQL database connection
+// const db = pgp('postgres://username:password@localhost:5432/mydatabase');
 
 // Define the schema creation query
 const createSchemaQuery = `

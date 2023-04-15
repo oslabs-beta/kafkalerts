@@ -5,9 +5,10 @@ import './styles.scss';
 const Login = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
-  const [errorDisplay, setErrorDisplay] = false;
+  const [errorDisplay, setErrorDisplay] = useState('none');
   const navigate = useNavigate();
-  const handleClick = async (endpoint) => {
+
+  const handleSend = async (endpoint) => {
     //TO DO: fix body so that html injection attacks can't happen
     try {
       const response = await fetch(endpoint, {
@@ -16,7 +17,7 @@ const Login = () => {
         body: JSON.stringify({ username: username, password: password }),
       });
       if (response.status === 200) navigate('/dashboard');
-      else setErrorDisplay(true);
+      else setErrorDisplay('block');
     } catch (err) {
       console.log(err);
     }
@@ -26,15 +27,22 @@ const Login = () => {
       <input
         type='text'
         placeholder='Username'
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(e) => {
+          setErrorDisplay('none');
+          setUsername(e.target.value);
+        }}
       />
       <input
         type='text'
         placeholder='Password'
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => {
+          setErrorDisplay('none');
+          setPassword(e.target.value);
+        }}
       />
-      <button onClick={() => handleClick('/login')}>Log In</button>
-      <button onClick={() => handleClick('/signup')}>Create Account</button>
+      <p style={{ display: errorDisplay }}>Username or password incorrect</p>
+      <button onClick={() => handleSend('/login')}>Log In</button>
+      <button onClick={() => handleSend('/signup')}>Create Account</button>
 
       {/* holder code, delete later */}
       <div onClick={() => navigate('/dashboard')}>GO TO DASHBOARD</div>

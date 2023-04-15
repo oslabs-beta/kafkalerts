@@ -18,8 +18,7 @@ app.get('/*', (req, res) => {
     if (err) return res.status(500).send(err);
   });
 });
-
-// serve static files
+// LOG IN ROUTE
 app.post(
   '/login',
   authController.verifyUser,
@@ -28,7 +27,7 @@ app.post(
     return res.status(200).json('logged in');
   }
 );
-
+// SIGN UP ROUTE
 app.post(
   '/signup',
   authController.createAccount,

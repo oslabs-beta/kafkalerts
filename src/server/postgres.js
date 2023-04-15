@@ -7,15 +7,15 @@ const db = pgp('postgres://username:password@localhost:5432/mydatabase');
 // Define the schema creation query
 const createSchemaQuery = `CREATE SCHEMA [IF NOT EXISTS] kafkAlertsSchema;`;
 
-// Run the schema creation query
+// Run the schema creation query. (none is for a query that expects no response)
 db.none(createSchemaQuery)
   .then(() => console.log('Schema created successfully'))
   .catch((err) => console.error('Error creating schema:', err));
 
 //TO DO: make table for users
 const makeUserTable = `CREATE TABLE [IF NOT EXISTS] user_table (
-    column1 datatype(length) column_contraint,
-    column2 datatype(length) column_contraint,
+    column1 datatype(length) column_constraint,
+    column2 datatype(length) column_constraint,
     table_constraints
  )`;
 
