@@ -1,5 +1,6 @@
 import React from 'react';
-import Broker from '../components/Broker';
+import Broker from './components/Broker';
+
 const BrokersContainer = () => {
   // map array of brokers into container
 
@@ -11,4 +12,4 @@ const BrokersContainer = () => {
   );
 };
 
-export default Signup;
+export default BrokersContainer;
