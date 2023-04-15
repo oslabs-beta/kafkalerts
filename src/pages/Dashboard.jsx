@@ -3,7 +3,7 @@ import Navbar from '../containers/NavBar';
 import Feed from '../containers/Feed';
 const Dashboard = () => {
   return (
-    <div>
+    <div id='dashboard-page'>
       <Navbar />
       <Feed />
     </div>
