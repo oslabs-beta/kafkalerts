@@ -9,6 +9,15 @@ const cookieController = require('./controllers/cookieController');
 const app = express();
 const PORT = 3000;
 
+//always send index at all routes so react router can handle all routes instead of backend
+app.get('/*', function (req, res) {
+  return res.sendFile(path.join(__dirname, '../index.html'), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
+
 // controllers -
 // postgres db -
 app.use(cookieParser());

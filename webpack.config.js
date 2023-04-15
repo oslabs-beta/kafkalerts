@@ -14,6 +14,9 @@ module.exports = {
       react: path.join(__dirname, 'node_modules', 'react'),
     },
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   module: {
     rules: [
       {
@@ -36,6 +39,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.css', '.scss'],
   },
   plugins: [
     new HtmlWebPackPlugin({
