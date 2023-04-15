@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../containers/NavBar';
 import Feed from '../containers/Feed';
-import './style.scss';
+import './styles.scss';
 
 const Dashboard = () => {
   return (

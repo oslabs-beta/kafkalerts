@@ -3,26 +3,21 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const authController = require('./controllers/authController');
 const cookieController = require('./controllers/cookieController');
-
-// const router = express.Router();
-
 const app = express();
 const PORT = 3000;
 
-//always send index at all routes so react router can handle all routes instead of backend
-app.get('/*', function (req, res) {
-  return res.sendFile(path.join(__dirname, '../index.html'), function (err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
-});
+// === SERVER ===
 
-// controllers -
-// postgres db -
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//always send index.html at all routes so react router handles them instead of backend
+app.get('/*', (req, res) => {
+  return res.sendFile(path.join(__dirname, '../index.html'), (err) => {
+    if (err) return res.status(500).send(err);
+  });
+});
 
 // serve static files
 app.post(
@@ -34,11 +29,14 @@ app.post(
   }
 );
 
-// app.use('/dashboard', express.static(path.join()));
-
-app.post('/signup', authController.verifyUser, (req, res) => {
-  return res.status(200).json('account created');
-});
+app.post(
+  '/signup',
+  authController.createAccount,
+  cookieController.setCookie,
+  (req, res) => {
+    return res.status(200).json('account created');
+  }
+);
 
 // catch-all route handler for any requests to an unknown route
 app.use(function (err, req, res, next) {
