@@ -1,10 +1,7 @@
 const db = require('../postgres'); // db module
-const pgp = db.$config.pgp; // the library's root after initialization
+// const pgp = db.$config.pgp; // the library's root after initialization
 const bcrypt = require('bcrypt');
 
-bcrypt.hash(myPlaintextPassword, saltRounds, function (err, hash) {
-  // Store hash in your password DB.
-});
 
 const authController = {};
 
