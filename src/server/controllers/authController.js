@@ -13,7 +13,8 @@ authController.createAccount = async (req, res, next) => {
     await db.query(checkQuery, [username], async (err, user) => {
       if (user.rowCount > 0) {
         console.log('User already exists. Please log in.');
-        return next();
+        
+        return next({status: 401});
       } else if (err) {
         return next(err);
       } else {
@@ -44,14 +45,18 @@ authController.verifyUser = async (req, res, next) => {
   try {
     const { username, password } = req.body;
     console.log(username, password);
-    const hashedPassword = await db.query(
+    let hashedPassword = await db.query(
       'SELECT password FROM users WHERE username = $1',
       [username]
     );
-    console.log(hashedPassword)
+    hashedPassword = hashedPassword.rows[0].password;
     const matched = await bcrypt.compare(password, hashedPassword);
-    if (!matched) return next(err);
-    return next();
+    if (!matched) {
+      return next(err);
+    } else {
+      res.locals.cookieID = username;
+      return next();
+    }
   } catch (err) {
     return next(err);
   }

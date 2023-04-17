@@ -1,11 +1,23 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
+
 const cookieParser = require('cookie-parser');
 const authController = require('./controllers/authController');
 const cookieController = require('./controllers/cookieController');
 const app = express();
 const PORT = 3000;
 
+
+// Set up CORS options to allow passing through cookies to the client server
+// const corsOptions = {
+//   origin: 'http://localhost:3000',
+//   credentials: true,
+//   methods: 'GET, POST, PUT, DELETE, OPTIONS',
+//   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+// };
+
+app.use(cors());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -66,3 +78,4 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+

@@ -13,8 +13,9 @@ const Login = () => {
     // fix cors error
     try {
       console.log(username, password, endpoint)
-      const response = await fetch(`http://localhost:3000/:${endpoint}`, {
+      const response = await fetch(`http://localhost:3000/${endpoint}`, {
         method: 'POST',
+        // credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username, password: password }),
       });
