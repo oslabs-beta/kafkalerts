@@ -10,12 +10,15 @@ const Login = () => {
 
   const handleSend = async (endpoint) => {
     //TO DO: fix body so that html injection attacks can't happen
+    // fix cors error
     try {
-      const response = await fetch(endpoint, {
+      console.log(username, password, endpoint)
+      const response = await fetch(`http://localhost:3000/:${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username, password: password }),
       });
+      console.log(response.status);
       if (response.status === 200) navigate('/dashboard');
       else setErrorDisplay('block');
     } catch (err) {
@@ -41,8 +44,8 @@ const Login = () => {
         }}
       />
       <p style={{ display: errorDisplay }}>Username or password incorrect</p>
-      <button onClick={() => handleSend('/login')}>Log In</button>
-      <button onClick={() => handleSend('/signup')}>Create Account</button>
+      <button onClick={() => handleSend('login')}>Log In</button>
+      <button onClick={() => handleSend('signup')}>Create Account</button>
 
       {/* holder code, delete later */}
       <div onClick={() => navigate('/dashboard')}>GO TO DASHBOARD</div>

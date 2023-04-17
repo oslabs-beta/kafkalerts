@@ -40,7 +40,7 @@ app.post(
 // catch-all route handler for any requests to an unknown route
 app.use(function (err, req, res, next) {
   res.status(500);
-  res.render('error', { error: err });
+  res.render('server line 43 error', { error: err });
 });
 
 // handler to send back 404 status code

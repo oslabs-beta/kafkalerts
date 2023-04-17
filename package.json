@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Kafka cluster monitoring tool",
   "main": "index.js",
-  
   "scripts": {
     "start": "webpack-dev-server --mode=development --open --hot",
     "build": "webpack --mode=production",
@@ -25,6 +24,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "kafkajs": "^2.2.4",
+    "pg": "^8.10.0",
     "pg-promise": "^11.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
