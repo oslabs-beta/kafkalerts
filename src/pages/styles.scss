@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+.pages {
+  background-color: antiquewhite;
+  width: 100vw;
+  min-height: 100vh;
+}
+#dashboard-page {
+  display: flex;
+  justify-content: center;
+  #navbar-container {
+    position: fixed;
+    width: 100%;
+    background-color: red;
+  }
+  #feed-container {
+    background-color: pink;
+    width: 600px;
+    min-height: 100vh;
+    padding: 100px 0px 0px 0px;
+  }
+}
