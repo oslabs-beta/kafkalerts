@@ -2,13 +2,12 @@ import React from 'react';
 import AlertsContainer from './AlertsContainer';
 import BrokersContainer from './BrokersContainer';
 
-const Feed = () => {
+const Feed = ({ alerts, brokers }) => {
   return (
-    <div>
-      <h1>FEED HERE</h1>
-      <AlertsContainer />
-      <BrokersContainer />
-    </div>
+    <main id='feed-container'>
+      <AlertsContainer alerts={alerts} />
+      <BrokersContainer brokers={brokers} />
+    </main>
   );
 };
 
