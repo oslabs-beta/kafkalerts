@@ -1,19 +1,31 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
+
 const cookieParser = require('cookie-parser');
 const authController = require('./controllers/authController');
 const cookieController = require('./controllers/cookieController');
 const app = express();
 const PORT = 3000;
 
-// === SERVER ===
 
+// Set up CORS options to allow passing through cookies to the client server
+// const corsOptions = {
+//   origin: 'http://localhost:3000',
+//   credentials: true,
+//   methods: 'GET, POST, PUT, DELETE, OPTIONS',
+//   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+// };
+
+app.use(cors());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
 //always send index.html at all routes so react router handles them instead of backend
 app.get('/*', (req, res) => {
+  console.log('here in the server')
   return res.sendFile(path.join(__dirname, '../index.html'), (err) => {
     if (err) return res.status(500).send(err);
   });
@@ -40,7 +52,7 @@ app.post(
 // catch-all route handler for any requests to an unknown route
 app.use(function (err, req, res, next) {
   res.status(500);
-  res.render('error', { error: err });
+  res.render('server line 43 error', { error: err });
 });
 
 // handler to send back 404 status code
@@ -66,3 +78,4 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
+

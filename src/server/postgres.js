@@ -1,22 +1,49 @@
-const pgp = require('pg-promise')();
-
-//TO DO: change out for actual database
-// Creates a new PostgreSQL database connection
-const db = pgp('postgres://username:password@localhost:5432/mydatabase');
+const { Pool } = require('pg');
+const dotenv = require('dotenv').config()
+console.log('pg file ran')
+const connectionString = process.env.PG_URI;
+const pool = new Pool({
+  connectionString,
+});
+pool.connect();
 
 // Define the schema creation query
-const createSchemaQuery = `CREATE SCHEMA [IF NOT EXISTS] kafkAlertsSchema;`;
+const createSchemaQuery = `CREATE SCHEMA IF NOT EXISTS kafkalerts_schema`;
 
 // Run the schema creation query. (none is for a query that expects no response)
-db.none(createSchemaQuery)
+async function createSchema() {
+  await pool.query(createSchemaQuery)
   .then(() => console.log('Schema created successfully'))
   .catch((err) => console.error('Error creating schema:', err));
+}
+
 
 //TO DO: make table for users
-const makeUserTable = `CREATE TABLE [IF NOT EXISTS] user_table (
-    column1 datatype(length) column_constraint,
-    column2 datatype(length) column_constraint,
-    table_constraints
+const makeUserTable = `CREATE TABLE IF NOT EXISTS users (
+    username VARCHAR(24) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY (username) 
  )`;
 
-module.exports = db;
+async function createUserTable() {
+  await pool.query(makeUserTable)
+  .then(() => console.log('Table created successfully'))
+  .catch((err) => console.error('Error creating users table:', err));
+}
+
+// async function createUser() {
+//   await pool.query('INSERT INTO users (username, password) VALUES (\'IANFL\', \'123\')');
+// }
+
+
+
+createSchema();
+createUserTable();
+// createUser();
+
+module.exports = {
+  query: (text, params, callback) => {
+    console.log('executed query', text);
+    return pool.query(text, params, callback);
+  }
+};

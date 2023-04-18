@@ -8,6 +8,7 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
+  mode: 'developement',
   resolve: {
     modules: [path.join(__dirname, 'src'), 'node_modules'],
     alias: {
