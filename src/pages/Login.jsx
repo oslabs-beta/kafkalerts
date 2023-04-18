@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.scss';
+import Navbar from '../containers/NavBar';
 
 const Login = () => {
   const [username, setUsername] = useState(null);
@@ -12,7 +13,7 @@ const Login = () => {
     //TO DO: fix body so that html injection attacks can't happen
     // fix cors error
     try {
-      console.log(username, password, endpoint)
+      console.log(username, password, endpoint);
       const response = await fetch(`http://localhost:3000/${endpoint}`, {
         method: 'POST',
         // credentials: 'include',
@@ -28,6 +29,7 @@ const Login = () => {
   };
   return (
     <div id='login-page'>
+      <Navbar loggedIn={false} />
       <input
         type='text'
         placeholder='Username'
