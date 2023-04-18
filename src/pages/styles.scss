@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 .pages {
   background-color: antiquewhite;
@@ -20,6 +20,12 @@
     background-color: pink;
     width: 600px;
     min-height: 100vh;
-    padding: 100px 0px 0px 0px;
+    padding: 100px 10px 0px 10px;
+
+    #alerts-container {
+      background-color: salmon;
+      padding: 8px;
+      border-radius: 5px;
+    }
   }
 }
