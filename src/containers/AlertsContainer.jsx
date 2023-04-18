@@ -6,7 +6,7 @@ const AlertsContainer = ({ alerts }) => {
     return <Alert info={alert} key={index} />;
   });
   return (
-    <section id='alerts-container'>
+    <section id='alerts-container' className='container'>
       <h2>Alerts: {alerts.length}</h2>
       <ul>{alertsArr}</ul>
     </section>

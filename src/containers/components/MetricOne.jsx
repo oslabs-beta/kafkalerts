@@ -1,13 +1,19 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
+const alertColors = {
+  alerting: 'salmon',
+  notAlerting: 'skyblue',
+};
 
-
-const MetricOne = ({metric}) => {
-  
-
+const MetricOne = ({ name, alerting }) => {
   return (
-    <div className="metric">
-      <h2>{metric}</h2>
-      <div className="graph"></div>
+    <div
+      className='metric'
+      style={{
+        background: alerting ? alertColors.alerting : alertColors.notAlerting,
+      }}
+    >
+      <h2>{name}</h2>
+      <div className='graph'></div>
     </div>
   );
 };

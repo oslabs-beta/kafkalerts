@@ -1,49 +1,56 @@
+@import '../global-styles.scss';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  font-family: $main-font;
+}
+body {
+  background-color: $light;
 }
 .pages {
-  background-color: antiquewhite;
   width: 100vw;
   min-height: 100vh;
-}
-#navbar-container {
-  position: fixed;
-  width: 100%;
-  min-height: 50px;
-  background-color: red;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  h1 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+}
+.container {
+  background-color: $medium;
+  padding: 10px;
+  border-radius: 5px;
+  border: $regular-border;
 }
 
+#homepage {
+  #login-container {
+    width: 90%;
+    max-width: 500px;
+    height: 300px;
+    #button-box {
+      width: 100%;
+      button {
+        width: 50%;
+      }
+    }
+  }
+}
 #dashboard-page {
-  display: flex;
-  justify-content: center;
   #feed-container {
-    background-color: pink;
+    background-color: $medium-light;
     width: 600px;
     min-height: 100vh;
-    padding: 100px 10px 0px 10px;
+    padding: 100px 20px 0px 20px;
     #brokers-container {
-      background-color: salmon;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 0px 10px;
+      margin-top: 20px;
       text-align: center;
       .broker {
-        border-radius: 5px;
-        border: 1px solid rgb(103, 102, 102);
-        background-color: lightsalmon;
-        padding: 10px;
+        background-color: $light;
         text-align: left;
+
         .broker-metrics {
           display: flex;
           justify-content: space-between;
@@ -65,10 +72,20 @@
         }
       }
     }
-    #alerts-container {
-      background-color: salmon;
-      padding: 8px;
-      border-radius: 5px;
-    }
+  }
+}
+#navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 50px;
+  background-color: $medium;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

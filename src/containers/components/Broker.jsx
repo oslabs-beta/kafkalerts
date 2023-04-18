@@ -14,13 +14,14 @@ const Broker = ({ name, metrics }) => {
 
   // map passed in metrics to an array of metric components,
   // each component will be a specific metric for that broker.
-  const brokerMetrics = metrics.map((metric) => <MetricOne metric={metric} />);
-
+  const brokerMetrics = metrics.map((metric) => (
+    <MetricOne name={metric.stat} alerting={metric.alerting} />
+  ));
+  // style={{'background-color': {metric.altering ? 'salmon' : 'skyblue'}}}
   return (
-    <section className='broker' id={name}>
+    <section className='broker container' id={name}>
       <h3>{name}</h3>
       {isShowing ? <div className='broker-metrics'>{brokerMetrics}</div> : null}
-      {/* <button onClick={handleClick}>Show/Hide Metrics</button> */}
       <Button onPress={() => handleClick()}>Show/Hide Metrics</Button>
     </section>
   );
