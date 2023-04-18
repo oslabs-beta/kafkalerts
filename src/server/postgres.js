@@ -31,19 +31,12 @@ async function createUserTable() {
   .catch((err) => console.error('Error creating users table:', err));
 }
 
-// async function createUser() {
-//   await pool.query('INSERT INTO users (username, password) VALUES (\'IANFL\', \'123\')');
-// }
-
-
-
 createSchema();
 createUserTable();
-// createUser();
 
 module.exports = {
   query: (text, params, callback) => {
-    console.log('executed query', text);
+    // console.log('executed query', text);
     return pool.query(text, params, callback);
   }
 };

@@ -10,18 +10,23 @@ const Login = () => {
 
   const handleSend = async (endpoint) => {
     //TO DO: fix body so that html injection attacks can't happen
-    // fix cors error
     try {
-      console.log(username, password, endpoint)
-      const response = await fetch(`http://localhost:3000/${endpoint}`, {
+      await fetch(`http://localhost:3000/${endpoint}`, {
         method: 'POST',
         // credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username, password: password }),
-      });
-      console.log(response.status);
-      if (response.status === 200) navigate('/dashboard');
-      else setErrorDisplay('block');
+      })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res.isVerified)
+        if (res.isVerified) navigate('/dashboard');
+        else if (!res.isVerified) console.log('Username already exists.');
+      })
+      // console.log('response.status', response.status)
+      // if (response.locals.isVerified) navigate('/dashboard');
+      // else if (!response.locals.isVerified) console.log('Username already exists.');
+      // else setErrorDisplay('block');
     } catch (err) {
       console.log(err);
     }
@@ -35,6 +40,7 @@ const Login = () => {
           setErrorDisplay('none');
           setUsername(e.target.value);
         }}
+        style={{margin: '5%'}}
       />
       <input
         type='text'
@@ -44,12 +50,12 @@ const Login = () => {
           setPassword(e.target.value);
         }}
       />
-      <p style={{ display: errorDisplay }}>Username or password incorrect</p>
-      <button onClick={() => handleSend('login')}>Log In</button>
+      <p style={{ display: errorDisplay }}>{errorDisplay}</p>
+      <button style={{margin: '5%'}} onClick={() => handleSend('login')}>Log In</button>
       <button onClick={() => handleSend('signup')}>Create Account</button>
 
       {/* holder code, delete later */}
-      <div onClick={() => navigate('/dashboard')}>GO TO DASHBOARD</div>
+      {/* <div onClick={() => navigate('/dashboard')}>GO TO DASHBOARD</div> */}
     </div>
   );
 };
