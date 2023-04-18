@@ -21,7 +21,7 @@
     background-color: pink;
     width: 600px;
     min-height: 100vh;
-    padding: 100px 0px 0px 0px;
+    padding: 100px 10px 0px 10px;
       #brokers-container {
         background-color: salmon;
         padding: 10px;
@@ -55,5 +55,10 @@
               }
           }
       }
+    #alerts-container {
+      background-color: salmon;
+      padding: 8px;
+      border-radius: 5px;
+    }
   }
 }
