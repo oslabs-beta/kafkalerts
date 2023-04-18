@@ -3,7 +3,7 @@
 //   const displayBrokers = brokers.map(broker => {
 //     console.log('broker name is... ', broker.name);
 //     return <Broker name={broker.name} metrics={broker.metrics}/>
-    
+
 //   })
 //   return (
 //     <section id="brokers-container">
@@ -13,14 +13,14 @@
 //   );
 // };
 import React from 'react';
-import {render, screen} from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import BrokersContainer from '../BrokersContainer';
 import Broker from '../components/Broker';
 import MetricOne from '../components/MetricOne';
 import Button from '../components/Button';
-console.log('hello ')
+console.log('hello ');
 // test if broker container has a broker property
 // test if broker has name and metrics property
 // test map function - displayBrokers should be an array of brokers
@@ -29,20 +29,18 @@ console.log('hello ')
 // test if container renders
 describe('Broker Container functionality', () => {
   let brokers = [];
-  render(<BrokersContainer brokers={brokers} />)
+  // render(<BrokersContainer brokers={brokers} />);
   // const { getByText } = render(<BrokersContainer />);
   // beforeAll(() => {
   //   render(<BrokersContainer brokers={brokers} />)
   // });
 
-  test('BrokersContainer should have a brokers property', () => {
-    expect(BrokersContainer).not.toBeInTheDocument;
-    
-  })
-  test("test child component", () => {
-    
-    expect(getByText(/Broker/i)).toBeInTheDocument();
+  test('BrokersContainer should render to DOM', () => {
+    render(<BrokersContainer brokers={[]} />);
+    const heading = screen.getByText('Brokers');
+    expect(heading).toBeInTheDocument();
   });
-  
-
-})
+  // test('test child component', () => {
+  //   expect(getByText(/Broker/i)).toBeInTheDocument();
+  // });
+});
