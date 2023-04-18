@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.scss';
+
 import TextField from '../containers/components/TextField.jsx';
 import Button from '../containers/components/Button.jsx';
 import { usePress } from 'react-aria';
+
+import Navbar from '../containers/NavBar';
+
 
 const Login = () => {
   const [username, setUsername] = useState(null);
@@ -14,7 +18,7 @@ const Login = () => {
   const handleSend = async (endpoint) => {
     //TO DO: fix body so that html injection attacks can't happen
     try {
-      console.log(username, password, endpoint)
+      console.log(username, password, endpoint);
       const response = await fetch(`http://localhost:3000/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -46,6 +50,9 @@ const Login = () => {
 
       Username: {username}
       Password: {password}
+
+      {/* holder code, delete later */}
+      <div onClick={() => navigate('/dashboard')}>GO TO DASHBOARD</div>
     </div>
 
   );
