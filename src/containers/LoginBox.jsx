@@ -3,7 +3,7 @@ import TextField from './components/TextField';
 import Button from './components/Button';
 const LoginBox = ({ setPassword, setUsername, handleSend }) => {
   return (
-    <div id='login-container'>
+    <div id='login-container' className='container'>
       <TextField label='Username: ' onChange={setUsername} isRequired />
       <TextField label='Password: ' onChange={setPassword} isRequired />
       <div id='button-box'>

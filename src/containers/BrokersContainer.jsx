@@ -8,7 +8,7 @@ const BrokersContainer = ({ brokers }) => {
     return <Broker name={broker.name} metrics={broker.metrics} />;
   });
   return (
-    <section id='brokers-container'>
+    <section id='brokers-container' className='container'>
       <h2>Brokers</h2>
       {displayBrokers}
     </section>

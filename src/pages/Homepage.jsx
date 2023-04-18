@@ -30,7 +30,7 @@ const Homepage = () => {
     }
   };
   return (
-    <div id='homepage' className='loginForm'>
+    <div id='homepage' className='pages loginForm'>
       <Navbar />
       <LoginBox
         setUsername={setUsername}

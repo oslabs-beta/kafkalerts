@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ loggedIn }) => {
   const navigate = useNavigate();
-  let navItems = [<h1 style={{ 'flex-grow': 1 }}>kafkAlerts</h1>];
+  let navItems = [<h1>kafkAlerts</h1>];
   if (loggedIn) {
     navItems.push(
       <nav>
