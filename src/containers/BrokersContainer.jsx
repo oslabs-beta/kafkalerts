@@ -1,14 +1,18 @@
 import React from 'react';
 import Broker from './components/Broker';
 
-const BrokersContainer = () => {
+const BrokersContainer = ({brokers}) => {
   // map array of brokers into container
-
+  const displayBrokers = brokers.map(broker => {
+    console.log('broker name is... ', broker.name);
+    return <Broker name={broker.name} metrics={broker.metrics}/>
+    
+  })
   return (
-    <div>
-      <Broker />
-      This is the Brokers Container. It holds Brokers.
-    </div>
+    <section id="brokers-container">
+      <h2>Brokers</h2>
+      {displayBrokers}
+    </section>
   );
 };
 

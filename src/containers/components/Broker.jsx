@@ -1,12 +1,35 @@
-import React from 'react';
+import React, {useRef} from 'react';
+import Button from './Button';
+import { useState } from 'react';
 
-const Broker = () => {
+import MetricOne from './MetricOne';
+
+const Broker = ({name, metrics}) => {
+  // useState to toggle visibility of broker metrics
+  const [isShowing, setIsShowing] = useState(false);
+  // if button is clicked, changes if it is showing or not
+  const handleClick = () => {
+    setIsShowing(!isShowing);
+  }
+
+  // map passed in metrics to an array of metric components, 
+  // each component will be a specific metric for that broker.
+  const brokerMetrics = metrics.map(metric => {
+    return <MetricOne metric={metric}/>
+  })
   return (
-    <div>
-      This is an individual Broker with some buttons on it
-      <button>Click Me</button>
-      <button>No, click Me!</button>
-    </div>
+    <section className="broker" id={name}>
+      <h2>{name}</h2>
+      {isShowing ? 
+      <div className="broker-metrics">
+        {brokerMetrics}
+      </div> : <></>}
+      <button onClick={handleClick}>Show/Hide Metrics</button>
+      <Button onPress={() => {
+        //alert('Button pressed!')
+        handleClick();
+      }}>Show/Hide Metrics</Button>
+    </section>
   );
 };
 
