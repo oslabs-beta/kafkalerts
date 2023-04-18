@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+body {
+  background-color: antiquewhite;
+}
 .pages {
   background-color: antiquewhite;
   width: 100vw;
@@ -11,6 +14,7 @@
 }
 #navbar-container {
   position: fixed;
+  top: 0;
   width: 100%;
   min-height: 50px;
   background-color: red;
@@ -23,7 +27,26 @@
     transform: translateX(-50%);
   }
 }
-
+#homepage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  #login-container {
+    background-color: red;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    #button-box {
+      width: 100%;
+      background-color: green;
+      button {
+        width: 50%;
+      }
+    }
+  }
+}
 #dashboard-page {
   display: flex;
   justify-content: center;

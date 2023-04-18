@@ -7,7 +7,7 @@ const Dashboard = () => {
   const [username, setUsername] = useState('Ian');
   const [alerts, setAlerts] = useState([{ name: 'Test Broker' }]);
   const [brokers, setBrokers] = useState([
-    { name: 'Test Broker', metrics: ['backward overflow', 'lag', 'urp'] },
+    { name: 'Test-Broker', metrics: ['backward overflow', 'lag', 'urp'] },
   ]);
   // const [brokers, setBrokers] = useState([]);
 
