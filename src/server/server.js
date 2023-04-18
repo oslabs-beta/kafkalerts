@@ -30,29 +30,31 @@ app.get('/*', (req, res) => {
     if (err) return res.status(500).send(err);
   });
 });
+
 // LOG IN ROUTE
 app.post(
   '/login',
   authController.verifyUser,
   cookieController.setCookie,
   (req, res) => {
-    return res.status(200).json('logged in');
+    return res.status(200).json(res.locals);
   }
 );
+
 // SIGN UP ROUTE
 app.post(
   '/signup',
   authController.createAccount,
   cookieController.setCookie,
   (req, res) => {
-    return res.status(200).json('account created');
+    return res.status(200).json(res.locals);
   }
 );
 
 // catch-all route handler for any requests to an unknown route
 app.use(function (err, req, res, next) {
   res.status(500);
-  res.render('server line 43 error', { error: err });
+  res.render('error', { error: err });
 });
 
 // handler to send back 404 status code
@@ -65,7 +67,7 @@ app.use((err, req, res, next) => {
     status: 400,
     message: { err: 'An error occurred' },
   };
-  const errObj = Object.assign(defaultErr, err);
+  const errObj = Object.assign({}, defaultErr, err);
   console.log(errObj.log);
   return res.status(errObj.status).json(errObj.message);
 });

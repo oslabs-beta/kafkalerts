@@ -4,7 +4,7 @@ import Feed from '../containers/Feed';
 import './styles.scss';
 
 const Dashboard = () => {
-  const [username, setUsername] = useState('Ian');
+  const [username, setUsername] = useState('IAN');
   const [alerts, setAlerts] = useState([{ name: 'Test Broker' }]);
   const [brokers, setBrokers] = useState([
     {
