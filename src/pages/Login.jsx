@@ -12,21 +12,26 @@ import Navbar from '../containers/NavBar';
 const Login = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
-  const [errorDisplay, setErrorDisplay] = useState('none');
+  const [errorDisplay, setErrorDisplay] = useState(null);
   const navigate = useNavigate();
 
   const handleSend = async (endpoint) => {
     //TO DO: fix body so that html injection attacks can't happen
     try {
-      console.log(username, password, endpoint);
-      const response = await fetch(`http://localhost:3000/${endpoint}`, {
+      await fetch(`http://localhost:3000/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username, password: password }),
-      });
-      console.log(response.status);
-      if (response.status === 200) navigate('/dashboard');
-      else setErrorDisplay('block');
+      })
+      .then(res => res.json())
+      .then(res => {
+        // console.log('login page verified', res.isVerified)
+        if (res.isVerified) navigate('/dashboard');
+        else if (!res.isVerified) {
+          setErrorDisplay(`Something went wrong. Possible issues: \n The username you tried to create already exists. \n Incorrect username and/or password.`);
+          // console.log('couldnt sign in')
+        }
+      })
     } catch (err) {
       console.log(err);
     }
@@ -50,9 +55,12 @@ const Login = () => {
 
       Username: {username}
       Password: {password}
+      <br></br> 
+      <br></br>
+      {errorDisplay}
 
       {/* holder code, delete later */}
-      <div onClick={() => navigate('/dashboard')}>GO TO DASHBOARD</div>
+      {/* <div onClick={() => navigate('/dashboard')}>GO TO DASHBOARD</div> */}
     </div>
 
   );
