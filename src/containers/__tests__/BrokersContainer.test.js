@@ -25,22 +25,30 @@ console.log('hello ');
 // test if broker has name and metrics property
 // test map function - displayBrokers should be an array of brokers
 // brokers should be an array
-// displayBrokers should be an array
+
 // test if container renders
 describe('Broker Container functionality', () => {
-  let brokers = [];
+  let brokers = [{name: 'brokerOne', metrics: ['lag', 'backwards overflow', 'urp']}, {name: 'brokerTwo', metrics: ['lag', 'backwards overflow', 'urp']}];
   // render(<BrokersContainer brokers={brokers} />);
   // const { getByText } = render(<BrokersContainer />);
-  // beforeAll(() => {
-  //   render(<BrokersContainer brokers={brokers} />)
-  // });
+  beforeAll(() => {
+    render(<BrokersContainer brokers={brokers} />)
+  });
 
   test('BrokersContainer should render to DOM', () => {
-    render(<BrokersContainer brokers={[]} />);
+    // render(<BrokersContainer brokers={[]} />);
     const heading = screen.getByText('Brokers');
     expect(heading).toBeInTheDocument();
   });
-  // test('test child component', () => {
-  //   expect(getByText(/Broker/i)).toBeInTheDocument();
+  
+  // test('BrokersContainer renders number of brokers equal to brokers.length', () => {
+  //   let parent = screen.getByText('Brokers')
+  //   let firstSib = parent.nextSibling
+  //   expect(firstSib).toHaveTextContent('broker1')
   // });
+  // import {within} from '@testing-library/dom'
+
+  // const messages = document.getElementById('messages')
+  // const helloMessage = within(messages).getByText('hello')
+ 
 });
