@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .pages {
   background-color: antiquewhite;
@@ -21,5 +22,38 @@
     width: 600px;
     min-height: 100vh;
     padding: 100px 0px 0px 0px;
+      #brokers-container {
+        background-color: salmon;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 0px 10px;
+        text-align: center;
+          .broker {
+            border-radius: 5px;
+            border: 1px solid rgb(103, 102, 102);
+            background-color: lightsalmon;
+            padding: 10px;
+            text-align: left;
+              .broker-metrics {
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                  .metric {
+                    color: red;
+                    height: 200px;
+                    width: 150px;
+                    border: 1px solid rgb(103, 102, 102);
+                    border-radius: 5px;
+                    background-color: rgb(253, 177, 147);
+                    padding: 10px;
+                    margin: 10px 0;
+                      h2 {
+                        border: 1px solid rgb(103, 102, 102);
+                        border-radius: 5px;
+                      }
+                  }
+              }
+          }
+      }
   }
 }
