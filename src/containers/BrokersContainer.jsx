@@ -3,9 +3,9 @@ import Broker from './components/Broker';
 
 const BrokersContainer = ({ brokers }) => {
   // map array of brokers into container
-  const displayBrokers = brokers.map((broker) => {
-    // console.log('broker name is... ', broker.name);
-    return <Broker name={broker.name} metrics={broker.metrics} />;
+  const displayBrokers = brokers.map((broker, index) => {
+    //TO DO: change keys to something better than indexes
+    return <Broker name={broker.name} key={index} metrics={broker.metrics} />;
   });
   return (
     <section id='brokers-container' className='container'>

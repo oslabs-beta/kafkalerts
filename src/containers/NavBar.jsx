@@ -4,15 +4,20 @@ import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ loggedIn }) => {
   const navigate = useNavigate();
-  let navItems = [<h1>kafkAlerts</h1>];
+  let navItems = [<h1 key={'why key'}>kafkAlerts</h1>];
   if (loggedIn) {
     navItems.push(
-      <nav>
+      <nav key={'1'}>
         <p>{loggedIn}</p>
+        {/* TO DO: change keys to something meaningful */}
         <Link onPress={() => navigate('/')}>Logout</Link>
       </nav>
     );
-    navItems.unshift(<Link onPress={() => navigate('/dashboard')}>Home</Link>);
+    navItems.unshift(
+      <Link key={'2'} onPress={() => navigate('/dashboard')}>
+        Home
+      </Link>
+    );
   }
   return <div id='navbar-container'>{navItems}</div>;
 };
