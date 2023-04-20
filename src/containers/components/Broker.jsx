@@ -4,9 +4,9 @@ import { useState } from 'react';
 
 import MetricOne from './MetricOne';
 
-const Broker = ({ name, metrics }) => {
+const Broker = ({ name, metrics, showing }) => {
   // useState to toggle visibility of broker metrics
-  const [isShowing, setIsShowing] = useState(false);
+  const [isShowing, setIsShowing] = useState(showing);
   // if button is clicked, changes if it is showing or not
   const handleClick = () => {
     setIsShowing(!isShowing);

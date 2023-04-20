@@ -4,8 +4,8 @@ import Feed from '../containers/Feed';
 import './styles.scss';
 
 const Dashboard = () => {
-  const [username, setUsername] = useState('IAN');
-  const [alerts, setAlerts] = useState([{ name: 'Test Broker' }]);
+  const [username, setUsername] = useState('unknown user');
+  const [alerts, setAlerts] = useState([]);
   const [brokers, setBrokers] = useState([]);
 
   const testData = [
@@ -34,6 +34,18 @@ const Dashboard = () => {
       ],
     },
   ];
+  const sortSplit = (brokers) => {
+    const alerts = [];
+    const nonAlerts = [];
+    brokers.forEach((broker) => {
+      for (let i = 0; i < broker.metrics.length; i++) {
+        if (broker.metrics[i].alerting) return alerts.push(broker);
+      }
+      nonAlerts.push(broker);
+    });
+    return [alerts, nonAlerts];
+  };
+
   useEffect(() => {
     (async () => {
       //TO DO: set this on an interval to get data every few second or so
@@ -43,9 +55,10 @@ const Dashboard = () => {
           credentials: 'include',
         });
         const data = await response.json();
-        setBrokers(testData);
-        //TO DO: switch to this when the backend is getting data
-        // setBrokers(data)
+        //TO DO: switch to using fetched data when the backend is set up
+        const split = sortSplit(testData);
+        setAlerts(split[0]);
+        setBrokers(split[1]);
       } catch (err) {
         console.log('problems getting metrics from your cluster, sorry', err);
       }
@@ -55,7 +68,7 @@ const Dashboard = () => {
   return (
     <div id='dashboard-page' className='pages'>
       <Navbar loggedIn={username} />
-      <Feed brokers={brokers} />
+      <Feed alerts={alerts} brokers={brokers} />
     </div>
   );
 };
