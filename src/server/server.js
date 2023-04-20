@@ -8,27 +8,31 @@ const cookieController = require('./controllers/cookieController');
 const app = express();
 const PORT = 3000;
 
-
 // Set up CORS options to allow passing through cookies to the client server
-// const corsOptions = {
-//   origin: 'http://localhost:3000',
-//   credentials: true,
-//   methods: 'GET, POST, PUT, DELETE, OPTIONS',
-//   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
-// };
+const corsOptions = {
+  origin: 'http://localhost:8080',
+  credentials: true,
+  methods: 'GET, POST, PUT, DELETE, OPTIONS',
+  allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
 //always send index.html at all routes so react router handles them instead of backend
 app.get('/*', (req, res) => {
-  console.log('here in the server')
+  console.log('here in the server');
   return res.sendFile(path.join(__dirname, '../index.html'), (err) => {
     if (err) return res.status(500).send(err);
   });
+});
+
+//GET METRICS ROUTE
+//TO DO: actually build this
+app.post('/kafka', (req, res) => {
+  return res.status(200).json('broker data would be here');
 });
 
 // LOG IN ROUTE
