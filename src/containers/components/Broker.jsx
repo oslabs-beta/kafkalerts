@@ -19,7 +19,7 @@ const Broker = ({ name, metrics, showing }) => {
   ));
   // style={{'background-color': {metric.altering ? 'salmon' : 'skyblue'}}}
   return (
-    <section className='broker container' id={name}>
+    <section className='broker container' id={name.replace(/\s+/g, '-').toLowerCase()}>
       <h3>{name}</h3>
       {isShowing ? <div className='broker-metrics'>{brokerMetrics}</div> : null}
       <Button onPress={() => handleClick()}>Show/Hide Metrics</Button>
