@@ -17,7 +17,7 @@ const Broker = ({ name, metrics }) => {
   const brokerMetrics = metrics.map((metric) => <MetricOne metric={metric} />);
 
   return (
-    <section className='broker' id={name}>
+    <section className='broker' id={name.replace(/\s+/g, '-').toLowerCase()}>
       <h3>{name}</h3>
       {isShowing ? <div className='broker-metrics'>{brokerMetrics}</div> : null}
       {/* <button onClick={handleClick}>Show/Hide Metrics</button> */}
