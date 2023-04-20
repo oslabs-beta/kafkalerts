@@ -1,6 +1,5 @@
 const request = require('supertest');
 const server = 'http://localhost:3000';
-// const server = require('../../server/server.js')
 
 describe('Route integration', () => {
   const username = 'test' + Math.floor(Math.random()*100);
@@ -8,6 +7,7 @@ describe('Route integration', () => {
 
   // test that index.html gets sent so that react router handles routes
   // rather than routes being handled in backend
+  // maybe not complete?
   describe('/*', () => {
     describe('GET', () => {
       it('responds with 200 status and text/html content type', () => {

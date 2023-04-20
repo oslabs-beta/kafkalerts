@@ -1,19 +1,25 @@
 const request = require('supertest');
 const server = 'http://localhost:3000';
 
-describe('Bcrypting passwords', () => {
+describe('Cookie controller', () => {
+  const username = 'test' + Math.floor(Math.random()*100);
+  const body = {username, password: 'test'} 
+  body.isVerified = true;
 
-  it('Cookie should be created', () => {
+  it('Cookie should be created on signup', () => {
     request(server)
       .post('/signup')
-      .send({"username": "test3", "password" : "password3"})
+      .send(body)
       .type('form')
-      // .end((err, res) => {
-      //   cookieController.setCookie({}, (err, user) => {
-      //     expect(user.cookieID).to.eql("test3");
-      //   });
-      // });
+      .expect('cookieId', username)
   });
-  
+
+  it('Cookie should be created on login', () => {
+    request(server)
+      .post('/login')
+      .send(body)
+      .type('form')
+      .expect('cookieId', username)
+  });
 })
 

@@ -85,9 +85,9 @@ describe('Broker Container displays properly', () => {
     const broker2 = screen.getByText(broker2Name);
 
     expect(broker1).toBeInTheDocument();
-    expect(broker1).toHaveTextContent('brokerOne');
+    expect(broker1).toHaveTextContent('Alerting-Test-Broker');
     expect(broker2).toBeInTheDocument();
-    expect(broker2).toHaveTextContent('brokerTwo');
+    expect(broker2).toHaveTextContent('All-Good-Test-Broker');
   })
 
 });
