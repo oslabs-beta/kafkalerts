@@ -5,8 +5,8 @@ import BrokersContainer from './BrokersContainer';
 const Feed = ({ alerts, brokers }) => {
   return (
     <main id='feed-container'>
-      <AlertsContainer alerts={alerts} />
-      <BrokersContainer brokers={brokers} />
+      <AlertsContainer brokers={alerts} />
+      <BrokersContainer alerts={alerts} brokers={brokers} />
     </main>
   );
 };

@@ -1,14 +1,13 @@
 import React from 'react';
 import Alert from './components/Alert';
 
-const AlertsContainer = ({ alerts }) => {
-  const alertsArr = alerts.map((alert, index) => {
-    return <Alert info={alert} key={index} />;
-  });
+const AlertsContainer = ({ brokers }) => {
+  brokers = brokers.map((broker, index) => <Alert info={broker} key={index} />);
+
   return (
-    <section id='alerts-container'>
-      <h2>Alerts: {alerts.length}</h2>
-      <ul>{alertsArr}</ul>
+    <section id='alerts-container' className='container'>
+      <h2>Alerts: {brokers.length}</h2>
+      <div>{brokers}</div>
     </section>
   );
 };
