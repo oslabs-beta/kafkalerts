@@ -15,12 +15,13 @@ console.log('hello ');
 // test if container renders
 describe('Broker Container displays properly', () => {
   let container;
+  let alerts = [];
   let brokers = [{name: 'brokerOne', metrics: ['lag', 'backwards overflow', 'urp'], key:'123'}, 
                  {name: 'brokerTwo', metrics: ['lag', 'backwards overflow', 'urp'], key:'456'}];
   // render(<BrokersContainer brokers={brokers} />);
   // const { getByText } = render(<BrokersContainer />);
   beforeAll(() => {
-    container = render(<BrokersContainer key='brokers-container' brokers={brokers} />)
+    container = render(<BrokersContainer key='brokers-container' brokers={brokers} alerts={alerts} />)
   });
 
   test('BrokersContainer should render to DOM', () => {
@@ -70,8 +71,32 @@ describe('Broker Container displays properly', () => {
 // check if button has functionality
 describe('Broker components... ', () => {
   let container;
-  let brokers = [{name: 'brokerOne', metrics: ['lag', 'backwards overflow', 'urp'], key:'123'}, 
-                 {name: 'brokerTwo', metrics: ['lag', 'backwards overflow', 'urp'], key:'456'}];
+  let brokers = [
+    {
+      name: 'Alerting-Test-Broker',
+      metrics: [
+        { stat: 'backward overflow', alerting: true },
+        { stat: 'lag', alerting: false },
+        { stat: 'urp', alerting: true },
+      ],
+    },
+    {
+      name: 'All-Good-Test-Broker',
+      metrics: [
+        { stat: 'backward overflow', alerting: false },
+        { stat: 'lag', alerting: false },
+        { stat: 'urp', alerting: false },
+      ],
+    },
+    {
+      name: 'Second-Alerting-Test-Broker',
+      metrics: [
+        { stat: 'backward overflow', alerting: false },
+        { stat: 'lag', alerting: false },
+        { stat: 'urp', alerting: true },
+      ],
+    },
+  ];
   let broker = {name: 'brokerOne', metrics: ['lag', 'backwards overflow', 'urp'], key:'123'}
   let brokerName = broker.name;
   let brokerMetrics = broker.metrics;
