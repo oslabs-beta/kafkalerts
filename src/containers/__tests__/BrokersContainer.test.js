@@ -16,8 +16,32 @@ console.log('hello ');
 describe('Broker Container displays properly', () => {
   let container;
   let alerts = [];
-  let brokers = [{name: 'brokerOne', metrics: ['lag', 'backwards overflow', 'urp'], key:'123'}, 
-                 {name: 'brokerTwo', metrics: ['lag', 'backwards overflow', 'urp'], key:'456'}];
+  let brokers = [
+    {
+      name: 'Alerting-Test-Broker',
+      metrics: [
+        { stat: 'backward overflow', alerting: true },
+        { stat: 'lag', alerting: false },
+        { stat: 'urp', alerting: true },
+      ],
+    },
+    {
+      name: 'All-Good-Test-Broker',
+      metrics: [
+        { stat: 'backward overflow', alerting: false },
+        { stat: 'lag', alerting: false },
+        { stat: 'urp', alerting: false },
+      ],
+    },
+    {
+      name: 'Second-Alerting-Test-Broker',
+      metrics: [
+        { stat: 'backward overflow', alerting: false },
+        { stat: 'lag', alerting: false },
+        { stat: 'urp', alerting: true },
+      ],
+    },
+  ];
   // render(<BrokersContainer brokers={brokers} />);
   // const { getByText } = render(<BrokersContainer />);
   beforeAll(() => {
