@@ -1,6 +1,6 @@
 import React from 'react';
-import TextField from './components/TextField';
-import Button from './components/Button';
+import TextField from '../components/TextField';
+import Button from '../components/Button';
 const LoginBox = ({ setPassword, setUsername, handleSend }) => {
   return (
     <div id='login-container' className='container'>

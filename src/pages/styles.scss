@@ -1,14 +1,13 @@
-@import '../global-styles.scss';
+@import '../variables.scss';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
   font-family: $main-font;
 }
 body {
-  background-color: $light;
+  background-color: pink;
 }
 .pages {
   width: 100vw;
@@ -26,6 +25,21 @@ body {
 }
 
 #homepage {
+  #navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 50px;
+    background-color: $medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
   #login-container {
     width: 90%;
     max-width: 500px;
@@ -39,53 +53,41 @@ body {
   }
 }
 #dashboard-page {
-  #feed-container {
-    background-color: $medium-light;
-    width: 600px;
+  #dash-nav {
+    #alerts-container {
+      .alert-box {
+      }
+    }
+  }
+  #brokers-container {
+    background-color: $light;
+    width: 100vw;
+    max-width: 1200px;
     min-height: 100vh;
-    padding: 100px 20px 0px 20px;
-    #brokers-container {
-      margin-top: 20px;
-      text-align: center;
-      .broker {
-        background-color: $light;
-        text-align: left;
+    padding: 50px 100px 10px;
+    .broker {
+      background-color: $light;
+      text-align: left;
 
-        .broker-metrics {
-          display: flex;
-          justify-content: space-between;
-          text-align: center;
-          .metric {
-            color: red;
-            height: 200px;
-            width: 150px;
+      .broker-metrics {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        .metric {
+          color: red;
+          height: 200px;
+          width: 150px;
+          border: 1px solid rgb(103, 102, 102);
+          border-radius: 5px;
+          background-color: rgb(253, 177, 147);
+          padding: 10px;
+          margin: 10px 0;
+          h2 {
             border: 1px solid rgb(103, 102, 102);
             border-radius: 5px;
-            background-color: rgb(253, 177, 147);
-            padding: 10px;
-            margin: 10px 0;
-            h2 {
-              border: 1px solid rgb(103, 102, 102);
-              border-radius: 5px;
-            }
           }
         }
       }
     }
-  }
-}
-#navbar-container {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  min-height: 50px;
-  background-color: $medium;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  h1 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
   }
 }

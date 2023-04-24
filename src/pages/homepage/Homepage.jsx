@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './styles.scss';
-import TextField from '../containers/components/TextField.jsx';
-import Button from '../containers/components/Button.jsx';
-import { usePress } from 'react-aria';
-import Navbar from '../containers/NavBar';
-import LoginBox from '../containers/LoginBox';
+import '../styles.scss';
+import Navbar from './containers/NavBar';
+import LoginBox from './containers/LoginBox';
 
 const Homepage = () => {
   const [username, setUsername] = useState(null);
