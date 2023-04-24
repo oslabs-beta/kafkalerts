@@ -1,8 +1,7 @@
-import React, { useRef } from 'react';
-import Button from './Button';
+import React from 'react';
+import Button from '../../homepage/components/Button';
 import { useState } from 'react';
-
-import MetricOne from './MetricOne';
+import Metric from './Metric';
 
 const Broker = ({ name, metrics, showing }) => {
   // useState to toggle visibility of broker metrics
@@ -15,11 +14,14 @@ const Broker = ({ name, metrics, showing }) => {
   // map passed in metrics to an array of metric components,
   // each component will be a specific metric for that broker.
   const brokerMetrics = metrics.map((metric) => (
-    <MetricOne name={metric.stat} alerting={metric.alerting} />
+    <Metric name={metric.stat} alerting={metric.alerting} />
   ));
   // style={{'background-color': {metric.altering ? 'salmon' : 'skyblue'}}}
   return (
-    <section className='broker container' id={name.replace(/\s+/g, '-').toLowerCase()}>
+    <section
+      className='broker container'
+      id={name.replace(/\s+/g, '-').toLowerCase()}
+    >
       <h3>{name}</h3>
       {isShowing ? <div className='broker-metrics'>{brokerMetrics}</div> : null}
       <Button onPress={() => handleClick()}>Show/Hide Metrics</Button>

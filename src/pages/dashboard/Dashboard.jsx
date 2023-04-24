@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../containers/NavBar';
-import Feed from '../containers/Feed';
-import './styles.scss';
+import '../styles.scss';
+import DashNav from './containers/DashNav';
+import BrokersContainer from './containers/BrokersContainer';
 
 const Dashboard = () => {
   const [username, setUsername] = useState('unknown user');
-  const [alerts, setAlerts] = useState([]);
+  const [alertingBrokers, setAlertingBrokers] = useState([]);
   const [brokers, setBrokers] = useState([]);
 
   const testData = [
@@ -34,16 +34,12 @@ const Dashboard = () => {
       ],
     },
   ];
-  const sortSplit = (brokers) => {
-    const alerts = [];
-    const nonAlerts = [];
-    brokers.forEach((broker) => {
+  const getAlerts = (brokers) => {
+    return brokers.filter((broker) => {
       for (let i = 0; i < broker.metrics.length; i++) {
-        if (broker.metrics[i].alerting) return alerts.push(broker);
+        if (broker.metrics[i].alerting) return true;
       }
-      nonAlerts.push(broker);
     });
-    return [alerts, nonAlerts];
   };
 
   useEffect(() => {
@@ -56,10 +52,11 @@ const Dashboard = () => {
         });
         const data = await response.json();
         //TO DO: switch to using fetched data when the backend is set up
-        const split = sortSplit(testData);
-        setAlerts(split[0]);
-        setBrokers(split[1]);
+        setAlertingBrokers(getAlerts(testData));
+        setBrokers(testData);
       } catch (err) {
+        setAlerts(getAlerts(testData));
+        setBrokers(testData);
         console.log('problems getting metrics from your cluster, sorry', err);
       }
     })();
@@ -67,8 +64,8 @@ const Dashboard = () => {
 
   return (
     <div id='dashboard-page' className='pages'>
-      <Navbar loggedIn={username} />
-      <Feed alerts={alerts} brokers={brokers} />
+      <DashNav alertingBrokers={alertingBrokers} username={username} />
+      <BrokersContainer brokers={brokers} />
     </div>
   );
 };

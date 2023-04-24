@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './components/Link';
+import Link from '../components/Link';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = ({ loggedIn }) => {
