@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: $main-font;
 }
+img {
+  max-width: 100%;
+}
 body {
   background-color: pink;
 }
@@ -54,9 +57,48 @@ body {
 }
 #dashboard-page {
   #dash-nav {
+    position: fixed;
+    background-image: linear-gradient(to bottom, $light, 95%, transparent);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    width: 100%;
+    max-width: 1200px;
+    height: 80px;
     #alerts-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       .alert-box {
+        background-color: rgb(250, 115, 137);
+        margin: 0 5px;
+        padding: 3px;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        border-radius: 3px;
+        border: $regular-border;
       }
+      .alert-box:hover {
+        background-color: darken(rgb(250, 115, 137), 10%);
+      }
+    }
+    #user-menu-button {
+      border-radius: 50%;
+      margin-left: 20px;
+      width: 40px;
+      height: 40px;
+    }
+    #user-menu {
+      position: absolute;
+      right: 0px;
+      margin: 50px 40px;
+      background-color: $medium;
+      border: $regular-border;
+      border-radius: 5px;
+      padding: 5px;
     }
   }
   #brokers-container {
