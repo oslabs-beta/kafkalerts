@@ -52,6 +52,7 @@ body {
     }
   }
 }
+
 #dashboard-page {
   #dash-nav {
     #alerts-container {
@@ -64,11 +65,31 @@ body {
     width: 100vw;
     max-width: 1200px;
     min-height: 100vh;
-    padding: 50px 100px 10px;
+    // padding: 50px 100px 10px;
     .broker {
       background-color: $light;
-      text-align: left;
-
+      .collapsed-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        div {
+          white-space: nowrap;
+          .total-alerts-box {
+            background-color: rgb(171, 171, 255);
+            width: 30px;
+            height: 30px;
+            text-align: center;
+          }
+        }
+        #shorten {
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .collapsed-bar button:last-child {
+        margin-left: auto;
+        padding: 3px;
+      }
       .broker-metrics {
         display: flex;
         justify-content: space-between;

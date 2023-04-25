@@ -10,37 +10,28 @@ const Dashboard = () => {
 
   const testData = [
     {
-      name: 'Alerting-Test-Broker',
-      metrics: [
-        { stat: 'backward overflow', alerting: true },
-        { stat: 'lag', alerting: false },
-        { stat: 'urp', alerting: true },
-      ],
+      id: '1',
+      topics: ['sitting', 'lounging', 'laying'],
+      alerting: true,
+      partitions: 47,
+      metrics: ['backward overflow', 'lag', 'urp'],
     },
     {
-      name: 'All-Good-Test-Broker',
-      metrics: [
-        { stat: 'backward overflow', alerting: false },
-        { stat: 'lag', alerting: false },
-        { stat: 'urp', alerting: false },
-      ],
+      id: '2',
+      topics: ['swimming', 'diving', 'freestyle'],
+      alerting: false,
+      partitions: 53,
+      metrics: ['backward overflow', 'lag', 'urp'],
     },
     {
-      name: 'Second-Alerting-Test-Broker',
-      metrics: [
-        { stat: 'backward overflow', alerting: false },
-        { stat: 'lag', alerting: false },
-        { stat: 'urp', alerting: true },
-      ],
+      id: '3',
+      topics: ['walking', 'sprinting', 'running'],
+      alerting: true,
+      partitions: 61,
+      metrics: ['backward overflow', 'lag', 'urp'],
     },
   ];
-  const getAlerts = (brokers) => {
-    return brokers.filter((broker) => {
-      for (let i = 0; i < broker.metrics.length; i++) {
-        if (broker.metrics[i].alerting) return true;
-      }
-    });
-  };
+  const getAlerts = (brokers) => brokers.filter((broker) => broker.alerting);
 
   useEffect(() => {
     (async () => {
@@ -55,7 +46,7 @@ const Dashboard = () => {
         setAlertingBrokers(getAlerts(testData));
         setBrokers(testData);
       } catch (err) {
-        setAlerts(getAlerts(testData));
+        setAlertingBrokers(getAlerts(testData));
         setBrokers(testData);
         console.log('problems getting metrics from your cluster, sorry', err);
       }
