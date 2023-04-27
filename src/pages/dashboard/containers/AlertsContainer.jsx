@@ -8,8 +8,8 @@ const AlertsContainer = ({ alertingBrokers }) => {
 
   return (
     <section id='alerts-container' className='container'>
-      <h2>Alerts: {alertingBrokers.length}</h2>
-      <div>{alertingBrokers}</div>
+      <h2>Alerting Brokers by ID:</h2>
+      {alertingBrokers}
     </section>
   );
 };

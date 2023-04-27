@@ -4,9 +4,12 @@ import DashNav from './containers/DashNav';
 import BrokersContainer from './containers/BrokersContainer';
 
 const Dashboard = () => {
-  const [username, setUsername] = useState('unknown user');
+  const [username, setUsername] = useState('xXGoogleExecXx');
   const [alertingBrokers, setAlertingBrokers] = useState([]);
   const [brokers, setBrokers] = useState([]);
+  const [connectionString, setConnectionString] = useState(
+    'grafana.org/themetricsyouwant.forfree'
+  );
 
   const testData = [
     {
@@ -55,7 +58,11 @@ const Dashboard = () => {
 
   return (
     <div id='dashboard-page' className='pages'>
-      <DashNav alertingBrokers={alertingBrokers} username={username} />
+      <DashNav
+        alertingBrokers={alertingBrokers}
+        username={username}
+        connectionString={connectionString}
+      />
       <BrokersContainer brokers={brokers} />
     </div>
   );
