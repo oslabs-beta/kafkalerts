@@ -4,13 +4,17 @@ import DashNav from './containers/DashNav';
 import BrokersContainer from './containers/BrokersContainer';
 
 const Dashboard = () => {
-  const [username, setUsername] = useState('unknown user');
+  const [username, setUsername] = useState('xXGoogleExecXx');
   const [alertingBrokers, setAlertingBrokers] = useState([]);
   const [brokers, setBrokers] = useState([]);
+  const [connectionString, setConnectionString] = useState(
+    'grafana.org/themetricsyouwant.forfree'
+  );
 
   const testData = [
     {
       name: 'Alerting-Test-Broker',
+      id: 1,
       metrics: [
         { stat: 'backward overflow', alerting: true },
         { stat: 'lag', alerting: false },
@@ -19,6 +23,7 @@ const Dashboard = () => {
     },
     {
       name: 'All-Good-Test-Broker',
+      id: 2,
       metrics: [
         { stat: 'backward overflow', alerting: false },
         { stat: 'lag', alerting: false },
@@ -27,6 +32,7 @@ const Dashboard = () => {
     },
     {
       name: 'Second-Alerting-Test-Broker',
+      id: 3,
       metrics: [
         { stat: 'backward overflow', alerting: false },
         { stat: 'lag', alerting: false },
@@ -64,7 +70,11 @@ const Dashboard = () => {
 
   return (
     <div id='dashboard-page' className='pages'>
-      <DashNav alertingBrokers={alertingBrokers} username={username} />
+      <DashNav
+        alertingBrokers={alertingBrokers}
+        username={username}
+        connectionString={connectionString}
+      />
       <BrokersContainer brokers={brokers} />
     </div>
   );
