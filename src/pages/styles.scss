@@ -108,6 +108,8 @@ body {
     max-width: 1200px;
     min-height: 100vh;
     // padding: 50px 100px 10px;
+    // added margin to make top broker visible, can remove once solution is found
+    margin-top: 80px;
     .broker {
       background-color: $light;
       .collapsed-bar {
@@ -138,8 +140,8 @@ body {
         text-align: center;
         .metric {
           color: red;
-          height: 200px;
-          width: 150px;
+          height: 300px;
+          width: 350px;
           border: 1px solid rgb(103, 102, 102);
           border-radius: 5px;
           background-color: rgb(253, 177, 147);
@@ -148,6 +150,10 @@ body {
           h2 {
             border: 1px solid rgb(103, 102, 102);
             border-radius: 5px;
+          }
+          .graph canvas {
+            width: 200px;
+            height: 200px;
           }
         }
       }

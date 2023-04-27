@@ -18,21 +18,21 @@ const Dashboard = () => {
       topics: ['sitting', 'lounging', 'laying'],
       alerting: true,
       partitions: 47,
-      metrics: ['backward overflow', 'lag', 'urp'],
+      metrics: [{name: 'Bytes In'}, {name: 'Bytes Out'}, {name: 'URP'}],
     },
     {
       id: '2',
       topics: ['swimming', 'diving', 'freestyle'],
       alerting: false,
       partitions: 53,
-      metrics: ['backward overflow', 'lag', 'urp'],
+      metrics: [{name: 'Bytes In'}, {name: 'Bytes Out'}, {name: 'URP'}],
     },
     {
       id: '3',
       topics: ['walking', 'sprinting', 'running'],
       alerting: true,
       partitions: 61,
-      metrics: ['backward overflow', 'lag', 'urp'],
+      metrics: [{name: 'Bytes In'}, {name: 'Bytes Out'}, {name: 'URP'}],
     },
   ];
   const getAlerts = (brokers) => brokers.filter((broker) => broker.alerting);
@@ -41,12 +41,17 @@ const Dashboard = () => {
     (async () => {
       //TO DO: set this on an interval to get data every few second or so
       try {
-        const response = await fetch('http://localhost:3000/kafka', {
-          method: 'POST',
-          credentials: 'include',
-        });
+        const response = await fetch('http://localhost:3001/kafka');
         const data = await response.json();
         //TO DO: switch to using fetched data when the backend is set up
+        console.log('metrics in Dashboard - ', data);
+        // for each broker assign respective metrics from data object
+        testData.forEach(broker => {
+          broker.metrics[0].result = data.bytesIn;
+          broker.metrics[1].result = data.bytesOut;
+          broker.metrics[2].result = data.urp;
+        })
+        console.log('this is the test data: ', testData)
         setAlertingBrokers(getAlerts(testData));
         setBrokers(testData);
       } catch (err) {

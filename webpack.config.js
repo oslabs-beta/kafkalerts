@@ -55,5 +55,8 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
     }),
+    // new webpack.ProvidePlugin({
+    //   Chart: 'react-chartjs-2',
+    // }),
   ],
 };
