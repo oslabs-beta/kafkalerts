@@ -14,8 +14,10 @@ const Broker = ({ name, metrics, showing }) => {
   // map passed in metrics to an array of metric components,
   // each component will be a specific metric for that broker.
   const brokerMetrics = metrics.map((metric) => (
-    <Metric name={metric.stat} alerting={metric.alerting} />
+    <Metric name={metric.stat} result={metric.result} alerting={metric.alerting} />
   ));
+console.log('brokerMetrics - ', brokerMetrics)  
+console.log('metrics in Broker is ', metrics)
   // style={{'background-color': {metric.altering ? 'salmon' : 'skyblue'}}}
   return (
     <section
