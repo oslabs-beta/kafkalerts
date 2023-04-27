@@ -7,9 +7,10 @@ const BrokersContainer = ({ brokers }) => {
   const displayBrokers = brokers.map((broker, index) => (
     <Broker
       showing={false}
-      name={broker.name}
+      id={broker.id}
       key={'broker' + index}
       metrics={broker.metrics}
+      brokerData={broker}
     />
   ));
   return (

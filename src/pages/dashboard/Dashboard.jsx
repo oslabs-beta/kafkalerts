@@ -4,43 +4,37 @@ import DashNav from './containers/DashNav';
 import BrokersContainer from './containers/BrokersContainer';
 
 const Dashboard = () => {
-  const [username, setUsername] = useState('unknown user');
+  const [username, setUsername] = useState('xXGoogleExecXx');
   const [alertingBrokers, setAlertingBrokers] = useState([]);
   const [brokers, setBrokers] = useState([]);
+  const [connectionString, setConnectionString] = useState(
+    'grafana.org/themetricsyouwant.forfree'
+  );
 
   const testData = [
     {
-      name: 'Alerting-Test-Broker',
-      metrics: [
-        { stat: 'Bytes In', alerting: true },
-        { stat: 'Bytes Out', alerting: false },
-        { stat: 'URP', alerting: true },
-      ],
+      id: '1',
+      topics: ['sitting', 'lounging', 'laying'],
+      alerting: true,
+      partitions: 47,
+      metrics: ['backward overflow', 'lag', 'urp'],
     },
-    // {
-    //   name: 'All-Good-Test-Broker',
-    //   metrics: [
-    //     { stat: 'Bytes In', alerting: false },
-    //     { stat: 'Bytes Out', alerting: false },
-    //     { stat: 'URP', alerting: false },
-    //   ],
-    // },
-    // {
-    //   name: 'Second-Alerting-Test-Broker',
-    //   metrics: [
-    //     { stat: 'Bytes In', alerting: false },
-    //     { stat: 'Bytes Out', alerting: false },
-    //     { stat: 'URP', alerting: true },
-    //   ],
-    // },
+    {
+      id: '2',
+      topics: ['swimming', 'diving', 'freestyle'],
+      alerting: false,
+      partitions: 53,
+      metrics: ['backward overflow', 'lag', 'urp'],
+    },
+    {
+      id: '3',
+      topics: ['walking', 'sprinting', 'running'],
+      alerting: true,
+      partitions: 61,
+      metrics: ['backward overflow', 'lag', 'urp'],
+    },
   ];
-  const getAlerts = (brokers) => {
-    return brokers.filter((broker) => {
-      for (let i = 0; i < broker.metrics.length; i++) {
-        if (broker.metrics[i].alerting) return true;
-      }
-    });
-  };
+  const getAlerts = (brokers) => brokers.filter((broker) => broker.alerting);
 
   useEffect(() => {
     (async () => {
@@ -69,7 +63,11 @@ const Dashboard = () => {
 
   return (
     <div id='dashboard-page' className='pages'>
-      <DashNav alertingBrokers={alertingBrokers} username={username} />
+      <DashNav
+        alertingBrokers={alertingBrokers}
+        username={username}
+        connectionString={connectionString}
+      />
       <BrokersContainer brokers={brokers} />
     </div>
   );
