@@ -22,7 +22,12 @@
     "globalTeardown": "./jest-teardown.js",
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+        "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(scss)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
   },
   "bugs": {
     "url": "https://github.com/oslabs-beta/kafkalerts/issues"
@@ -58,6 +63,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.5.0",
+    "jest-axe": "^7.0.1",
     "jest-environment-jsdom": "^29.5.0",
     "nodemon": "^2.0.22",
     "sass": "^1.62.0",
