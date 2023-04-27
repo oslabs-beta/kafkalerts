@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles.scss';
 import DashNav from './containers/DashNav';
 import BrokersContainer from './containers/BrokersContainer';
+import {v4 as uuidv4} from 'uuid'
 
 const Dashboard = () => {
   const [username, setUsername] = useState('xXGoogleExecXx');
@@ -62,8 +63,9 @@ const Dashboard = () => {
         alertingBrokers={alertingBrokers}
         username={username}
         connectionString={connectionString}
+        key={uuidv4()}
       />
-      <BrokersContainer brokers={brokers} />
+      <BrokersContainer brokers={brokers} key={uuidv4()}/>
     </div>
   );
 };

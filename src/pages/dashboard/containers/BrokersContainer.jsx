@@ -1,5 +1,6 @@
 import React from 'react';
 import Broker from '../components/Broker';
+import {v4 as uuidv4} from 'uuid'
 
 const BrokersContainer = ({ brokers }) => {
   // map array of brokers into container
@@ -8,7 +9,7 @@ const BrokersContainer = ({ brokers }) => {
     <Broker
       showing={false}
       id={broker.id}
-      key={'broker' + index}
+      key={uuidv4()}
       metrics={broker.metrics}
       brokerData={broker}
     />
