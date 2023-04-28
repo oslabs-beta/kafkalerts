@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles.scss';
 import DashNav from './containers/DashNav';
 import BrokersContainer from './containers/BrokersContainer';
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
 
 const Dashboard = () => {
   const [username, setUsername] = useState('xXGoogleExecXx');
@@ -18,21 +18,21 @@ const Dashboard = () => {
       topics: ['sitting', 'lounging', 'laying'],
       alerting: true,
       partitions: 47,
-      metrics: [{name: 'Bytes In'}, {name: 'Bytes Out'}, {name: 'URP'}],
+      metrics: [{ name: 'Bytes In' }, { name: 'Bytes Out' }, { name: 'URP' }],
     },
     {
       id: '2',
       topics: ['swimming', 'diving', 'freestyle'],
       alerting: false,
       partitions: 53,
-      metrics: [{name: 'Bytes In'}, {name: 'Bytes Out'}, {name: 'URP'}],
+      metrics: [{ name: 'Bytes In' }, { name: 'Bytes Out' }, { name: 'URP' }],
     },
     {
       id: '3',
       topics: ['walking', 'sprinting', 'running'],
       alerting: true,
       partitions: 61,
-      metrics: [{name: 'Bytes In'}, {name: 'Bytes Out'}, {name: 'URP'}],
+      metrics: [{ name: 'Bytes In' }, { name: 'Bytes Out' }, { name: 'URP' }],
     },
   ];
   const getAlerts = (brokers) => brokers.filter((broker) => broker.alerting);
@@ -46,12 +46,12 @@ const Dashboard = () => {
         //TO DO: switch to using fetched data when the backend is set up
         console.log('metrics in Dashboard - ', data);
         // for each broker assign respective metrics from data object
-        testData.forEach(broker => {
+        testData.forEach((broker) => {
           broker.metrics[0].result = data.bytesIn;
           broker.metrics[1].result = data.bytesOut;
           broker.metrics[2].result = data.urp;
-        })
-        console.log('this is the test data: ', testData)
+        });
+        console.log('this is the test data: ', testData);
         setAlertingBrokers(getAlerts(testData));
         setBrokers(testData);
       } catch (err) {
@@ -70,7 +70,7 @@ const Dashboard = () => {
         connectionString={connectionString}
         key={uuidv4()}
       />
-      <BrokersContainer brokers={brokers} key={uuidv4()}/>
+      <BrokersContainer brokers={brokers} key={uuidv4()} />
     </div>
   );
 };
