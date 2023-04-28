@@ -1,4 +1,6 @@
 const express = require('express');
+const fetch = require('node-fetch');
+// import { fetch } from 'node-fetch';
 
 const apiController = {}
 
@@ -69,8 +71,12 @@ apiController.getURP = (req, res, next) => {
 
 apiController.getBytesIn = (req, res, next) => {
   console.log('getting Bytes In')
+  // window of 4 hours, getting data in 10 minute intervals
+  const endTimestamp = Math.floor(now.getTime() / 1000);
+  const startTimestamp = Math.floor(endTimestamp - (4*60*60));
+  const step = 600;
   //fetch('http://localhost:9090/api/v1/query?query=kafka_server_brokertopicmetrics_bytesin_total')
-  fetch('http://localhost:9090/api/v1/query_range?query=kafka_server_brokertopicmetrics_bytesin_total&start=2023-04-27T15:42:30.781Z&end=2023-04-27T15:45:00.781Z&step=15s')
+  fetch(`http://localhost:9090/api/v1/query_range?query=kafka_server_brokertopicmetrics_bytesin_total&start=${startTimestamp}&end=${endTimestamp}&step=${step}s`)
   .then(response => response.json())
   .then(data => {
     console.log('data has been parsed ', data)
@@ -89,7 +95,11 @@ apiController.getBytesIn = (req, res, next) => {
 
 apiController.getBytesOut = (req, res, next) => {
   console.log('getting Bytes Out')
-  fetch('http://localhost:9090/api/v1/query_range?query=kafka_server_brokertopicmetrics_bytesout_total&start=2023-04-27T15:42:30.781Z&end=2023-04-27T15:45:00.781Z&step=15s')
+  // window of 4 hours, getting data in 10 minute intervals
+  const endTimestamp = Math.floor(now.getTime() / 1000);
+  const startTimestamp = Math.floor(endTimestamp - (4*60*60));
+  const step = 600;
+  fetch(`http://localhost:9090/api/v1/query_range?query=kafka_server_brokertopicmetrics_bytesout_total&start=${startTimestamp}&end=${endTimestamp}&step=${step}s`)
   .then(response => response.json())
   .then(data => {
     res.locals.metrics.bytesOut = data.data.result;
