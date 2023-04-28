@@ -8,10 +8,10 @@ const Broker = ({ brokerData }) => {
 
   const toggleExpand = () => setExpandedDisplay(!expandedDisplay);
   const brokerMetrics = brokerData.metrics.map((metric) => (
-    <Metric name={metric.name} result={metric.result}/>
+    <Metric name={metric.name} result={metric.result} />
   ));
-console.log('brokerMetrics - ', brokerMetrics)  
-//console.log('metrics in Broker is ', metrics)
+  // console.log('brokerMetrics - ', brokerMetrics)
+  //console.log('metrics in Broker is ', metrics)
   // style={{'background-color': {metric.altering ? 'salmon' : 'skyblue'}}}
   return (
     <section className='broker container' id={brokerData.id}>
