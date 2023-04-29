@@ -44,25 +44,25 @@ export function BytesInChart(bytesIn) {
         },
       },
       y: {
-        display: true, 
+        display: true,
         title: {
           display: true,
           text: 'Bytes In',
         },
         ticks: {
           stepSize: 10000,
-        }
-      }
-    }
+        },
+      },
+    },
   };
-  console.log('bytesIn... ', bytesIn)
+  console.log('bytesIn... ', bytesIn);
   // get data
   // get bytes in/ time from bytes in array
-  const bytesY = bytesIn.map(tuple => Number(tuple[1]));
+  const bytesY = bytesIn?.map((tuple) => Number(tuple[1]));
   const startTime = bytesIn[0][0];
-  const timeX = bytesIn.map((tuple, idx) => {
-    return tuple[0]-startTime;
-  })
+  const timeX = bytesIn?.map((tuple, idx) => {
+    return tuple[0] - startTime;
+  });
   const data = {
     labels: timeX,
     datasets: [
@@ -72,12 +72,11 @@ export function BytesInChart(bytesIn) {
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
-     
     ],
   };
-  
+
   return <Line options={bytesInOptions} data={data} />;
-};
+}
 
 export function BytesOutChart(bytesOut) {
   const bytesOutOptions = {
@@ -102,25 +101,25 @@ export function BytesOutChart(bytesOut) {
         },
       },
       y: {
-        display: true, 
+        display: true,
         title: {
           display: true,
           text: 'Bytes Out',
         },
         ticks: {
           stepSize: 10000,
-        }
-      }
-    }
+        },
+      },
+    },
   };
-  console.log('bytesOut... ', bytesOut)
+  console.log('bytesOut... ', bytesOut);
   // get data
   // get bytes out / time from bytes in array
-  const bytesY = bytesOut.map(tuple => Number(tuple[1]));
+  const bytesY = bytesOut?.map((tuple) => Number(tuple[1]));
   const startTime = bytesOut[0][0];
-  const timeX = bytesOut.map((tuple, idx) => {
-    return tuple[0]-startTime;
-  })
+  const timeX = bytesOut?.map((tuple, idx) => {
+    return tuple[0] - startTime;
+  });
   const data = {
     labels: timeX,
     datasets: [
@@ -130,13 +129,11 @@ export function BytesOutChart(bytesOut) {
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
-     
     ],
   };
 
   return <Line options={bytesOutOptions} data={data} />;
-};
-
+}
 
 export function URPChart(URPData) {
   const URPOptions = {
@@ -161,24 +158,24 @@ export function URPChart(URPData) {
         },
       },
       y: {
-        display: true, 
+        display: true,
         title: {
           display: true,
           text: 'URP Count',
         },
         ticks: {
           stepSize: 1,
-        }
-      }
-    }
+        },
+      },
+    },
   };
-  console.log('URP... ', URPData)
+  console.log('URP... ', URPData);
 
-  const urps = URPData.map(tuple => Number(tuple[1]));
+  const urps = URPData.map((tuple) => Number(tuple[1]));
   const startTime = URPData[0][0];
   const timeX = URPData.map((tuple, idx) => {
-    return tuple[0]-startTime;
-  })
+    return tuple[0] - startTime;
+  });
   const data = {
     labels: timeX,
     datasets: [
@@ -188,10 +185,8 @@ export function URPChart(URPData) {
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
-     
     ],
   };
 
   return <Line options={URPOptions} data={data} />;
-};
-
+}

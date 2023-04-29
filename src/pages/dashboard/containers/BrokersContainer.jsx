@@ -1,6 +1,6 @@
 import React from 'react';
 import Broker from '../components/Broker';
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
 
 const BrokersContainer = ({ brokers }) => {
   // map array of brokers into container
@@ -14,11 +14,7 @@ const BrokersContainer = ({ brokers }) => {
       brokerData={broker}
     />
   ));
-  return (
-    <section id='brokers-container' className='container'>
-      {displayBrokers}
-    </section>
-  );
+  return <section id='brokers-container'>{displayBrokers}</section>;
 };
 
 export default BrokersContainer;

@@ -109,9 +109,10 @@ body {
     min-height: 100vh;
     // padding: 50px 100px 10px;
     // added margin to make top broker visible, can remove once solution is found
-    margin-top: 80px;
+    padding: 80px 20px;
     .broker {
       background-color: $light;
+      margin-bottom: 10px;
       .collapsed-bar {
         display: flex;
         align-items: center;
