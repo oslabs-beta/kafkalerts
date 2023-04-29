@@ -55,7 +55,7 @@ export function BytesInChart(bytesIn) {
       },
     },
   };
-  console.log('bytesIn... ', bytesIn);
+  // console.log('bytesIn... ', bytesIn);
   // get data
   // get bytes in/ time from bytes in array
   const bytesY = bytesIn?.map((tuple) => Number(tuple[1]));
@@ -112,7 +112,7 @@ export function BytesOutChart(bytesOut) {
       },
     },
   };
-  console.log('bytesOut... ', bytesOut);
+  // console.log('bytesOut... ', bytesOut);
   // get data
   // get bytes out / time from bytes in array
   const bytesY = bytesOut?.map((tuple) => Number(tuple[1]));
@@ -169,7 +169,7 @@ export function URPChart(URPData) {
       },
     },
   };
-  console.log('URP... ', URPData);
+  // console.log('URP... ', URPData);
 
   const urps = URPData.map((tuple) => Number(tuple[1]));
   const startTime = URPData[0][0];
