@@ -11,7 +11,7 @@ const Metric = ({ name, result, alerting }) => {
   );
   let chart = [];
   if (name === 'Bytes In') {
-    console.log('bytes in values', result[0].values)
+    console.log('bytes in values', result[0].values);
     chart = BytesInChart(result[0].values);
   }
   if (name === 'Bytes Out') {
