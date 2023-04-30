@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Alert = ({ info }) => {
-  return <div className='alert-box'>{info.id}</div>;
+const Alert = ({ broker }) => {
+  return <div className='alert-box'>{broker[0]}</div>;
 };
 
 export default Alert;

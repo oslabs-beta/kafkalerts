@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import AlertsContainer from './AlertsContainer';
 import UserMenu from '../components/UserMenu';
 import logo from '../../../assets/logo.png';
-import {v4 as uuidv4} from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
 
-const DashNav = ({ alertingBrokers, username, connectionString }) => {
+const DashNav = ({ brokers, username, connectionString }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
     <nav id='dash-nav'>
-      <AlertsContainer alertingBrokers={alertingBrokers} key={uuidv4()}/>
+      <AlertsContainer brokers={brokers} key={uuidv4()} />
       <button
         id='user-menu-button'
         onClick={toggleMenu}
