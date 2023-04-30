@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Metric from './Metric';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -195,9 +195,11 @@ const Broker = ({ id, alerts }) => {
       <Metric name={metric} result={metrics[metric]} key={uuidv4()} />
     );
   }
-
+  useEffect(() => {
+    if (alerts.length) toggleExpand();
+  }, []);
   return (
-    <section className='broker container' id={id}>
+    <section className='broker container' id={'broker' + id}>
       <div className='collapsed-bar'>
         <div>ID: {id}</div>
         Alerts:{' '}

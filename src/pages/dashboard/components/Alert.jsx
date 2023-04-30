@@ -7,9 +7,10 @@ const Alert = ({ broker }) => {
       activeClass='active'
       smooth
       spy
-      to={broker[0]}
+      to={'broker' + broker[0]}
       offset={-80}
       className='alert-box'
+      onClick={() => console.log('hello')}
     >
       {broker[0]}
     </Link>
