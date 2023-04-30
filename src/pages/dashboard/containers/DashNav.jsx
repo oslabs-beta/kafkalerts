@@ -4,7 +4,7 @@ import UserMenu from '../components/UserMenu';
 import logo from '../../../assets/logo.png';
 import {v4 as uuidv4} from 'uuid'
 
-const DashNav = ({ alertingBrokers, username, connectionString }) => {
+const DashNav = ({ alertingBrokers, username, connectionString, handleSubmit }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
   return (
@@ -21,6 +21,7 @@ const DashNav = ({ alertingBrokers, username, connectionString }) => {
         username={username}
         menuOpen={menuOpen}
         connectionString={connectionString}
+        handleSubmit={handleSubmit}
       />
     </nav>
   );

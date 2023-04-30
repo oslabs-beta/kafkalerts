@@ -11,12 +11,13 @@ const Dashboard = () => {
   const [connectionString, setConnectionString] = useState(
     'grafana.org/themetricsyouwant.forfree'
   );
-
+  const [brokerIds, setBrokerIds] = useState([])
   const [bytesIn, setBytesIn] = useState([]);
   const [activeBrokers, setActiveBrokers] = useState([]);
   const [urp, setUrp] = useState([]);
   const [bytesOut, setBytesOut] = useState([]);
 
+  let promURI = '';
   const testData = [
     {
       id: '1',
@@ -52,6 +53,34 @@ const Dashboard = () => {
       ],
     },
   ];
+  // when user submits form, ids will be added to an array
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const idInput = e.target.elements.idInput.value;
+    const idsArray = idInput.split(',').map(id => id.trim().toString());
+    // update Prometheus host to use for querying later
+    promURI = e.target.elements.promInput.value;
+    // store brokerIds in DB
+    try {
+      const response = await fetch('http://localhost:3001/addbrokers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({idsArray: idsArray, username: username}), 
+      } 
+      );
+      const data = await response.json();
+      // update state with new array of Ids
+      setBrokerIds(idsArray);
+      console.log('broker IDs... ', idsArray)
+      console.log('response from DB: ', data)
+      e.target.reset();
+    } catch (error) {
+      console.error('Error submitting brokerIDs to database: ', error);
+    }
+   
+  }
   const getAlerts = (brokers) => brokers.filter((broker) => broker.alerting);
 
   const getBytesIn = async () => {
@@ -103,7 +132,7 @@ const Dashboard = () => {
       const data = await response.json();
       setUrp(data.data.result);
       // res.locals.metrics.urp = data.data.result;
-      // console.log('we have URP: ', data.data.result.values)
+      console.log('we have URP: ', data.data.result)
     } catch (err) {
       console.log('error getting URP');
     }
@@ -125,7 +154,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     getActiveBrokers();
-    getUrp;
+    getUrp();
     getBytesIn();
     getBytesOut();
     setAlertingBrokers(getAlerts(testData));
@@ -138,6 +167,7 @@ const Dashboard = () => {
         alertingBrokers={alertingBrokers}
         username={username}
         connectionString={connectionString}
+        handleSubmit={handleSubmit}
         key={uuidv4()}
       />
       <BrokersContainer brokers={brokers} key={uuidv4()} />

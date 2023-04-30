@@ -75,4 +75,28 @@ authController.verifyUser = async (req, res, next) => {
   }
 };
 
+authController.addBrokers = async (req, res, next) => {
+  console.log('inside addBrokers')
+  try {
+    const { idsArray, username } = req.body;
+    console.log('req.body in addBrokers... ', req.body)
+    const queryString = `
+      UPDATE users
+      SET broker_ids = $1
+      WHERE username = $2
+    `;
+    let inserted = await db.query(queryString, [idsArray, username]);
+    console.log('inserted.. ', inserted)
+    return next();
+    
+  } catch (err) {
+    // console.log('catch in verify user')
+    return next({
+      log: 'Error inside add Brokers.',
+      status: 401,
+      message: { err: 'Unable to add brokers to database table users.', err },
+    });
+  }
+};
+
 module.exports = authController;

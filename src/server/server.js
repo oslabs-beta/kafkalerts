@@ -65,6 +65,15 @@ app.post(
   }
 );
 
+// ADD BROKER IDS ROUTE
+app.post(
+  '/addbrokers',
+  authController.addBrokers,
+  (req, res) => {
+    return res.status(200).json('ids added')
+  }
+)
+
 // catch-all route handler for any requests to an unknown route
 app.use(function (err, req, res, next) {
   res.status(500);
