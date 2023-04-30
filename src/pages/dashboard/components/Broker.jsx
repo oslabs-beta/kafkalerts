@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Metric from './Metric';
 import { v4 as uuidv4 } from 'uuid';
 
-const Broker = ({ id }) => {
+const Broker = ({ id, alerts }) => {
   const [expandedDisplay, setExpandedDisplay] = useState(false);
   const [totalAlerts, setTotalAlerts] = useState(0);
   const [metrics, setMetrics] = useState({});
