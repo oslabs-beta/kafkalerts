@@ -24,8 +24,7 @@
       "@testing-library/jest-dom/extend-expect"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
       "\\.(scss)$": "<rootDir>/src/__mocks__/styleMock.js"
     }
   },
@@ -48,6 +47,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
+    "react-scroll": "^1.8.9",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

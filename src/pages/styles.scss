@@ -107,8 +107,6 @@ body {
     width: 100vw;
     max-width: 1200px;
     min-height: 100vh;
-    // padding: 50px 100px 10px;
-    // added margin to make top broker visible, can remove once solution is found
     padding: 80px 20px;
     .broker {
       background-color: $light;
@@ -117,18 +115,16 @@ body {
         display: flex;
         align-items: center;
         gap: 8px;
-        div {
-          white-space: nowrap;
-          .total-alerts-box {
-            background-color: rgb(171, 171, 255);
-            width: 30px;
-            height: 30px;
-            text-align: center;
-          }
-        }
-        #shorten {
-          overflow: hidden;
-          text-overflow: ellipsis;
+        .total-alerts-box {
+          background-color: rgb(171, 171, 255);
+          width: 30px;
+          height: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 5px;
+          border: $regular-border;
         }
       }
       .collapsed-bar button:last-child {
