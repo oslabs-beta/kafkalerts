@@ -7,6 +7,21 @@ const Broker = ({ id, alerts }) => {
   const [expandedDisplay, setExpandedDisplay] = useState(false);
   const [metrics, setMetrics] = useState({});
 
+  async function fetchWithTimeout(resource, options = {}) {
+    const { timeout = 1000 } = options;
+
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+
+    const response = await fetch(resource, {
+      ...options,
+      signal: controller.signal,
+    });
+    clearTimeout(id);
+
+    return response;
+  }
+
   const getBytesIn = async () => {
     console.log('getting Bytes In');
     const testData = {
@@ -51,7 +66,7 @@ const Broker = ({ id, alerts }) => {
     const step = 60;
     //fetch('http://localhost:9090/api/v1/query?query=kafka_server_brokertopicmetrics_bytesin_total')
     try {
-      const response = await fetch(
+      const response = await fetchWithTimeout(
         `http://localhost:9090/api/v1/query_range?query=kafka_server_brokertopicmetrics_bytesin_total&start=${startTimestamp}&end=${endTimestamp}&step=${step}s{broker_id=${id}}`
       );
       const data = await response.json();
@@ -108,7 +123,7 @@ const Broker = ({ id, alerts }) => {
     const startTimestamp = Math.floor(endTimestamp - 20 * 60);
     const step = 60;
     try {
-      const response = await fetch(
+      const response = await fetchWithTimeout(
         `http://localhost:9090/api/v1/query_range?query=kafka_server_brokertopicmetrics_bytesout_total&start=${startTimestamp}&end=${endTimestamp}&step=${step}s{broker_id=${id}}`
       );
       const data = await response.json();
@@ -166,7 +181,7 @@ const Broker = ({ id, alerts }) => {
     // const oldQuery =
     //   'http://localhost:9090/api/v1/query?query=kafka_server_replicamanager_underreplicatedpartitions';
     try {
-      const response = await fetch(queryURL);
+      const response = await fetchWithTimeout(queryURL);
       const data = await response.json();
       if (data) {
         return data.data.result;
