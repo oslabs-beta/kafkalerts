@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Broker = ({ id, alerts }) => {
   const [expandedDisplay, setExpandedDisplay] = useState(false);
-  const [totalAlerts, setTotalAlerts] = useState(0);
   const [metrics, setMetrics] = useState({});
 
   const getBytesIn = async () => {
@@ -201,11 +200,18 @@ const Broker = ({ id, alerts }) => {
     <section className='broker container' id={id}>
       <div className='collapsed-bar'>
         <div>ID: {id}</div>
-        <div>
-          Alerts: <p className='total-alerts-box'>{totalAlerts}</p>
+        Alerts:{' '}
+        <div
+          className='total-alerts-box'
+          style={{
+            backgroundColor: alerts.length
+              ? 'rgb(250, 115, 137)'
+              : 'rgb(171, 171, 255)',
+          }}
+        >
+          {alerts.length}
         </div>
-        {/* <div id='shorten'>Topics: {brokerData.topics.join(', ')}</div> */}
-        {/* <div>Partitions: {brokerData.partitions}</div> */}
+        <p>{alerts}</p>
         <button onClick={toggleExpand}>
           {expandedDisplay ? 'collapse' : 'expand'}
         </button>
