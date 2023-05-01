@@ -157,3 +157,28 @@ body {
     }
   }
 }
+
+#landing-page {
+  min-height: 100vh;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #header {
+    position: fixed;
+    background-color: pink;
+    width: 100vw;
+  }
+  #main {
+    max-width: 1200px;
+    padding-top: 80px;
+    flex: 1 0 auto;
+    background-color: red;
+  }
+  #footer {
+    width: 100vw;
+    flex-shrink: 0;
+    background-color: lightgreen;
+  }
+}
