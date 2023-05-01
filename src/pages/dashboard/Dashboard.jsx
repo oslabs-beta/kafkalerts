@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [connectionString, setConnectionString] = useState(
     'grafana.org/themetricsyouwant.forfree'
   );
-
+    let promURI = '';
   const [brokerIds, setBrokerIds] = useState([
     '1',
     '2',
