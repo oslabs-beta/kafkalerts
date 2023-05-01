@@ -34,16 +34,16 @@ app.use(express.static(path.join(__dirname, '../index.html')));
 
 //GET METRICS ROUTE
 //TO DO: actually build this
-app.get(
-  '/kafka',
-  apiController.getActiveBrokers,
-  apiController.getURP,
-  apiController.getBytesIn,
-  apiController.getBytesOut,
-  (req, res) => {
-    return res.status(200).json(res.locals.metrics);
-  }
-);
+// app.get(
+//   '/kafka',
+//   apiController.getActiveBrokers,
+//   apiController.getURP,
+//   apiController.getBytesIn,
+//   apiController.getBytesOut,
+//   (req, res) => {
+//     return res.status(200).json(res.locals.metrics);
+//   }
+// );
 
 // LOG IN ROUTE
 app.post(

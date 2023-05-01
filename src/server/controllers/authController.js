@@ -2,7 +2,6 @@ const db = require('../postgres'); // db module
 // const pgp = db.$config.pgp; // the library's root after initialization
 const bcrypt = require('bcrypt');
 
-
 const authController = {};
 
 authController.createAccount = async (req, res, next) => {
@@ -22,13 +21,17 @@ authController.createAccount = async (req, res, next) => {
         });
       } else {
         const passHash = await bcrypt.hash(password, 10);
-        const newUser = 'INSERT INTO users (username, password) VALUES ($1, $2)';
+        const newUser =
+          'INSERT INTO users (username, password) VALUES ($1, $2)';
         await db.query(newUser, [username, passHash], (err, user) => {
           if (err) {
             return next({
               log: 'Error occurred when creating new account.',
               status: 401,
-              message: { err: 'Error occurred when creating new account.', err },
+              message: {
+                err: 'Error occurred when creating new account.',
+                err,
+              },
             });
           } else {
             res.locals.isVerified = true;
@@ -37,7 +40,7 @@ authController.createAccount = async (req, res, next) => {
           }
         });
       }
-    });      
+    });
   } catch (err) {
     return next({
       log: 'Error occurred during create account.',

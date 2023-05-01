@@ -1,24 +1,14 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import { BytesInChart, BytesOutChart, URPChart } from './Charts';
 
-const Metric = ({ name, result, alerting }) => {
-  console.log(
-    'inside metric name is ',
-    name,
-    ' inside Metric, result is ',
-    result
-  );
+const Metric = ({ name, result }) => {
   let chart = [];
-  if (name === 'Bytes In') {
-    chart = BytesInChart(result[0]?.values);
-  }
-  if (name === 'Bytes Out') {
-    chart = BytesOutChart(result[0]?.values);
-  }
-  if (name === 'URP') {
-    chart = URPChart(result[0]?.values);
-  }
+  chart =
+    name === 'Bytes In'
+      ? BytesInChart(result)
+      : name === 'Bytes Out'
+      ? BytesOutChart(result)
+      : URPChart(result);
 
   return (
     <div className='metric'>
