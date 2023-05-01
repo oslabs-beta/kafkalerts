@@ -22,6 +22,7 @@ async function createSchema() {
 const makeUserTable = `CREATE TABLE IF NOT EXISTS users (
     username VARCHAR(24) NOT NULL,
     password VARCHAR(255) NOT NULL,
+    broker_ids text[],
     PRIMARY KEY (username) 
  )`;
 
