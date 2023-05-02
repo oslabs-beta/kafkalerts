@@ -10,7 +10,8 @@ img {
   max-width: 100%;
 }
 body {
-  background-color: #0e3d61;
+  background-color: $page-background;
+  font-size: 1rem;
 }
 .pages {
   width: 100vw;
@@ -22,7 +23,7 @@ body {
 }
 .container {
   background-color: $medium-dark;
-  padding: 10px;
+  padding: 2% 3%;
   border-radius: 10px;
   border: $regular-border;
   color: $dark;
@@ -38,11 +39,14 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    min-height: 50px;
-    background-color: $medium-light;
+    color: $dark;
+    min-height: 80px;
+    // background-color: $medium-light;
+    background-image: linear-gradient(90deg, rgb(249, 75, 6) 0%, hsla(42, 94%, 57%, 1) 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.8rem;
     h1 {
       position: absolute;
       left: 50%;
@@ -50,14 +54,43 @@ body {
     }
   }
   #login-container {
+    background-color: $chart-background;
     width: 90%;
     max-width: 500px;
-    height: 300px;
+    height: 280px;
+    font-size: 1.2rem;
     #button-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
       width: 100%;
+      margin: 5% auto;
       button {
-        width: 50%;
+        width: 40%;
+        height: 40px;
+        margin: 4%;
+        background-color: $button-background;
+        color: $text;
+        border-radius: 8px; 
+        font-size: 1.15rem;
+        font-weight: bold;
+        border: 2.6px solid $medium-dark;
       }
+    }
+    #username {
+      margin: 4% 3% 3% 5%;
+      height: 25px;
+      width: 200px;
+      border-radius: 4px;
+      border: $small-box-border-dark;
+    }
+    #password {
+      margin: 3% 3% 5% 6.7%;
+      height: 25px;
+      width: 200px;
+      border-radius: 4px;
+      border: $small-box-border-dark;
     }
   }
 }
@@ -87,12 +120,13 @@ body {
         background-color: $medium-dark;
         margin-left: 12px;
         padding: 3px;
-        height: 30px;
-        width: 30px;
+        height: 35px;
+        width: 35px;
         justify-content: center;
         align-items: center;
         border-radius: 4px;
         border: $small-box-border-light;
+        font-size: 1.3rem;
       }
       .alert-box:hover {
         background-color: darken($medium-dark, 10%);
@@ -130,14 +164,13 @@ body {
         gap: 8px;
         .total-alerts-box {
           background-color: $medium-light;
-          width: 30px;
-          height: 30px;
+          width: 33px;
+          height: 33px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           border-radius: 5px;
-          // border: $small-box-border-dark;
         }
       }
       .collapsed-bar button:last-child {

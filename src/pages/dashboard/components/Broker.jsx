@@ -222,10 +222,9 @@ const Broker = ({ id, alerts }) => {
           className='total-alerts-box'
           style={{
             backgroundColor: alerts.length ? "#ff6b35" : '#1a659e',
-            color: alerts.length ? "#1a659e" : 'white',
-            border: alerts.length ? '2px solid #1a659e' : '2px solid #034373'
-            // fontSize: '16px',
-            // fontWeight: 900
+            color: alerts.length ? "#004e89" : '#fcfce8',
+            border: alerts.length ? '2px solid #1a659e' : '2px solid #034373',
+            fontSize: '1.32rem',
           }}
         >
           {alerts.length}
