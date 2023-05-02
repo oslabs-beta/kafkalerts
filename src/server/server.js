@@ -13,6 +13,7 @@ const PORT = 3000;
 const corsOptions = {
   origin: 'https://kafkalerts.vercel.app',
   credentials: true,
+  preflightContinue: true,
   methods: 'GET, POST, PUT, DELETE, OPTIONS',
   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
 };
