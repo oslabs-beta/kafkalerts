@@ -12,7 +12,7 @@ const PORT = 3000;
 
 // Set up CORS options to allow passing through cookies to the client server
 const corsOptions = {
-  origin: 'http://localhost:8080',
+  origin: 'https://kafkalerts-61obnxs3r-kafkalerts.vercel.app',
   credentials: true,
   methods: 'GET, POST, PUT, DELETE, OPTIONS',
   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
