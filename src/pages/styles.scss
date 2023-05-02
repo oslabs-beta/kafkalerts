@@ -219,8 +219,42 @@ body {
   #main {
     max-width: 1200px;
     padding-top: 80px;
+    display: flex;
+    flex-direction: column;
     flex: 1 0 auto;
     background-color: red;
+    align-items: center;
+    justify-content: space-between;
+    #hero {
+      max-width: 800px;
+      background-color: lightblue;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      h1 {
+        font-size: 3.5em;
+      }
+      h3 {
+        margin-top: 20px;
+      }
+      button {
+        font-size: 1.2em;
+        padding: 10px;
+        border-radius: 3px;
+        margin-top: 20px;
+      }
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .features-row {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   #footer {
     width: 100vw;

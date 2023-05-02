@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <h1>Hero Comp</h1>
+    <div id='hero'>
+      <h1>kafkAlerts</h1>
+      <h2>Driven by accessibility.</h2>
+      <h3>Broker metric monitoring and alerting for your Kafka cluster</h3>
+      <p></p>
+      <button onClick={() => navigate('/login')}>Connect</button>
     </div>
   );
 };

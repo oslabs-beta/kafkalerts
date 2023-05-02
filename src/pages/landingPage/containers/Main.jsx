@@ -6,7 +6,7 @@ import Team from '../components/Team';
 const Main = () => {
   return (
     <div id='main'>
-      <h1>kafkAlerts</h1>
+      
       <Hero />
       <Features />
       <Team />
