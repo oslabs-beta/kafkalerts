@@ -42,7 +42,11 @@ body {
     color: $dark;
     min-height: 80px;
     // background-color: $medium-light;
-    background-image: linear-gradient(90deg, rgb(249, 75, 6) 0%, hsla(42, 94%, 57%, 1) 100%);
+    background-image: linear-gradient(
+      90deg,
+      rgb(249, 75, 6) 0%,
+      hsla(42, 94%, 57%, 1) 100%
+    );
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -72,7 +76,7 @@ body {
         margin: 4%;
         background-color: $button-background;
         color: $text;
-        border-radius: 8px; 
+        border-radius: 8px;
         font-size: 1.15rem;
         font-weight: bold;
         border: 2.6px solid $medium-dark;
@@ -98,7 +102,12 @@ body {
 #dashboard-page {
   #dash-nav {
     position: fixed;
-    background-image: linear-gradient(to bottom, $medium-dark, 95%, transparent);
+    background-image: linear-gradient(
+      to bottom,
+      $medium-dark,
+      95%,
+      transparent
+    );
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -114,7 +123,11 @@ body {
       border-radius: 10px;
       flex-direction: row;
       align-items: center;
-      background-image: linear-gradient(90deg, rgb(249, 75, 6) 0%, hsla(42, 94%, 57%, 1) 100%);;
+      background-image: linear-gradient(
+        90deg,
+        rgb(249, 75, 6) 0%,
+        hsla(42, 94%, 57%, 1) 100%
+      );
       .alert-box {
         display: flex;
         background-color: $medium-dark;
@@ -206,7 +219,7 @@ body {
 
 #landing-page {
   min-height: 100vh;
-  background-color: antiquewhite;
+  background-color: $page-background;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,6 +228,11 @@ body {
     position: fixed;
     background-color: pink;
     width: 100vw;
+    background-image: linear-gradient(
+      90deg,
+      rgb(249, 75, 6) 0%,
+      hsla(42, 94%, 57%, 1) 100%
+    );
   }
   #main {
     max-width: 1200px;
@@ -222,7 +240,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
-    background-color: red;
+    background-color: $page-background;
     align-items: center;
     justify-content: space-between;
     #hero {
@@ -250,15 +268,57 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
+      .features-row {
+        display: flex;
+        justify-content: space-between;
+        .single-feature-box {
+          background-color: pink;
+          margin: 2px;
+        }
+      }
     }
-    .features-row {
+    #team-box {
+      background-color: aqua;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      h2 {
+        text-align: center;
+      }
+      .team-members {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        .player-box {
+          background-color: orange;
+          margin: 2px;
+          width: 30%;
+          img {
+            margin-top: 10%;
+            width: 100px;
+          }
+          .links {
+            display: flex;
+          }
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
     }
   }
   #footer {
     width: 100vw;
     flex-shrink: 0;
-    background-color: lightgreen;
+    text-align: center;
+    background-image: linear-gradient(
+      to right,
+      hsla(42, 94%, 57%, 1) 0%,
+      rgb(249, 75, 6) 100%
+    );
   }
 }

@@ -1,11 +1,25 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faGithub } from '';
 
 const Player = ({ name, picSrc, github, linkedIn }) => {
   return (
-    <div>
-      <h1>Player </h1>
+    <div className='player-box'>
+      <div className='player-pic'>
+        <img src={picSrc} />
+        <h3>{name} </h3>
+      </div>
+      <div className='links'>
+        <a href={linkedIn} target='_blank'>
+          <FontAwesomeIcon icon='fa-brands fa-linkedin' />
+        </a>
+        <a href={github}>
+          <FontAwesomeIcon icon='fa-brands fa-github' href={github} />
+        </a>
+      </div>
     </div>
   );
 };
 
 export default Player;
+// <a href="your link here"> <i class="fa fa-dribbble fa-4x"></i></a>
