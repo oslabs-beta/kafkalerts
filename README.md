@@ -1,1 +1,1 @@
-# kafkalerts
+# kafkAlerts
