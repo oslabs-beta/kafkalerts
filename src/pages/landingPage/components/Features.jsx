@@ -11,7 +11,12 @@ const Features = () => {
   return (
     <div className='features'>
       <h1>Features</h1>
-      {features}
+      <div className='features-row'>
+        {features.slice(0,3)}
+      </div>
+      <div className='features-row'>
+        {features.slice(3,6)}
+      </div>
     </div>
   );
 };
