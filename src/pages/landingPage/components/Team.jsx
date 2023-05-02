@@ -5,7 +5,7 @@ const Team = () => {
   const team = [
     {
       name: 'Hazel Bolivar',
-      src: '../assets/hazel-headshot.jpeg',
+      src: '../assets/headshots/hazel-headshot.jpeg',
       github: 'https://github.com/hazelbolivar',
       linkedIn: 'https://www.linkedin.com/in/hazelbolivar/',
     },
@@ -35,15 +35,20 @@ const Team = () => {
     },
   ];
 
-  const players = team.map(player => {
-    return <Player name={player.name} picSrc={player.src} github={player.github} linkedIn={player.linkedIn}/>
-  })
+  const players = team.map((player) => {
+    return (
+      <Player
+        name={player.name}
+        picSrc={player.src}
+        github={player.github}
+        linkedIn={player.linkedIn}
+      />
+    );
+  });
   return (
     <div>
       <h1>Team Comp </h1>
-      <div className='team-members'>
-        {players}
-      </div>
+      <div className='team-members'>{players}</div>
     </div>
   );
 };
