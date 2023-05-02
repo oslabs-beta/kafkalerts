@@ -17,6 +17,7 @@ const Homepage = () => {
       console.log(username, password, endpoint);
       const response = await fetch(`https://kafkalerts.vercel.app/${endpoint}`, {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username, password: password }),
       });
