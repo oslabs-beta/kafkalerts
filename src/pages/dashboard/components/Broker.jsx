@@ -4,8 +4,6 @@ import Metric from './Metric';
 import { v4 as uuidv4 } from 'uuid';
 import test from '../../../assets/testData.js'
 
-console.log(test)
-
 const Broker = ({ id, alerts }) => {
   const [expandedDisplay, setExpandedDisplay] = useState(false);
   const [metrics, setMetrics] = useState({});
