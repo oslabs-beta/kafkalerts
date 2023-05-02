@@ -27,7 +27,7 @@ export function BytesInChart(bytesIn) {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'bottom',
+        position: 'none',
       },
       title: {
         display: true,
@@ -69,8 +69,8 @@ export function BytesInChart(bytesIn) {
       {
         label: 'Dataset 1',
         data: bytesY,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgb(249, 75, 6)',
+        backgroundColor: 'rgba(249, 75, 6, 0.5)',
       },
     ],
   };
@@ -84,7 +84,7 @@ export function BytesOutChart(bytesOut) {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'bottom',
+        position: 'none',
       },
       title: {
         display: true,
@@ -126,8 +126,8 @@ export function BytesOutChart(bytesOut) {
       {
         label: 'Dataset 1',
         data: bytesY,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgb(249, 75, 6)',
+        backgroundColor: 'rgba(249, 75, 6, 0.5)',
       },
     ],
   };
@@ -141,7 +141,8 @@ export function URPChart(URPData) {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        position: 'bottom',
+        // position: 'bottom',
+        position: 'none'
       },
       title: {
         display: true,
@@ -182,8 +183,8 @@ export function URPChart(URPData) {
       {
         label: 'Dataset 1',
         data: urps,
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgb(249, 75, 6)',
+        backgroundColor: 'rgba(249, 75, 6, 0.5)',
       },
     ],
   };

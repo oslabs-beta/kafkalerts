@@ -221,15 +221,16 @@ const Broker = ({ id, alerts }) => {
         <div
           className='total-alerts-box'
           style={{
-            backgroundColor: alerts.length
-              ? 'rgb(250, 115, 137)'
-              : 'rgb(171, 171, 255)',
+            backgroundColor: alerts.length ? "#ff6b35" : '#1a659e',
+            color: alerts.length ? "#004e89" : '#fcfce8',
+            border: alerts.length ? '2px solid #1a659e' : '2px solid #034373',
+            fontSize: '1.32rem',
           }}
         >
           {alerts.length}
         </div>
         <p>{alerts}</p>
-        <button onClick={toggleExpand}>
+        <button onClick={toggleExpand} style={{width: '72px', backgroundColor: '#fcfce8', borderRadius: '5px'}}>
           {expandedDisplay ? 'collapse' : 'expand'}
         </button>
       </div>

@@ -10,7 +10,8 @@ img {
   max-width: 100%;
 }
 body {
-  background-color: pink;
+  background-color: $page-background;
+  font-size: 1rem;
 }
 .pages {
   width: 100vw;
@@ -21,10 +22,16 @@ body {
   align-items: center;
 }
 .container {
-  background-color: $medium;
-  padding: 10px;
-  border-radius: 5px;
+  background-color: $medium-dark;
+  padding: 2% 3%;
+  border-radius: 10px;
   border: $regular-border;
+  color: $dark;
+  font-weight: bold;
+}
+
+#alerts-container {
+  color: $alert-header-text;
 }
 
 #homepage {
@@ -32,11 +39,14 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    min-height: 50px;
-    background-color: $medium;
+    color: $dark;
+    min-height: 80px;
+    // background-color: $medium-light;
+    background-image: linear-gradient(90deg, rgb(249, 75, 6) 0%, hsla(42, 94%, 57%, 1) 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.8rem;
     h1 {
       position: absolute;
       left: 50%;
@@ -44,14 +54,43 @@ body {
     }
   }
   #login-container {
+    background-color: $chart-background;
     width: 90%;
     max-width: 500px;
-    height: 300px;
+    height: 280px;
+    font-size: 1.2rem;
     #button-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
       width: 100%;
+      margin: 5% auto;
       button {
-        width: 50%;
+        width: 40%;
+        height: 40px;
+        margin: 4%;
+        background-color: $button-background;
+        color: $text;
+        border-radius: 8px; 
+        font-size: 1.15rem;
+        font-weight: bold;
+        border: 2.6px solid $medium-dark;
       }
+    }
+    #username {
+      margin: 4% 3% 3% 5%;
+      height: 25px;
+      width: 200px;
+      border-radius: 4px;
+      border: $small-box-border-dark;
+    }
+    #password {
+      margin: 3% 3% 5% 6.7%;
+      height: 25px;
+      width: 200px;
+      border-radius: 4px;
+      border: $small-box-border-dark;
     }
   }
 }
@@ -59,55 +98,63 @@ body {
 #dashboard-page {
   #dash-nav {
     position: fixed;
-    background-image: linear-gradient(to bottom, $light, 95%, transparent);
+    background-image: linear-gradient(to bottom, $medium-dark, 95%, transparent);
     padding: 20px;
     display: flex;
     flex-direction: row;
     top: 0;
-    width: 100%;
+    width: 100vw;
     max-width: 1200px;
-    height: 80px;
+    height: 100px;
+    align-items: center;
     #alerts-container {
       width: 100%;
+      height: 70px;
       display: flex;
+      border-radius: 10px;
       flex-direction: row;
       align-items: center;
+      background-image: linear-gradient(90deg, rgb(249, 75, 6) 0%, hsla(42, 94%, 57%, 1) 100%);;
       .alert-box {
-        background-color: rgb(250, 115, 137);
-        margin: 0 5px;
+        display: flex;
+        background-color: $medium-dark;
+        margin-left: 12px;
         padding: 3px;
-        height: 25px;
-        width: 25px;
-        text-align: center;
-        border-radius: 3px;
-        border: $regular-border;
+        height: 35px;
+        width: 35px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+        border: $small-box-border-light;
+        font-size: 1.3rem;
       }
       .alert-box:hover {
-        background-color: darken(rgb(250, 115, 137), 10%);
+        background-color: darken($medium-dark, 10%);
       }
     }
     #user-menu-button {
       border-radius: 50%;
-      margin-left: 20px;
-      width: 40px;
-      height: 40px;
+      margin-left: 10px;
+      width: 56px;
+      height: 56px;
     }
     #user-menu {
       position: absolute;
       right: 0px;
       margin: 50px 40px;
-      background-color: $medium;
+      background-color: $light;
       border: $regular-border;
       border-radius: 5px;
       padding: 5px;
     }
   }
   #brokers-container {
-    background-color: $light;
+    background-color: $medium-dark;
     width: 100vw;
     max-width: 1200px;
     min-height: 100vh;
     padding: 80px 20px;
+    margin-top: 18px;
     .broker {
       background-color: $light;
       margin-bottom: 10px;
@@ -116,15 +163,14 @@ body {
         align-items: center;
         gap: 8px;
         .total-alerts-box {
-          background-color: rgb(171, 171, 255);
-          width: 30px;
-          height: 30px;
+          background-color: $medium-light;
+          width: 33px;
+          height: 33px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           border-radius: 5px;
-          border: $regular-border;
         }
       }
       .collapsed-bar button:last-child {
@@ -136,16 +182,16 @@ body {
         justify-content: space-between;
         text-align: center;
         .metric {
-          color: red;
-          height: 300px;
+          color: $chart-header-text;
+          height: 280px;
           width: 350px;
-          border: 1px solid rgb(103, 102, 102);
+          border: 1px solid $medium-dark;
           border-radius: 5px;
-          background-color: rgb(253, 177, 147);
+          background-color: $chart-background;
           padding: 10px;
           margin: 10px 0;
           h2 {
-            border: 1px solid rgb(103, 102, 102);
+            border: 1px solid $dark;
             border-radius: 5px;
           }
           .graph canvas {
