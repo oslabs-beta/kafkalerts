@@ -11,7 +11,7 @@ const PORT = 3000;
 
 // Set up CORS options to allow passing through cookies to the client server
 const corsOptions = {
-  origin: 'https://kafkalerts.com',
+  origin: 'https://kafkalerts-5wyr7ttbl-kafkalerts.vercel.app/',
   credentials: true,
 //   preflightContinue: true,
   methods: 'GET, POST, PUT, DELETE, OPTIONS',
