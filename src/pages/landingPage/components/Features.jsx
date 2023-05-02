@@ -25,7 +25,7 @@ const featureObj = [
     // icon: <FontAwesomeIcon icon='fa-solid fa-bell' />,
     icon: <AlertIcon />,
     header: 'Alerts',
-    text: 'hen an issue is detected.',
+    text: 'When an issue is detected, broker specific alerts immediately appear at the top of your page.',
   },
   {
     icon: <SecurityIcon />,
