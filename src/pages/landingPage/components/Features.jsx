@@ -14,10 +14,10 @@ const featureObj = [
     // icon: <AccessibilityIcon />,
     icon: <FontAwesomeIcon icon='fa-solid fa-universal-access' />,
     header: 'Accessibility',
-    text: 'Designed with accessibility at the forefront.',
+    text: 'With accessibility at the forefront of all our design decisions, kafkAlerts has an accessibility rating of 100.',
   },
   {
-    icon: <BrokerIcon />,
+    icon: BrokerIcon, //<BrokerIcon />,
     header: 'Broker Metrics',
     text: 'See Kafka Cluster metrics broken down by individual broker.',
   },
@@ -25,7 +25,7 @@ const featureObj = [
     // icon: <FontAwesomeIcon icon='fa-solid fa-bell' />,
     icon: <AlertIcon />,
     header: 'Alerts',
-    text: 'Get broker specific alerts when an issue is detected.',
+    text: 'hen an issue is detected.',
   },
   {
     icon: <SecurityIcon />,
@@ -37,16 +37,11 @@ const featureObj = [
     header: 'Diagnose Issues',
     text: 'Use alerts and metrics to determine the source of cluster health issues.',
   },
-  {
-    icon: <SettingIcon />,
-    header: 'Save Preferences',
-    text: 'Save your preferences to your profile.',
-  },
-  {
-    icon: <CheckIcon />,
-    header: 'Testing',
-    text: 'Tested for accessibility and reliability.',
-  },
+  // {
+  //   icon: <SettingIcon />,
+  //   header: 'Save Preferences',
+  //   text: 'Save your preferences to your profile.',
+  // },
   {
     icon: <CheckIcon />,
     header: 'Testing',

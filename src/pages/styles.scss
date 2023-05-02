@@ -291,9 +291,10 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: red;
+      // background-color: red;
+      color: $alert-header-text;
       #features {
-        background-color: aquamarine;
+        // background-color: $alert-header-text;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -305,11 +306,13 @@ body {
           align-items: center;
           min-width: 250px;
           flex: 0 0 30%;
-          background-color: pink;
           margin: 2px;
           svg {
-            width: 200px;
-            background-color: red;
+            width: 50%;
+            height: 50%;
+          }
+          img {
+            width: 100px;
           }
         }
       }
@@ -362,21 +365,25 @@ body {
   #footer {
     width: 100vw;
     flex-shrink: 0;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     background-image: linear-gradient(
       to right,
       hsla(42, 94%, 57%, 1) 0%,
       rgb(249, 75, 6) 100%
     );
+    // font-size: 12px;
 
     .footer-links {
-      display: flex;
-      justify-content: center;
-      padding: 5px;
+      padding: 2px;
       a {
-        text-decoration: none;
         color: inherit;
-        padding: 5px;
+        margin-right: 8px;
+        :hover {
+          color: $page-background;
+        }
       }
     }
   }
