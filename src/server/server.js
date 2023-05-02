@@ -11,9 +11,9 @@ const PORT = 3000;
 
 // Set up CORS options to allow passing through cookies to the client server
 const corsOptions = {
-  origin: 'https://kafkalerts.vercel.app',
+  origin: 'https://kafkalerts.com',
   credentials: true,
-  preflightContinue: true,
+//   preflightContinue: true,
   methods: 'GET, POST, PUT, DELETE, OPTIONS',
   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
 };
@@ -82,7 +82,10 @@ app.use(function (err, req, res, next) {
 });
 
 // handler to send back 404 status code
-app.use((req, res) => res.sendStatus(404));
+app.use((req, res) => {
+  console.log('404 error handler');
+  res.sendStatus(404));
+}
 
 // global error handler
 app.use((err, req, res, next) => {
