@@ -1,9 +1,12 @@
 import React from 'react';
-
+import logo from '../../../assets/logo.png';
 const Header = () => {
   return (
     <div id='header'>
-      <h1>welcome to the header</h1>
+      <div>
+        <img src={logo} />
+      </div>
+      <h1>kafkAlerts</h1>
     </div>
   );
 };

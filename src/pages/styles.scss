@@ -220,19 +220,36 @@ body {
 #landing-page {
   min-height: 100vh;
   background-color: $page-background;
+  // background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   #header {
     position: fixed;
-    background-color: pink;
     width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(249, 75, 6);
     background-image: linear-gradient(
-      90deg,
-      rgb(249, 75, 6) 0%,
-      hsla(42, 94%, 57%, 1) 100%
+      to right,
+      rgb(249, 75, 6),
+      hsla(42, 94%, 57%, 1)
     );
+    div {
+      margin: 3px 10px 5px 5px;
+      padding: 3px;
+      border-radius: 50%;
+      background-image: linear-gradient(
+        to bottom,
+        rgb(249, 75, 6) 0%,
+        hsla(42, 94%, 57%, 1) 180%
+      );
+      img {
+        width: 50px;
+      }
+    }
   }
   #main {
     max-width: 1200px;
@@ -240,17 +257,16 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
-    background-color: $page-background;
     align-items: center;
-    justify-content: space-between;
     #hero {
       max-width: 800px;
-      background-color: lightblue;
+      // background-color: lightblue;
       padding: 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+      color: $text;
       h1 {
         font-size: 3.5em;
       }
@@ -262,27 +278,49 @@ body {
         padding: 10px;
         border-radius: 3px;
         margin-top: 20px;
+        background-color: $button-background;
+        border: 1px solid $medium-light;
+        color: $alert-header-text;
+        margin-top: 3rem;
+      }
+      button:hover {
+        background-color: $medium-dark;
       }
     }
-    .features {
+    #feature-box {
       display: flex;
       flex-direction: column;
       align-items: center;
-      .features-row {
+      background-color: red;
+      #features {
+        background-color: aquamarine;
         display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
         .single-feature-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 250px;
+          flex: 0 0 30%;
           background-color: pink;
           margin: 2px;
+          svg {
+            width: 200px;
+            background-color: red;
+          }
         }
       }
     }
     #team-box {
-      background-color: aqua;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      color: $text;
+      margin-top: 1rem;
       h2 {
         text-align: center;
       }
@@ -293,19 +331,29 @@ body {
         align-items: center;
         justify-content: center;
         .player-box {
-          background-color: orange;
+          //background-color: $medium-light;
+          //border: 2px solid $medium-light;
+          border-radius: 5px;
           margin: 2px;
           width: 30%;
+          max-width: 220px;
+          padding: 5px;
+          color: $text;
           img {
+            border: 1px solid $medium-light;
             margin-top: 10%;
-            width: 100px;
+            width: 100%;
+            border-radius: 3px;
           }
           .links {
             display: flex;
+            justify-content: center;
+            padding: 5px;
           }
           a {
             text-decoration: none;
             color: inherit;
+            padding: 5px;
           }
         }
       }
@@ -320,5 +368,16 @@ body {
       hsla(42, 94%, 57%, 1) 0%,
       rgb(249, 75, 6) 100%
     );
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+      a {
+        text-decoration: none;
+        color: inherit;
+        padding: 5px;
+      }
+    }
   }
 }

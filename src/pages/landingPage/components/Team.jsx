@@ -3,8 +3,8 @@ import Player from './Player';
 import hazel from '../../../assets/headshots/hazel-headshot.jpg';
 import ian from '../../../assets/headshots/ian-headshot.jpg';
 import krystal from '../../../assets/headshots/krystal-headshot.jpg';
-import annie from '../../../assets/headshots/Annie_Rosen_WEB_SMALL-17.jpg';
-import jeb from '../../../assets/headshots/jeb-headshot2.png';
+import annie from '../../../assets/headshots/annie-headshot.png';
+import jeb from '../../../assets/headshots/jeb-headshot.png';
 const Team = () => {
   const team = [
     {
