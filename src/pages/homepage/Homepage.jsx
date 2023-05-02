@@ -4,6 +4,7 @@ import '../styles.scss';
 import Navbar from './containers/NavBar';
 import LoginBox from './containers/LoginBox';
 
+
 const Homepage = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
