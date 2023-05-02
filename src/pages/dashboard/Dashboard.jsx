@@ -60,9 +60,9 @@ const Dashboard = () => {
   useEffect(() => {
     // TO DO: change temp messages to three relevant messages
     const tempErrorMessages = [
-      'temp error message 1',
-      'temp error message 2',
-      'temp error message 3',
+      'Under Replicated Paritions is greater than 0',
+      'Specified SLO 1 is out of bounds',
+      'Specified SLO 4 is out of bounds',
     ];
     Promise.all(
       brokerIds.map(async (brokerId) => {

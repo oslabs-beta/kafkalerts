@@ -13,7 +13,7 @@ const DashNav = ({ brokers, username, connectionString, handleSubmit }) => {
       <button
         id='user-menu-button'
         onClick={toggleMenu}
-        style={{ backgroundColor: menuOpen ? 'grey' : 'antiquewhite' }}
+        style={{ backgroundColor: menuOpen ? 'grey' : '#ff6b35' }}
       >
         <img src={logo} alt='KA' />
       </button>

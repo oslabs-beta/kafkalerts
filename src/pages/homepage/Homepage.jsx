@@ -35,7 +35,7 @@ const Homepage = () => {
         handleSend={handleSend}
       />
       {/* TO DO: delete this */}
-      <button onClick={() => navigate('/dashboard')}>
+      <button style={{marginTop: '20px'}}onClick={() => navigate('/dashboard')}>
         Temp button to go to dashboard easily
       </button>
     </div>
