@@ -11,14 +11,14 @@ const PORT = 3000;
 
 
 // Set up CORS options to allow passing through cookies to the client server
-const corsOptions = {
-  origin: 'https://kafkalerts-61obnxs3r-kafkalerts.vercel.app',
-  credentials: true,
-  methods: 'GET, POST, PUT, DELETE, OPTIONS',
-  allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
-};
+// const corsOptions = {
+//   origin: 'https://kafkalerts-61obnxs3r-kafkalerts.vercel.app',
+//   credentials: true,
+//   methods: 'GET, POST, PUT, DELETE, OPTIONS',
+//   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -103,4 +103,5 @@ const listener = app.listen(PORT, () => {
   console.log(`Server listening on port: ${PORT}`);
 });
 
-module.exports = listener;
+// module.exports = listener;
+module.exports = app;
