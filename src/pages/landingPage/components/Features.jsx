@@ -1,13 +1,5 @@
 import React from 'react';
 import SingleFeature from './SingleFeature';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import AccessibilityIcon from '../../../assets/Icons/accessibility_icon.svg';
-// import BrokerIcon from '../../../assets/Icons/network_alt_icon.svg';
-// import AlertIcon from '../../../assets/Icons/bell_notification_icon.svg';
-// import SecurityIcon from '../../../assets/Icons/lock_key_icon.svg';
-// import HealthIcon from '../../../assets/Icons/health_shield_icon.svg';
-// import SettingIcon from '../../../assets/Icons/settings_icon.svg';
-// import CheckIcon from '../../../assets/Icons/check_icon.svg';
 
 const featureObj = [
   {
@@ -35,11 +27,6 @@ const featureObj = [
     header: 'Diagnose Issues',
     text: 'Use alerts and metrics to determine the source of cluster health issues.',
   },
-  // {
-  //   icon: <SettingIcon />,
-  //   header: 'Save Preferences',
-  //   text: 'Save your preferences to your profile.',
-  // },
   {
     icon: 'fa-file-lines',
     header: 'Testing',
