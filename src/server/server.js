@@ -10,15 +10,15 @@ const app = express();
 const PORT = 3000;
 
 // Set up CORS options to allow passing through cookies to the client server
-const corsOptions = {
-  origin: '*',
-  credentials: true,
-//   preflightContinue: true,
-  methods: 'GET, POST, PUT, DELETE, OPTIONS',
-  allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin',
-};
+// const corsOptions = {
+//   origin: '*',
+//   credentials: true,
+// //   preflightContinue: true,
+//   methods: 'GET, POST, PUT, DELETE, OPTIONS',
+//   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin',
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -45,6 +45,12 @@ app.use(express.static(path.join(__dirname, '../index.html')));
 //     return res.status(200).json(res.locals.metrics);
 //   }
 // );
+
+app.get('/latenight', (req, res) => {
+  console.log('whatever');
+  return res.status(200);
+});
+
 
 // LOG IN ROUTE
 app.post(
