@@ -16,3 +16,12 @@ module.exports = (globalConfig) => {
 //     ]
 //   }
 // ],
+
+// "version": 2,
+//   "builds": [
+//     {
+//       "src": "src/index.js",
+//       "use": "@vercel/node"
+//     }
+//   ],
+

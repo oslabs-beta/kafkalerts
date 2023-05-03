@@ -54,7 +54,7 @@ app.get('/latenight', (req, res) => {
 
 // LOG IN ROUTE
 app.post(
-  '/login',
+  '/api/login',
   authController.verifyUser,
   cookieController.setCookie,
   (req, res) => {
@@ -64,7 +64,7 @@ app.post(
 
 // SIGN UP ROUTE
 app.post(
-  '/signup',
+  '/api/signup',
   authController.createAccount,
   cookieController.setCookie,
   (req, res) => {
@@ -74,7 +74,7 @@ app.post(
 
 // ADD BROKER IDS ROUTE
 app.post(
-  '/addbrokers',
+  '/api/addbrokers',
   authController.addBrokers,
   (req, res) => {
     return res.status(200).json('ids added')
