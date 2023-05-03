@@ -35,6 +35,11 @@ body {
 }
 
 #homepage {
+  
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    align-items: center;
   #navbar-container {
     position: fixed;
     top: 0;
@@ -42,7 +47,11 @@ body {
     color: $dark;
     min-height: 80px;
     // background-color: $medium-light;
-    background-image: linear-gradient(90deg, rgb(249, 75, 6) 0%, hsla(42, 94%, 57%, 1) 100%);
+    background-image: linear-gradient(
+      90deg,
+      rgb(249, 75, 6) 0%,
+      hsla(42, 94%, 57%, 1) 100%
+    );
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,8 +66,9 @@ body {
     background-color: $chart-background;
     width: 90%;
     max-width: 500px;
-    height: 280px;
+    //height: 22vh;
     font-size: 1.2rem;
+    margin-top: auto;
     #button-box {
       display: flex;
       flex-direction: row;
@@ -72,7 +82,7 @@ body {
         margin: 4%;
         background-color: $button-background;
         color: $text;
-        border-radius: 8px; 
+        border-radius: 8px;
         font-size: 1.15rem;
         font-weight: bold;
         border: 2.6px solid $medium-dark;
@@ -98,7 +108,12 @@ body {
 #dashboard-page {
   #dash-nav {
     position: fixed;
-    background-image: linear-gradient(to bottom, $medium-dark, 95%, transparent);
+    background-image: linear-gradient(
+      to bottom,
+      $medium-dark,
+      95%,
+      transparent
+    );
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -114,7 +129,11 @@ body {
       border-radius: 10px;
       flex-direction: row;
       align-items: center;
-      background-image: linear-gradient(90deg, rgb(249, 75, 6) 0%, hsla(42, 94%, 57%, 1) 100%);;
+      background-image: linear-gradient(
+        90deg,
+        rgb(249, 75, 6) 0%,
+        hsla(42, 94%, 57%, 1) 100%
+      );
       .alert-box {
         display: flex;
         background-color: $medium-dark;
@@ -141,11 +160,34 @@ body {
     #user-menu {
       position: absolute;
       right: 0px;
-      margin: 50px 40px;
+      margin: 55px 80px;
+      margin-top: 75px;
+      // margin-right: 80px;
       background-color: $light;
+      background-image: linear-gradient(
+        to top,
+        $medium-light 0%,
+        $light 100%
+      );
       border: $regular-border;
       border-radius: 5px;
       padding: 5px;
+      .broker-id-form {
+        padding: 3px;
+        input {
+          width: 100%;
+          margin-top: 3px;
+        }
+      };
+      button {
+        padding: 3px;
+        margin-top: 3px;
+        background-color: $alert-header-text;
+        border-radius: 5px;
+      };
+      #logout {
+        margin-left: 3px;
+      }
     }
   }
   #brokers-container {
@@ -202,4 +244,175 @@ body {
       }
     }
   }
+}
+#footer {
+  width: 100vw;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    hsla(42, 94%, 57%, 1) 0%,
+    rgb(249, 75, 6) 100%
+  );
+  // font-size: 12px;
+  margin-top: auto;
+  .footer-links {
+    padding: 2px;
+    a {
+      color: inherit;
+      margin-right: 8px;
+      :hover {
+        color: $page-background;
+      }
+    }
+  }
+}
+#landing-page {
+  min-height: 100vh;
+  background-color: $page-background;
+  // background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #header {
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(249, 75, 6);
+    background-image: linear-gradient(
+      to right,
+      rgb(249, 75, 6),
+      hsla(42, 94%, 57%, 1)
+    );
+    div {
+      margin: 3px 10px 5px 5px;
+      padding: 3px;
+      border-radius: 50%;
+      background-image: linear-gradient(
+        to bottom,
+        rgb(249, 75, 6) 0%,
+        hsla(42, 94%, 57%, 1) 180%
+      );
+      img {
+        width: 50px;
+      }
+    }
+  }
+  #main {
+    max-width: 1200px;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    align-items: center;
+    #hero {
+      max-width: 800px;
+      // background-color: lightblue;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      color: $text;
+      h1 {
+        font-size: 3.5em;
+      }
+      h3 {
+        margin-top: 20px;
+      }
+      button {
+        font-size: 1.2em;
+        padding: 10px;
+        border-radius: 3px;
+        margin-top: 20px;
+        background-color: $button-background;
+        border: 1px solid $medium-light;
+        color: $alert-header-text;
+        margin-top: 3rem;
+      }
+      button:hover {
+        background-color: $medium-dark;
+      }
+    }
+    #feature-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // background-color: red;
+      color: $alert-header-text;
+      #features {
+        // background-color: $alert-header-text;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .single-feature-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 250px;
+          flex: 0 0 30%;
+          margin: 2px;
+          svg {
+            width: 50%;
+            height: 50%;
+          }
+          img {
+            width: 100px;
+          }
+        }
+      }
+    }
+    #team-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: $text;
+      margin-top: 1rem;
+      h2 {
+        text-align: center;
+      }
+      .team-members {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        .player-box {
+          //background-color: $medium-light;
+          //border: 2px solid $medium-light;
+          border-radius: 5px;
+          margin: 2px;
+          width: 30%;
+          max-width: 220px;
+          padding: 5px;
+          color: $text;
+          img {
+            border: 1px solid $medium-light;
+            margin-top: 10%;
+            width: 100%;
+            border-radius: 3px;
+          }
+          .links {
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+          }
+          a {
+            text-decoration: none;
+            color: inherit;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  } 
 }

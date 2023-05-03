@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../styles.scss';
 import Navbar from './containers/NavBar';
 import LoginBox from './containers/LoginBox';
+import Footer from '../landingPage/containers/Footer';
 
 
 const Homepage = () => {
@@ -40,6 +41,7 @@ const Homepage = () => {
       <button style={{marginTop: '20px'}}onClick={() => navigate('/dashboard')}>
         Temp button to go to dashboard easily
       </button>
+      <Footer />
     </div>
   );
 };
