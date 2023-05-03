@@ -18,7 +18,7 @@ const Homepage = () => {
       const response = await fetch(`https://kafkalerts.com/${endpoint}`, {
         method: 'POST',
 //         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'https://kafkalerts.com' },
         body: JSON.stringify({ username: username, password: password }),
       });
       console.log('line 24 console log', response.status);
