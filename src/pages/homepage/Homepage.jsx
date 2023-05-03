@@ -15,7 +15,7 @@ const Homepage = () => {
     //TO DO: fix body so that html injection attacks can't happen
     try {
       console.log(username, password, endpoint);
-      const response = await fetch(`https://kafkalerts-5wyr7ttbl-kafkalerts.vercel.app/${endpoint}`, {
+      const response = await fetch(`https://kafkalerts.com/${endpoint}`, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
