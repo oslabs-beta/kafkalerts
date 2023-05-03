@@ -18,10 +18,10 @@ const Homepage = () => {
       const response = await fetch(`https://kafkalerts-5wyr7ttbl-kafkalerts.vercel.app/${endpoint}`, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
         body: JSON.stringify({ username: username, password: password }),
       });
-      console.log(response.status);
+      console.log('line 24 console log', response.status);
       if (response.status === 200) navigate('/dashboard');
       else setErrorDisplay('block');
     } catch (err) {
