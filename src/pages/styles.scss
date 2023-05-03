@@ -31,7 +31,7 @@ body {
 }
 
 #alerts-container {
-  color: $alert-header-text;
+  color: $cream-text;
 }
 
 #homepage {
@@ -75,7 +75,7 @@ body {
         height: 40px;
         margin: 4%;
         background-color: $button-background;
-        color: $text;
+        color: $cream-text;
         border-radius: 8px;
         font-size: 1.15rem;
         font-weight: bold;
@@ -220,22 +220,20 @@ body {
 #landing-page {
   min-height: 100vh;
   background-color: $page-background;
-  // background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   #header {
     position: fixed;
     width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(249, 75, 6);
+    background-color: $accent-color;
     background-image: linear-gradient(
       to right,
-      rgb(249, 75, 6),
-      hsla(42, 94%, 57%, 1)
+      $accent-color,
+      $light-accent-color
     );
     div {
       margin: 3px 10px 5px 5px;
@@ -243,8 +241,8 @@ body {
       border-radius: 50%;
       background-image: linear-gradient(
         to bottom,
-        rgb(249, 75, 6) 0%,
-        hsla(42, 94%, 57%, 1) 180%
+        $accent-color 0%,
+        $light-accent-color 180%
       );
       img {
         width: 50px;
@@ -253,7 +251,7 @@ body {
   }
   #main {
     max-width: 1200px;
-    padding-top: 80px;
+    margin-top: 69px;
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
@@ -261,68 +259,81 @@ body {
     #hero {
       max-width: 800px;
       // background-color: lightblue;
-      padding: 30px;
+      padding: 10rem 0 8rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      color: $text;
-      h1 {
-        font-size: 3.5em;
+      color: $cream-text;
+      span {
+        font-family: $logo-font;
+        font-size: 4rem;
+        font-weight: 500;
+        margin-bottom: -0.3rem;
       }
-      h3 {
-        margin-top: 20px;
+      h1 {
+        font-weight: 400;
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 1.2rem;
       }
       button {
         font-size: 1.2em;
-        padding: 10px;
-        border-radius: 3px;
+        padding: 0.7rem 3rem;
+        border-radius: 3rem;
         margin-top: 20px;
         background-color: $button-background;
-        border: 1px solid $medium-light;
-        color: $alert-header-text;
+        background-color: lighten($page-background, 12%);
+        border: 1px solid $cream-text;
+        color: $cream-text;
         margin-top: 3rem;
       }
       button:hover {
-        background-color: $medium-dark;
+        background-color: lighten($page-background, 3%);
       }
     }
     #feature-box {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      // background-color: red;
-      color: $alert-header-text;
-      #features {
-        // background-color: $alert-header-text;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      color: $cream-text;
+      > :first-child {
+        width: 100%;
+        text-align: center;
+        font-weight: 400;
+        margin-bottom: 1.2rem;
+      }
+      .single-feature {
+        background-color: lighten($page-background, 7%);
+        border: 2px solid $cream-text;
+        border-radius: 10px;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        .single-feature-box {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          min-width: 250px;
-          flex: 0 0 30%;
-          margin: 2px;
-          svg {
-            width: 50%;
-            height: 50%;
-          }
-          img {
-            width: 100px;
-          }
+        flex-direction: column;
+        align-items: center;
+        min-width: 250px;
+        // min-width: 6rem;
+        flex: 0 0 30%;
+        margin: 8px;
+        padding: 40px 20px 20px;
+        strong {
+          margin-top: 1.5rem;
+          font-size: 20px;
+          margin-bottom: 0.7rem;
+        }
+        p {
+          text-align: center;
         }
       }
     }
+
     #team-box {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      color: $text;
+      color: $cream-text;
       margin-top: 1rem;
       h2 {
         text-align: center;
@@ -334,16 +345,14 @@ body {
         align-items: center;
         justify-content: center;
         .player-box {
-          //background-color: $medium-light;
-          //border: 2px solid $medium-light;
           border-radius: 5px;
           margin: 2px;
           width: 30%;
           max-width: 220px;
           padding: 5px;
-          color: $text;
+          color: $cream-text;
           img {
-            border: 1px solid $medium-light;
+            border: 1px solid $cream-text;
             margin-top: 10%;
             width: 100%;
             border-radius: 3px;
