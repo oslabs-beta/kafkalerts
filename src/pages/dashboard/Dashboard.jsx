@@ -3,11 +3,11 @@ import '../styles.scss';
 import DashNav from './containers/DashNav';
 import BrokersContainer from './containers/BrokersContainer';
 import { v4 as uuidv4 } from 'uuid';
-
+import Footer from '../landingPage/containers/Footer';
 const Dashboard = () => {
   const [username, setUsername] = useState('xXGoogleExecXx');
   const [connectionString, setConnectionString] = useState(
-    'grafana.org/themetricsyouwant.forfree'
+    'prometheus:9090'
   );
     let promURI = '';
   const [brokerIds, setBrokerIds] = useState([
@@ -94,6 +94,7 @@ const Dashboard = () => {
         key={uuidv4()}
       />
       <BrokersContainer brokers={brokersAndAlerts} key={uuidv4()} />
+      <Footer />
     </div>
   );
 };

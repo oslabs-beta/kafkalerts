@@ -35,6 +35,10 @@ body {
 }
 
 #homepage {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  align-items: center;
   #navbar-container {
     position: fixed;
     top: 0;
@@ -61,8 +65,9 @@ body {
     background-color: $chart-background;
     width: 90%;
     max-width: 500px;
-    height: 280px;
+    //height: 22vh;
     font-size: 1.2rem;
+    margin-top: auto;
     #button-box {
       display: flex;
       flex-direction: row;
@@ -154,11 +159,30 @@ body {
     #user-menu {
       position: absolute;
       right: 0px;
-      margin: 50px 40px;
+      margin: 55px 80px;
+      margin-top: 75px;
+      // margin-right: 80px;
       background-color: $light;
+      background-image: linear-gradient(to top, $medium-light 0%, $light 100%);
       border: $regular-border;
       border-radius: 5px;
       padding: 5px;
+      .broker-id-form {
+        padding: 3px;
+        input {
+          width: 100%;
+          margin-top: 3px;
+        }
+      }
+      button {
+        padding: 3px;
+        margin-top: 3px;
+        background-color: $alert-header-text;
+        border-radius: 5px;
+      }
+      #logout {
+        margin-left: 3px;
+      }
     }
   }
   #brokers-container {
@@ -216,7 +240,31 @@ body {
     }
   }
 }
-
+#footer {
+  width: 100vw;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    hsla(42, 94%, 57%, 1) 0%,
+    rgb(249, 75, 6) 100%
+  );
+  // font-size: 12px;
+  margin-top: auto;
+  .footer-links {
+    padding: 2px;
+    a {
+      color: inherit;
+      margin-right: 8px;
+      :hover {
+        color: $page-background;
+      }
+    }
+  }
+}
 #landing-page {
   min-height: 100vh;
   background-color: $page-background;
