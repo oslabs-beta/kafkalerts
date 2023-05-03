@@ -36,7 +36,7 @@ const Team = () => {
       name: 'Jeb Stone',
       src: jeb,
       github: 'https://github.com/jeb-stone',
-      linkedIn: 'https://www.linkedin.com/in/jebstone/',
+      linkedIn: 'https://www.linkedin.com/in/jeb-stone/',
     },
   ];
 
