@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const BrokerIdForm = ({handleSubmit}) => {
+const BrokerIdForm = ({handleSubmit, menuOpen}) => {
   // create state variables
   const [isExpanded, setIsExpanded] = useState(false);
   // update state when called
@@ -10,7 +10,10 @@ const BrokerIdForm = ({handleSubmit}) => {
   // if expanded - show form to collect brokerIds and location of Prometheus
   return (
     <div className='broker-id-form'> 
-      <button onClick={toggleExpand}>{isExpanded ? 'Hide Form' : 'Connect Cluster'}</button>
+      <button 
+        onClick={toggleExpand}
+        
+      >{isExpanded ? 'Hide Form' : 'Connect Cluster'}</button>
       {isExpanded && (<form onSubmit={handleSubmit}>
         <label>
           <input 
