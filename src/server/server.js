@@ -48,7 +48,7 @@ app.use(express.static(path.join(__dirname, '../index.html')));
 
 app.get('/latenight', (req, res) => {
   console.log('whatever');
-  return res.status(200);
+  return res.status(200).json();
 });
 
 
