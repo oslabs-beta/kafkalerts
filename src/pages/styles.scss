@@ -232,9 +232,16 @@ body {
     background-color: $accent-color;
     background-image: linear-gradient(
       to right,
-      $accent-color,
-      $light-accent-color
+      $accent-color 0%,
+      $light-accent-color 60%
     );
+    @media (max-width: 700px) {
+      background-image: linear-gradient(
+        to right,
+        $accent-color,
+        $light-accent-color
+      );
+    }
     div {
       margin: 3px 10px 5px 5px;
       padding: 3px;
@@ -246,6 +253,18 @@ body {
       );
       img {
         width: 50px;
+        @media (max-width: $breakpoint-phone) {
+          width: 30px;
+        }
+      }
+    }
+    @media (max-width: $breakpoint-phone) {
+    }
+  }
+  @media (max-width: $breakpoint-phone) {
+    #header {
+      img {
+        width: 20px;
       }
     }
   }
@@ -257,8 +276,13 @@ body {
     flex: 1 0 auto;
     align-items: center;
     #hero {
-      max-width: 800px;
-      // background-color: lightblue;
+      background: radial-gradient(
+        closest-side,
+        lighten($page-background, 10%),
+        $page-background
+      );
+      width: 100%;
+      max-width: 1000px;
       padding: 10rem 0 8rem;
       display: flex;
       flex-direction: column;
@@ -277,6 +301,7 @@ body {
       }
       p {
         font-size: 1.2rem;
+        text-align: center;
       }
       button {
         font-size: 1.2em;
@@ -307,23 +332,29 @@ body {
       }
       .single-feature {
         background-color: lighten($page-background, 7%);
-        border: 2px solid $cream-text;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         min-width: 250px;
-        // min-width: 6rem;
         flex: 0 0 30%;
         margin: 8px;
         padding: 40px 20px 20px;
+
         strong {
           margin-top: 1.5rem;
-          font-size: 20px;
+          font-size: 1.25rem;
           margin-bottom: 0.7rem;
         }
         p {
           text-align: center;
+        }
+      }
+      @media (max-width: 550px) {
+        .single-feature {
+          min-width: 47%;
+          margin: 1.5%;
+          padding: 1rem 0.5rem;
         }
       }
     }
@@ -334,27 +365,33 @@ body {
       align-items: center;
       text-align: center;
       color: $cream-text;
-      margin-top: 1rem;
-      h2 {
-        text-align: center;
+      margin: 6rem 0 3rem;
+      h1 {
+        margin-bottom: 20px;
       }
-      .team-members {
+      #team-members {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: center;
+        width: 700px;
         justify-content: center;
+        @media (min-width: 1200px) {
+          width: 1200px;
+        }
+        @media (max-width: 700px) {
+          width: 100%;
+        }
         .player-box {
+          background-color: $page-background;
+          border: 1px solid $cream-text;
           border-radius: 5px;
-          margin: 2px;
-          width: 30%;
-          max-width: 220px;
-          padding: 5px;
+          margin: 5px;
+          width: 220px;
           color: $cream-text;
           img {
-            border: 1px solid $cream-text;
-            margin-top: 10%;
             width: 100%;
+            height: 220px;
+            object-fit: cover;
             border-radius: 3px;
           }
           .links {
@@ -379,11 +416,10 @@ body {
     justify-content: space-between;
     align-items: center;
     background-image: linear-gradient(
-      to right,
-      hsla(42, 94%, 57%, 1) 0%,
-      rgb(249, 75, 6) 100%
+      to left,
+      $accent-color,
+      $light-accent-color
     );
-    // font-size: 12px;
 
     .footer-links {
       padding: 2px;
