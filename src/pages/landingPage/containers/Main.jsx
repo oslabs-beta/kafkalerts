@@ -6,7 +6,6 @@ import Team from '../components/Team';
 const Main = () => {
   return (
     <div id='main'>
-      
       <Hero />
       <Features />
       <Team />
@@ -15,3 +14,4 @@ const Main = () => {
 };
 
 export default Main;
+// @include background(linear-gradient($color, scale-color($color, $lightness: -20%)));
