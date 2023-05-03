@@ -8,8 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/latenight",
-      "dest": "src/server/server.js",
+      "src": "/(.*)",
+      "dest": "src/api/server.js",
       "methods": [
         "GET",
         "POST",
@@ -19,5 +19,8 @@
         "DELETE"
       ]
     }
-  ]
+  ],
+
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+
 }

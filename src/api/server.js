@@ -90,8 +90,8 @@ app.use(function (err, req, res, next) {
 // handler to send back 404 status code
 app.use((req, res) => {
   console.log('404 error handler');
-  res.sendStatus(404));
-}
+  res.sendStatus(404);
+})
 
 // global error handler
 app.use((err, req, res, next) => {
@@ -108,9 +108,9 @@ app.use((err, req, res, next) => {
 /**
  * start server
  */
-const listener = app.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}`);
-});
+// const listener = app.listen(PORT, () => {
+//   console.log(`Server listening on port: ${PORT}`);
+// });
 
 // module.exports = listener;
 module.exports = app;
