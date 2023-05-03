@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const authController = {};
 
 authController.createAccount = async (req, res, next) => {
-  // console.log('inside create account');
+  console.log('inside create account');
   try {
     const { username, password } = req.body;
     const checkQuery = 'SELECT username FROM users WHERE username = $1';
@@ -51,7 +51,7 @@ authController.createAccount = async (req, res, next) => {
 };
 
 authController.verifyUser = async (req, res, next) => {
-  // console.log('inside verify user')
+  console.log('inside verify user')
   try {
     const { username, password } = req.body;
     let hashedPassword = await db.query(
@@ -69,7 +69,7 @@ authController.verifyUser = async (req, res, next) => {
       return next();
     }
   } catch (err) {
-    // console.log('catch in verify user')
+    console.log('catch in verify user')
     return next({
       log: 'Error inside verify user.',
       status: 401,
@@ -93,7 +93,7 @@ authController.addBrokers = async (req, res, next) => {
     return next();
     
   } catch (err) {
-    // console.log('catch in verify user')
+    console.log('catch in verify user')
     return next({
       log: 'Error inside add Brokers.',
       status: 401,
