@@ -4,6 +4,7 @@ import '../styles.scss';
 import Navbar from './containers/NavBar';
 import LoginBox from './containers/LoginBox';
 
+
 const Homepage = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
@@ -16,10 +17,11 @@ const Homepage = () => {
       console.log(username, password, endpoint);
       const response = await fetch(`https://kafkalerts.com/${endpoint}`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
         body: JSON.stringify({ username: username, password: password }),
       });
-      console.log(response.status);
+      console.log('line 24 console log', response.status);
       if (response.status === 200) navigate('/dashboard');
       else setErrorDisplay('block');
     } catch (err) {

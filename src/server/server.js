@@ -9,13 +9,13 @@ const apiController = require('./controllers/apiController');
 const app = express();
 const PORT = 3000;
 
-
 // Set up CORS options to allow passing through cookies to the client server
 // const corsOptions = {
-//   origin: 'https://kafkalerts-61obnxs3r-kafkalerts.vercel.app',
+//   origin: '*',
 //   credentials: true,
+// //   preflightContinue: true,
 //   methods: 'GET, POST, PUT, DELETE, OPTIONS',
-//   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+//   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin',
 // };
 
 app.use(cors());
@@ -45,6 +45,12 @@ app.use(express.static(path.join(__dirname, '../index.html')));
 //     return res.status(200).json(res.locals.metrics);
 //   }
 // );
+
+app.get('/latenight', (req, res) => {
+  console.log('whatever');
+  return res.status(200);
+});
+
 
 // LOG IN ROUTE
 app.post(
@@ -82,7 +88,10 @@ app.use(function (err, req, res, next) {
 });
 
 // handler to send back 404 status code
-app.use((req, res) => res.sendStatus(404));
+app.use((req, res) => {
+  console.log('404 error handler');
+  res.sendStatus(404));
+}
 
 // global error handler
 app.use((err, req, res, next) => {
@@ -105,3 +114,4 @@ const listener = app.listen(PORT, () => {
 
 // module.exports = listener;
 module.exports = app;
+
