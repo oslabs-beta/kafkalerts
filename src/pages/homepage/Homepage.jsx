@@ -37,7 +37,7 @@ const Homepage = () => {
         handleSend={handleSend}
       />
       {/* TO DO: delete this */}
-      <button id='demo-button' style={{marginTop: '20px'}}onClick={() => navigate('/dashboard')}>
+      <button id='demo-button' style={{marginTop: '20px', padding: '5px 12px'}}onClick={() => navigate('/dashboard')}>
         See a Demo!
       </button>
       <Footer />
