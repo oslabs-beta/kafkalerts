@@ -16,12 +16,13 @@ $alert-header-background: #5ea2d7;
 $chart-background: #f8d7bd;
 $chart-header-text: #004e89;
 
-
-// $alertColor: #35ff57;
-// $nonAlertColor: #1a659e;
+$cream-text: #fcfce8;
+$accent-color: rgb(249, 75, 6);
+$light-accent-color: hsla(42, 94%, 57%, 1);
 
 // === FONTS ===
 $main-font: 'Noto Sans', Arial, Helvetica, sans-serif;
+$logo-font: 'Noto Sans', Arial, Helvetica, sans-serif;
 $small-font: 12px;
 $medium-font: 16px;
 $large-font: 24px;
@@ -30,8 +31,4 @@ $regular-border: 3px solid $medium-dark;
 $small-box-border-dark: 2px solid $medium-dark;
 $small-box-border-light: 2px solid $medium-light;
 
-
-// :export {
-//   alertColor: $alertColor;
-//   nonAlertColor: $nonAlertColor;
-// }
+$breakpoint-phone: 500px;

@@ -10,7 +10,6 @@ const Team = () => {
     {
       name: 'Hazel Bolivar',
       src: hazel,
-      // srce: '../../../assets/headshots/hazel-headshot.jpeg',
       github: 'https://github.com/hazelbolivar',
       linkedIn: 'https://www.linkedin.com/in/hazelbolivar/',
     },
@@ -40,20 +39,19 @@ const Team = () => {
     },
   ];
 
-  const players = team.map((player) => {
-    return (
-      <Player
-        name={player.name}
-        picSrc={player.src}
-        github={player.github}
-        linkedIn={player.linkedIn}
-      />
-    );
-  });
+  const players = team.map((player) => (
+    <Player
+      name={player.name}
+      picSrc={player.src}
+      github={player.github}
+      linkedIn={player.linkedIn}
+    />
+  ));
+
   return (
     <div id='team-box'>
       <h1>Meet the team</h1>
-      <div className='team-members'>{players}</div>
+      <div id='team-members'>{players}</div>
     </div>
   );
 };
