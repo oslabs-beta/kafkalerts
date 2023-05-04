@@ -1,14 +1,23 @@
 # kafkAlerts 
 
+<p align="center">
+  <img src="src/assets/logo.png" width=300px 
+    style="background-image: linear-gradient(
+      to right,
+      rgb(249, 75, 6) 0%,
+      hsla(42, 94%, 57%, 1) 100%
+    ); border-radius:50%">
+</p>
 <h3 align="center">Open source, accessibility driven web application for monitoring and alerting Apache Kafka broker metrics</h3>
 </br>
 
-# Product Description
+---
 
 ## Table of Contents
 
-- [About] (#about)
+- [Product Description] (#product-description)
 - [Install and Run] (#install-and-run)
+  - [Install Locally] (#install-locally)
 - [How to Use] (#how-to-use)
 - [Contribute] (#contribute)
 - [Our Team] (#our-team)
@@ -16,7 +25,12 @@
 
 ---
 
-## About
+## Product Description
+With accessibility at the forefront of all our design decisions, kafkAlerts offers a better way to visualize Kafka broker metrics and receive alerts. Only the most relevant data renders on the screen, including what brokers are alerting and appropriate metrics for those brokers. 
+
+All other brokers will be listed in your feed and can be expanded to view metrics with the click or press of a button. 
+
+---
 
 ## Install and Run
 To begin using kafkAlerts, navigate to <a href="http://www.kafkAlerts.com">kafkalerts.com</a> and create an account. 
@@ -33,7 +47,16 @@ If you would prefer to run kafkAlerts locally, you may fork and clone our Github
   - `npm run dev` 
 - Once the application is running, navigate to localhost:3000 and input the port of your Prometheus server and brokers you would like to monitor.
 
+---
+
 ## How to Use
+Once you have successfully installed kafkAlerts and connected to your cluster, simply log in to view all of your brokers in one place. 
+- If any brokers are alerting, you will see them listed by id in your alerts menu. 
+- Click on that id to be taken directly to the alerting broker. Here you can find metrics that may indicate where there is an issue. 
+- Click on non-alerting brokers to view their metrics and see how they are generally performing. 
+- To add more brokers, simply go to the user menu at the top, click on 'Connect Cluster' and add any additional broker ids. 
+
+---
 
 ## Contribute
 
@@ -47,6 +70,8 @@ Some of our planned features for kafkAlerts include:
 - Adding OAuth authentication
 - Alerting based on user defined SLIs
 - Expanding metric insights
+
+---
 
 ## Our Team
 Questions, comments, concerns... funny memes? Reach out to us any time!
@@ -96,5 +121,8 @@ Questions, comments, concerns... funny memes? Reach out to us any time!
   </tr>
 </table>
 
+---
 
+# License
+MIT Licensed
     
