@@ -174,24 +174,24 @@ body {
     #user-menu {
       position: absolute;
       right: 0px;
-      margin: 55px 80px;
-      margin-top: 75px;
-      // margin-right: 80px;
+      top: -75px;
+      margin: 90px 80px 55px;
       background-color: $light;
       background-image: linear-gradient(to top, $medium-light 0%, $light 100%);
       border: $regular-border;
       border-radius: 5px;
-      padding: 5px;
+      padding: 10px;
       .broker-id-form {
         padding: 3px;
         input {
           width: 100%;
-          margin-top: 3px;
+          height: 30px;
+          margin: 5px auto;
         }
       }
       button {
-        padding: 3px;
-        margin-top: 3px;
+        padding: 3px 5px;
+        margin: 3px auto;
         background-color: $alert-header-text;
         border-radius: 5px;
       }

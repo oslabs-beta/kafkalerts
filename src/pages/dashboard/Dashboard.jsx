@@ -5,7 +5,7 @@ import BrokersContainer from './containers/BrokersContainer';
 import { v4 as uuidv4 } from 'uuid';
 import Footer from '../landingPage/containers/Footer';
 const Dashboard = () => {
-  const [username, setUsername] = useState('xXGoogleExecXx');
+  const [username, setUsername] = useState('John Doe');
   const [connectionString, setConnectionString] = useState(
     'prometheus:9090'
   );
