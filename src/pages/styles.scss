@@ -75,6 +75,7 @@ body {
       align-items: center;
       width: 100%;
       margin: 5% auto;
+     
       button {
         width: 40%;
         height: 40px;
@@ -85,6 +86,12 @@ body {
         font-size: 1.15rem;
         font-weight: bold;
         border: 2.6px solid $medium-dark;
+
+      }
+      @media screen and (max-width: 500px){
+        button{
+          font-size: .9rem;
+        }
       }
     }
     #username {
@@ -101,6 +108,14 @@ body {
       border-radius: 4px;
       border: $small-box-border-dark;
     }
+  }
+  #demo-button {
+    background-color: $chart-background;
+    padding: 5px;
+    color: $dark;
+    border-radius: 8px;
+    border: 2.6px solid $medium-dark;
+    font-size: 1.13rem;
   }
 }
 
