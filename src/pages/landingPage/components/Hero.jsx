@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div id='hero'>
       <h1>kafkAlerts</h1>
-      <h2>Driven by accessibility.</h2>
+      <h2>Driven by usability.</h2>
       <h3>Broker metric monitoring and alerting for your Kafka cluster</h3>
       <button onClick={() => navigate('/login')}>Connect A Cluster</button>
     </div>

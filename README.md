@@ -8,7 +8,7 @@
       hsla(42, 94%, 57%, 1) 100%
     ); border-radius:50%">
 </p>
-<h3 align="center">Open source, accessibility driven web application for monitoring and alerting Apache Kafka broker metrics</h3>
+<h3 align="center">Open source, usability driven web application for monitoring and alerting Apache Kafka broker metrics</h3>
 </br>
 
 ---
@@ -26,7 +26,7 @@
 ---
 
 ## Product Description
-With accessibility at the forefront of all our design decisions, kafkAlerts offers a better way to visualize Kafka broker metrics and receive alerts. Only the most relevant data renders on the screen, including what brokers are alerting and appropriate metrics for those brokers. 
+With usability and accessibility at the forefront of all our design decisions, kafkAlerts offers a better way to visualize Kafka broker metrics and receive alerts. Only the most relevant data renders on the screen, including what brokers are alerting and appropriate metrics for those brokers. 
 
 All other brokers will be listed in your feed and can be expanded to view metrics with the click or press of a button. 
 

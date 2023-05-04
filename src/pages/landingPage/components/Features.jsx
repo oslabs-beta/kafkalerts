@@ -14,7 +14,7 @@ const featureObj = [
     // icon: <AccessibilityIcon />,
     icon: <FontAwesomeIcon icon='fa-solid fa-universal-access' />,
     header: 'Accessibility',
-    text: 'With accessibility at the forefront of all our design decisions, kafkAlerts has an accessibility rating of 100.',
+    text: 'Designed with accessibility as the top priority, kafkAlerts works well with screen readers and keyboard navigation',
   },
   {
     icon: BrokerIcon, //<BrokerIcon />,
