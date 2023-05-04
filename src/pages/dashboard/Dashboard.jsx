@@ -35,7 +35,7 @@ const Dashboard = () => {
     promURI = e.target.elements.promInput.value;
     // store brokerIds in DB
     try {
-      const response = await fetch('http://localhost:3001/addbrokers', {
+      const response = await fetch('http://localhost:3000/addbrokers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

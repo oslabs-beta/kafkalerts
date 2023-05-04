@@ -36,7 +36,7 @@ All other brokers will be listed in your feed and can be expanded to view metric
 To begin using kafkAlerts, navigate to <a href="http://www.kafkAlerts.com">kafkalerts.com</a> and create an account. 
 - Make sure that Prometheus is running and connected to your cluster. 
 - Click on the user menu icon in the top right.
-- Click on 'Connect Cluster'
+- Click on 'Connect Cluster'.
 - Input your Prometheus instance and broker ids.
 
 

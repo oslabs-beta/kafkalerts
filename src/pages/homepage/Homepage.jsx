@@ -15,7 +15,7 @@ const Homepage = () => {
     //TO DO: fix body so that html injection attacks can't happen
     try {
       console.log(username, password, endpoint);
-      const response = await fetch(`http://localhost:3001/${endpoint}`, {
+      const response = await fetch(`http://localhost:3000/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username, password: password }),

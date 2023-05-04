@@ -7,7 +7,7 @@ const authController = require('./controllers/authController');
 const cookieController = require('./controllers/cookieController');
 const apiController = require('./controllers/apiController');
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 // Set up CORS options to allow passing through cookies to the client server
 const corsOptions = {
