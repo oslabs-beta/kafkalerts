@@ -85,40 +85,40 @@ Questions, comments, concerns... funny memes? Reach out to us any time!
       <br />
       <sub><b>Hazel Bolivar</b></sub>
       <br />
-      <a href="https://github.com/hazelbolivar"><img src="./client/src/assets/icons/github-logo.png" width="20px;" alt="Github"/></a>
-      <a href="https://www.linkedin.com/in/hazelbolivar/"><img src="./client/src/assets/icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
+      <a href="https://github.com/hazelbolivar"><img src="./client/src/assets/readme-icons/github-logo.png" width="20px;" alt="Github"/></a>
+      <a href="https://www.linkedin.com/in/hazelbolivar/"><img src="./client/src/assets/readme-icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
     </td>
     <td align="center">
       <img src="./client/src/assets/headshots/ian-headshot.jpg" width="140px;" alt="Ian Flynn's headshot"/>
       <br />
       <sub><b>Ian Flynn</b></sub>
       <br />
-      <a href="https://github.com/ian-flynn"><img src="./client/src/assets/icons/github-logo.png" width="20px;" alt="Github"/></a>
-      <a href="https://www.linkedin.com/in/ianrflynn/"><img src="./client/src/assets/icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
+      <a href="https://github.com/ian-flynn"><img src="./client/src/assets/readme-icons/github-logo.png" width="20px;" alt="Github"/></a>
+      <a href="https://www.linkedin.com/in/ianrflynn/"><img src="./client/src/assets/readme-icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
     </td>
     <td align="center">
       <img src="./client/src/assets/headshots/krystal-headshot.jpg" width="140px;" alt="Krystal Fung's headshot"/>
       <br />
       <sub><b>Krystal Fung</b></sub>
       <br />
-      <a href="https://github.com/klfung7"><img src="./client/src/assets/icons/github-logo.png" width="20px;" alt="Github"/></a>
-      <a href="https://www.linkedin.com/in/krystal-fung/"><img src="./client/src/assets/icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
+      <a href="https://github.com/klfung7"><img src="./client/src/assets/readme-icons/github-logo.png" width="20px;" alt="Github"/></a>
+      <a href="https://www.linkedin.com/in/krystal-fung/"><img src="./client/src/assets/readme-icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
     </td>
      <td align="center">
       <img src="./client/src/assets/headshots/annie-headshot.png" width="140px;" alt="Annie Rosen's headshot"/>
       <br />
       <sub><b>Annie Rosen</b></sub>
       <br />
-      <a href="https://github.com/mezzocarattere"><img src="./client/src/assets/icons/github-logo.png" width="20px;" alt="Github"/></a>
-      <a href="https://www.linkedin.com/in/rosen-annie/"><img src="./client/src/assets/icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
+      <a href="https://github.com/mezzocarattere"><img src="./client/src/assets/readme-icons/github-logo.png" width="20px;" alt="Github"/></a>
+      <a href="https://www.linkedin.com/in/rosen-annie/"><img src="./client/src/assets/readme-icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
     </td>
     <td align="center">
       <img src="./client/src/assets/headshots/jeb-headshot.png" width="140px;" alt="Jeb Stone's headshot"/>
       <br />
       <sub><b>Jeb Stone</b></sub>
       <br />
-      <a href="https://github.com/jeb-stone"><img src="./client/src/assets/icons/github-logo.png" width="20px;" alt="Github"/></a>
-      <a href="https://www.linkedin.com/in/jeb-stone/"><img src="./client/src/assets/icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
+      <a href="https://github.com/jeb-stone"><img src="./client/src/assets/readme-icons/github-logo.png" width="20px;" alt="Github"/></a>
+      <a href="https://www.linkedin.com/in/jeb-stone/"><img src="./client/src/assets/readme-icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
     </td>
   </tr>
 </table>
