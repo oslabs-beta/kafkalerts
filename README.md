@@ -10,13 +10,13 @@
 
 ## Table of Contents
 
-- [Product Description] (#product-description)
-- [Install and Run] (#install-and-run)
-  - [Install Locally] (#install-locally)
-- [How to Use] (#how-to-use)
-- [Contribute] (#contribute)
-- [Our Team] (#our-team)
-- [License] (#license)
+- [Product Description](#product-description)
+- [Install and Run](#install-and-run)
+- [Install Locally](#install-locally)
+- [How to Use](#how-to-use)
+- [Contribute](#contribute)
+- [Our Team](#our-team)
+- [License](#license)
 
 ---
 
