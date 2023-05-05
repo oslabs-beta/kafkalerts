@@ -5,6 +5,7 @@ const connectionString = process.env.PG_URI;
 const pool = new Pool({
   connectionString,
 });
+
 pool.connect();
 
 // Define the schema creation query
