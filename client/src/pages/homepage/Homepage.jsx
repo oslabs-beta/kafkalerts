@@ -15,7 +15,7 @@ const Homepage = () => {
     //TO DO: fix body so that html injection attacks can't happen
     try {
       console.log(username, password, endpoint);
-      const response = await fetch(`http://localhost:3000/${endpoint}`, {
+      const response = await fetch(`/api/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username, password: password }),
@@ -36,8 +36,12 @@ const Homepage = () => {
         handleSend={handleSend}
       />
       {/* TO DO: delete this */}
-      <button style={{marginTop: '20px'}}onClick={() => navigate('/dashboard')}>
-        Temp button to go to dashboard easily
+      <button
+        id='demo-button'
+        style={{ marginTop: '20px' }}
+        onClick={() => navigate('/dashboard')}
+      >
+        See a Demo!
       </button>
       <Footer />
     </div>
