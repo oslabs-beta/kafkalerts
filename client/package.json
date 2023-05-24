@@ -4,8 +4,8 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "webpack --mode=production",
+    "test": "jest --detectOpenHandles"
   },
   "author": "Annie Rosen, Hazel Bolivar, Ian Flynn, Jeb Stone, Krystal Fung",
   "license": "ISC",
