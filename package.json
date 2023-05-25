@@ -7,7 +7,7 @@
     "start": "cd ./server && node index.js",
     "client-install": "cd client && npm install",
     "server-install": "cd server && npm install",
-    "dev": "concurrently \"cd server && nodemon server/index.js  --mode=development\" \"cd client && webpack-dev-server --mode=development --open --hot\""
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\""
   },
   "repository": {
     "type": "git",
