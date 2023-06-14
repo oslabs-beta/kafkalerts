@@ -157,6 +157,9 @@ export function URPChart(URPData) {
           display: true,
           text: 'Last 7 Days',
         },
+        ticks: {
+          stepSize: 1,
+        }
       },
       y: {
         display: true,
