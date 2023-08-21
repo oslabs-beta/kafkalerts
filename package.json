@@ -20,12 +20,6 @@
   },
   "homepage": "kafkalerts.com",
   "dependencies": {
-    "concurrently": "^8.0.1",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "postcss-import": "^15.1.0"
+    "concurrently": "^8.0.1"
   }
 }
