@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles.scss';
 import Navbar from './containers/NavBar';
 import LoginBox from './containers/LoginBox';
 import Footer from '../landingPage/containers/Footer';
