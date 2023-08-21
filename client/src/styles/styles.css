@@ -13,6 +13,7 @@ body {
   background-color: var(--cl-page-background);
   font-size: 1rem;
 }
+
 .pages {
   width: 100vw;
   min-height: 100vh;
@@ -68,6 +69,7 @@ body {
     /* //height: 22vh; */
     font-size: 1.2rem;
     margin-top: auto;
+
     #button-box {
       display: flex;
       flex-direction: row;
@@ -161,8 +163,7 @@ body {
         font-size: 1.3rem;
       }
       .alert-box:hover {
-        /* TO DO */
-        /* background-color: darken(var(--cl-medium-dark), 10%); */
+        background-color: color-mix(in srgb, var(--cl-medium-dark), black 10%);
       }
     }
     #user-menu-button {
@@ -343,11 +344,12 @@ body {
     flex: 1 0 auto;
     align-items: center;
     #hero {
-      /* background: radial-gradient(
+      background: radial-gradient(
         closest-side,
-        /* TO DO */ /* lighten(var(--cl-page-background), 10%), */
-      /* var(--cl-page-background) */
-      /* );  */
+        color-mix(in srgb, var(--cl-page-background), white 10%),
+        var(--cl-page-background)
+      );
+
       width: 100%;
       max-width: 1000px;
       padding: 10rem 0 8rem;
@@ -375,16 +377,21 @@ body {
         padding: 0.7rem 3rem;
         border-radius: 3rem;
         margin-top: 20px;
-        /* background-color: var(--cl-button-background); */
-        /* TO DO */
-        /* background-color: lighten(var(--cl-page-background), 12%); */
+        background-color: color-mix(
+          in srgb,
+          var(--cl-page-background),
+          white 12%
+        );
         border: 1px solid var(--cl-cream-text);
         color: var(--cl-cream-text);
         margin-top: 3rem;
       }
       button:hover {
-        /* TO DO */
-        /* background-color: lighten(var(--cl-page-background), 3%); */
+        background-color: color-mix(
+          in srgb,
+          var(--cl-page-background),
+          white 3%
+        );
       }
     }
     #feature-box {
@@ -400,8 +407,11 @@ body {
         margin-bottom: 1.2rem;
       }
       .single-feature {
-        /* TO DO */
-        /* background-color: lighten(var(--cl-page-background), 7%); */
+        background-color: color-mix(
+          in srgb,
+          var(--cl-page-background),
+          white 7%
+        );
         border-radius: 10px;
         display: flex;
         flex-direction: column;
