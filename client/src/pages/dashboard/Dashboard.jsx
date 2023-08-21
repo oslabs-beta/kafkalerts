@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../styles.css';
 import DashNav from './containers/DashNav';
 import BrokersContainer from './containers/BrokersContainer';
 import { v4 as uuidv4 } from 'uuid';

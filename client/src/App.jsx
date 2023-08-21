@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { BrowserRouter } from 'react-router-dom';
 import Homepage from './pages/homepage/Homepage.jsx';
 import Dashboard from './pages/dashboard/Dashboard.jsx';
 import LandingPage from './pages/landingPage/LandingPage.jsx';
@@ -8,6 +7,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 library.add(fas, faGithub, faLinkedin);
+
+import '../build/styles/index.css';
 
 const App = () => {
   return (
