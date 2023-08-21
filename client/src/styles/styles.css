@@ -1,4 +1,4 @@
-@import '../variables.css';
+@import url('./variables.css');
 
 * {
   margin: 0;
@@ -300,13 +300,13 @@ body {
     background-image: linear-gradient(
       to right,
       var(--cl-accent) 0%,
-      var(--cl-light)-accent-color 60%
+      var(--cl-light-accent) 60%
     );
     @media (max-width: 700px) {
       background-image: linear-gradient(
         to right,
         var(--cl-accent),
-        var(--cl-light)-accent-color
+        var(--cl-light-accent)
       );
     }
     div {
@@ -316,7 +316,7 @@ body {
       background-image: linear-gradient(
         to bottom,
         var(--cl-accent) 0%,
-        var(--cl-light)-accent-color 180%
+        var(--cl-light-accent) 180%
       );
       img {
         width: 50px;
@@ -488,7 +488,7 @@ body {
     background-image: linear-gradient(
       to left,
       var(--cl-accent),
-      var(--cl-light)-accent-color
+      var(--cl-light-accent)
     );
 
     .footer-links {
