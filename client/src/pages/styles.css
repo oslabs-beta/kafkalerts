@@ -1,16 +1,16 @@
-@import '../variables.scss';
+@import '../variables.css';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $main-font;
+  font-family: var(--ff-main);
 }
 img {
   max-width: 100%;
 }
 body {
-  background-color: $page-background;
+  background-color: var(--cl-page-background);
   font-size: 1rem;
 }
 .pages {
@@ -22,16 +22,16 @@ body {
   align-items: center;
 }
 .container {
-  background-color: $medium-dark;
+  background-color: var(--cl-medium-dark);
   padding: 2% 3%;
   border-radius: 10px;
-  border: $regular-border;
-  color: $dark;
+  border: var(--border-regular);
+  color: var(--cl-dark);
   font-weight: bold;
 }
 
 #alerts-container {
-  color: $cream-text;
+  color: var(--cl-cream-text);
 }
 
 #homepage {
@@ -43,9 +43,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    color: $dark;
+    color: var(--cl-dark);
     min-height: 80px;
-    // background-color: $medium-light;
+    /* // background-color: var(--cl-medium-light); */
     background-image: linear-gradient(
       90deg,
       rgb(249, 75, 6) 0%,
@@ -62,10 +62,10 @@ body {
     }
   }
   #login-container {
-    background-color: $chart-background;
+    background-color: var(--cl-chart-background);
     width: 90%;
     max-width: 500px;
-    //height: 22vh;
+    /* //height: 22vh; */
     font-size: 1.2rem;
     margin-top: auto;
     #button-box {
@@ -75,22 +75,21 @@ body {
       align-items: center;
       width: 100%;
       margin: 5% auto;
-     
+
       button {
         width: 40%;
         height: 40px;
         margin: 4%;
-        background-color: $button-background;
-        color: $cream-text;
+        background-color: var(--cl-button-background);
+        color: var(--cl-cream-text);
         border-radius: 8px;
         font-size: 1.15rem;
         font-weight: bold;
-        border: 2.6px solid $medium-dark;
-
+        border: 2.6px solid var(--cl-medium-dark);
       }
-      @media screen and (max-width: 500px){
-        button{
-          font-size: .9rem;
+      @media screen and (max-width: 500px) {
+        button {
+          font-size: 0.9rem;
         }
       }
     }
@@ -99,22 +98,22 @@ body {
       height: 25px;
       width: 200px;
       border-radius: 4px;
-      border: $small-box-border-dark;
+      border: var(--br-small-dark);
     }
     #password {
       margin: 3% 3% 5% 6.7%;
       height: 25px;
       width: 200px;
       border-radius: 4px;
-      border: $small-box-border-dark;
+      border: var(--br-small-dark);
     }
   }
   #demo-button {
-    background-color: $chart-background;
+    background-color: var(--cl-chart-background);
     padding: 5px;
-    color: $dark;
+    color: var(--cl-dark);
     border-radius: 8px;
-    border: 2.6px solid $medium-dark;
+    border: 2.6px solid var(--cl-medium-dark);
     font-size: 1.13rem;
   }
 }
@@ -124,7 +123,7 @@ body {
     position: fixed;
     background-image: linear-gradient(
       to bottom,
-      $medium-dark,
+      var(--cl-medium-dark),
       95%,
       transparent
     );
@@ -150,7 +149,7 @@ body {
       );
       .alert-box {
         display: flex;
-        background-color: $medium-dark;
+        background-color: var(--cl-medium-dark);
         margin-left: 12px;
         padding: 3px;
         height: 35px;
@@ -158,11 +157,12 @@ body {
         justify-content: center;
         align-items: center;
         border-radius: 4px;
-        border: $small-box-border-light;
+        border: var(--br-small-light);
         font-size: 1.3rem;
       }
       .alert-box:hover {
-        background-color: darken($medium-dark, 10%);
+        /* TO DO */
+        /* background-color: darken(var(--cl-medium-dark), 10%); */
       }
     }
     #user-menu-button {
@@ -176,9 +176,13 @@ body {
       right: 0px;
       top: -75px;
       margin: 90px 80px 55px;
-      background-color: $light;
-      background-image: linear-gradient(to top, $medium-light 0%, $light 100%);
-      border: $regular-border;
+      background-color: var(--cl-light);
+      background-image: linear-gradient(
+        to top,
+        var(--cl-medium-light) 0%,
+        var(--cl-light) 100%
+      );
+      border: var(--border-regular);
       border-radius: 5px;
       padding: 10px;
       .broker-id-form {
@@ -192,7 +196,7 @@ body {
       button {
         padding: 3px 5px;
         margin: 3px auto;
-        background-color: $alert-header-text;
+        background-color: var(--cl-alert-header-text);
         border-radius: 5px;
       }
       #logout {
@@ -201,21 +205,21 @@ body {
     }
   }
   #brokers-container {
-    background-color: $medium-dark;
+    background-color: var(--cl-medium-dark);
     width: 100vw;
     max-width: 1200px;
     min-height: 100vh;
     padding: 80px 20px;
     margin-top: 18px;
     .broker {
-      background-color: $light;
+      background-color: var(--cl-light);
       margin-bottom: 10px;
       .collapsed-bar {
         display: flex;
         align-items: center;
         gap: 8px;
         .total-alerts-box {
-          background-color: $medium-light;
+          background-color: var(--cl-medium-light);
           width: 33px;
           height: 33px;
           display: flex;
@@ -234,16 +238,16 @@ body {
         justify-content: space-between;
         text-align: center;
         .metric {
-          color: $chart-header-text;
+          color: var(--cl-chart-header-text);
           height: 280px;
           width: 350px;
-          border: 1px solid $medium-dark;
+          border: 1px solid var(--cl-medium-dark);
           border-radius: 5px;
-          background-color: $chart-background;
+          background-color: var(--cl-chart-background);
           padding: 10px;
           margin: 10px 0;
           h2 {
-            border: 1px solid $dark;
+            border: 1px solid var(--cl-dark);
             border-radius: 5px;
           }
           .graph canvas {
@@ -267,7 +271,7 @@ body {
     hsla(42, 94%, 57%, 1) 0%,
     rgb(249, 75, 6) 100%
   );
-  // font-size: 12px;
+  /* // font-size: 12px; */
   margin-top: auto;
   .footer-links {
     padding: 2px;
@@ -275,14 +279,14 @@ body {
       color: inherit;
       margin-right: 8px;
       :hover {
-        color: $page-background;
+        color: var(--cl-page-background);
       }
     }
   }
 }
 #landing-page {
   min-height: 100vh;
-  background-color: $page-background;
+  background-color: var(--cl-page-background);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -292,17 +296,17 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: $accent-color;
+    background-color: var(--cl-accent);
     background-image: linear-gradient(
       to right,
-      $accent-color 0%,
-      $light-accent-color 60%
+      var(--cl-accent) 0%,
+      var(--cl-light)-accent-color 60%
     );
     @media (max-width: 700px) {
       background-image: linear-gradient(
         to right,
-        $accent-color,
-        $light-accent-color
+        var(--cl-accent),
+        var(--cl-light)-accent-color
       );
     }
     div {
@@ -311,20 +315,20 @@ body {
       border-radius: 50%;
       background-image: linear-gradient(
         to bottom,
-        $accent-color 0%,
-        $light-accent-color 180%
+        var(--cl-accent) 0%,
+        var(--cl-light)-accent-color 180%
       );
       img {
         width: 50px;
-        @media (max-width: $breakpoint-phone) {
+        @media (max-width: var(--breakpoint-phone)) {
           width: 30px;
         }
       }
     }
-    @media (max-width: $breakpoint-phone) {
+    @media (max-width: var(--breakpoint-phone)) {
     }
   }
-  @media (max-width: $breakpoint-phone) {
+  @media (max-width: var(--breakpoint-phone)) {
     #header {
       img {
         width: 20px;
@@ -339,11 +343,11 @@ body {
     flex: 1 0 auto;
     align-items: center;
     #hero {
-      background: radial-gradient(
+      /* background: radial-gradient(
         closest-side,
-        lighten($page-background, 10%),
-        $page-background
-      );
+        /* TO DO */ /* lighten(var(--cl-page-background), 10%), */
+      /* var(--cl-page-background) */
+      /* );  */
       width: 100%;
       max-width: 1000px;
       padding: 10rem 0 8rem;
@@ -351,9 +355,9 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      color: $cream-text;
+      color: var(--cl-cream-text);
       span {
-        font-family: $logo-font;
+        font-family: var(--ff-logo);
         font-size: 4rem;
         font-weight: 500;
         margin-bottom: -0.3rem;
@@ -371,14 +375,16 @@ body {
         padding: 0.7rem 3rem;
         border-radius: 3rem;
         margin-top: 20px;
-        background-color: $button-background;
-        background-color: lighten($page-background, 12%);
-        border: 1px solid $cream-text;
-        color: $cream-text;
+        /* background-color: var(--cl-button-background); */
+        /* TO DO */
+        /* background-color: lighten(var(--cl-page-background), 12%); */
+        border: 1px solid var(--cl-cream-text);
+        color: var(--cl-cream-text);
         margin-top: 3rem;
       }
       button:hover {
-        background-color: lighten($page-background, 3%);
+        /* TO DO */
+        /* background-color: lighten(var(--cl-page-background), 3%); */
       }
     }
     #feature-box {
@@ -386,7 +392,7 @@ body {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      color: $cream-text;
+      color: var(--cl-cream-text);
       > :first-child {
         width: 100%;
         text-align: center;
@@ -394,7 +400,8 @@ body {
         margin-bottom: 1.2rem;
       }
       .single-feature {
-        background-color: lighten($page-background, 7%);
+        /* TO DO */
+        /* background-color: lighten(var(--cl-page-background), 7%); */
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -427,7 +434,7 @@ body {
       flex-direction: column;
       align-items: center;
       text-align: center;
-      color: $cream-text;
+      color: var(--cl-cream-text);
       margin: 6rem 0 3rem;
       h1 {
         margin-bottom: 20px;
@@ -445,12 +452,12 @@ body {
           width: 100%;
         }
         .player-box {
-          background-color: $page-background;
-          border: 1px solid $cream-text;
+          background-color: var(--cl-page-background);
+          border: 1px solid var(--cl-cream-text);
           border-radius: 5px;
           margin: 5px;
           width: 220px;
-          color: $cream-text;
+          color: var(--cl-cream-text);
           img {
             width: 100%;
             height: 220px;
@@ -480,8 +487,8 @@ body {
     align-items: center;
     background-image: linear-gradient(
       to left,
-      $accent-color,
-      $light-accent-color
+      var(--cl-accent),
+      var(--cl-light)-accent-color
     );
 
     .footer-links {
@@ -490,7 +497,7 @@ body {
         color: inherit;
         margin-right: 8px;
         :hover {
-          color: $page-background;
+          color: var(--cl-page-background);
         }
       }
     }
