@@ -105,7 +105,7 @@ Questions, comments, concerns... funny memes? Reach out to us any time!
       <a href="https://www.linkedin.com/in/krystal-fung/"><img src="./client/src/assets/readme-icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
     </td>
      <td align="center">
-      <img src="./client/src/assets/headshots/annie-headshot.png" width="140px;" alt="Annie Rosen's headshot"/>
+      <img src="./client/src/assets/headshots/annie-headshot.jpg" width="140px;" alt="Annie Rosen's headshot"/>
       <br />
       <sub><b>Annie Rosen</b></sub>
       <br />
@@ -113,7 +113,7 @@ Questions, comments, concerns... funny memes? Reach out to us any time!
       <a href="https://www.linkedin.com/in/rosen-annie/"><img src="./client/src/assets/readme-icons/linkedIn-logo.png" width="20px;" alt="LinkedIn"/></a>
     </td>
     <td align="center">
-      <img src="./client/src/assets/headshots/jeb-headshot.png" width="140px;" alt="Jeb Stone's headshot"/>
+      <img src="./client/src/assets/headshots/jeb-headshot.jpg" width="140px;" alt="Jeb Stone's headshot"/>
       <br />
       <sub><b>Jeb Stone</b></sub>
       <br />
