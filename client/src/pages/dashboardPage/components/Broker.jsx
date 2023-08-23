@@ -2,7 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Metric from './Metric';
 import { v4 as uuidv4 } from 'uuid';
-import test from '../../../assets/testData.js'
+import test from '../../../assets/testData.js';
+import Button from '../../loginPage/components/Button';
 
 const Broker = ({ id, alerts }) => {
   const [expandedDisplay, setExpandedDisplay] = useState(false);
@@ -109,15 +110,15 @@ const Broker = ({ id, alerts }) => {
     if (alerts.length) toggleExpand();
   }, []);
   return (
-    <section className='broker container' id={'broker' + id}>
+    <section className='broker' id={'broker' + id}>
       <div className='collapsed-bar'>
-        <div>ID: {id}</div>
-        Alerts:{' '}
+        <div>ID: {id} | </div>
+        Alerts:
         <div
           className='total-alerts-box'
           style={{
-            backgroundColor: alerts.length ? "#ff6b35" : '#1a659e',
-            color: alerts.length ? "#004e89" : '#fcfce8',
+            backgroundColor: alerts.length ? '#ff6b35' : '#1a659e',
+            color: alerts.length ? '#004e89' : '#fcfce8',
             border: alerts.length ? '2px solid #1a659e' : '2px solid #034373',
             fontSize: '1.32rem',
           }}
@@ -125,13 +126,18 @@ const Broker = ({ id, alerts }) => {
           {alerts.length}
         </div>
         <p>{alerts}</p>
-        <button onClick={toggleExpand} style={{width: '72px', backgroundColor: '#fcfce8', borderRadius: '5px'}}>
-          {expandedDisplay ? 'collapse' : 'expand'}
-        </button>
+        <Button
+          onPress={toggleExpand}
+          // style={{
+          //   width: '72px',
+          //   backgroundColor: '#fcfce8',
+          //   borderRadius: '5px',
+          // }}
+        >
+          {expandedDisplay ? 'Hide' : 'Show'}
+        </Button>
       </div>
-      {expandedDisplay ? (
-        <div className='broker-metrics'>{brokerMetrics}</div>
-      ) : null}
+      {expandedDisplay && <div className='broker-metrics'>{brokerMetrics}</div>}
     </section>
   );
 };
