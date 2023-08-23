@@ -2,29 +2,19 @@
 
 /* // === COLORS === */
 :root {
-  --cl-dark: #004e89;
+  --cl-dark: #0e3d61;
   --cl-medium-dark: #1a659e;
   --cl-medium: #ff6b35;
   --cl-medium-light: #f7c59f;
   --cl-light: #e9e9e9;
-  --cl-text: #fde4d1;
-  --cl-button-background: #4392ce;
-  --cl-page-background: #0e3d61;
-  --cl-alert-header-text: #fcfce8;
-  --cl-alert-header: #f5f56f;
-  --cl-alert-header-background: #5ea2d7;
-  --cl-chart-background: #f8d7bd;
-  --cl-chart-header-text: #004e89;
-  --cl-cream-text: #fcfce8;
-  --cl-accent: rgb(249, 75, 6);
-  --cl-light-accent: hsla(42, 94%, 57%, 1);
+  --cl-text: #ffffff;
+
+  --cl-accent: #f94b06;
+  --cl-light-accent: #f8bb2a;
 
   /* // === FONTS === */
   --ff-main: 'Noto Sans', Arial, Helvetica, sans-serif;
   --ff-logo: 'Noto Sans', Arial, Helvetica, sans-serif;
-  --ff-small: 12px;
-  --ff-medium: 16px;
-  --ff-large: 24px;
 
   --br-regular: 3px solid var(--medium-dark);
   --br-small-dark: 2px solid var(--medium-dark);
