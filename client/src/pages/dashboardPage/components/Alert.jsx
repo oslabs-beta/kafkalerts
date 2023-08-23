@@ -9,8 +9,7 @@ const Alert = ({ broker }) => {
       spy
       to={'broker' + broker[0]}
       offset={-80}
-      className='alert-box'
-      onClick={() => console.log('hello')}
+      className='alert'
     >
       {broker[0]}
     </Link>
