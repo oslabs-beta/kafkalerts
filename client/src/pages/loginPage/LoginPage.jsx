@@ -4,7 +4,7 @@ import Navbar from './containers/NavBar';
 import LoginBox from './containers/LoginBox';
 import Footer from '../landingPage/containers/Footer';
 
-const Homepage = () => {
+const LoginPage = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
   const [errorDisplay, setErrorDisplay] = useState('none');
@@ -27,23 +27,15 @@ const Homepage = () => {
     }
   };
   return (
-    <div id='homepage' className='pages loginForm'>
+    <div id='login-page' className='pages'>
       <Navbar />
       <LoginBox
         setUsername={setUsername}
         setPassword={setPassword}
         handleSend={handleSend}
       />
-      {/* TO DO: delete this */}
-      <button
-        id='demo-button'
-        style={{ marginTop: '20px' }}
-        onClick={() => navigate('/dashboard')}
-      >
-        See a Demo!
-      </button>
       <Footer />
     </div>
   );
 };
-export default Homepage;
+export default LoginPage;
