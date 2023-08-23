@@ -4,9 +4,8 @@ import BrokersContainer from './containers/BrokersContainer';
 import { v4 as uuidv4 } from 'uuid';
 import Footer from '../landingPage/containers/Footer';
 const DashboardPage = () => {
-  const [username, setUsername] = useState('xXGoogleExecXx');
+  const [username, setUsername] = useState('Demo User');
   const [connectionString, setConnectionString] = useState('prometheus:9090');
-  let promURI = '';
   const [brokerIds, setBrokerIds] = useState([
     '1',
     '2',
@@ -24,12 +23,10 @@ const DashboardPage = () => {
   const [brokersAndAlerts, setBrokersAndAlerts] = useState([]);
 
   // when user submits form, ids will be added to an array
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const idInput = e.target.elements.idInput.value;
-    const idsArray = idInput.split(',').map((id) => id.trim().toString());
+  const handleSubmit = async (promURI, brokerIds) => {
+    const idsArray = brokerIds.split(',').map((id) => id.trim().toString());
     // update Prometheus host to use for querying later
-    promURI = e.target.elements.promInput.value;
+    setConnectionString(promURI);
     // store brokerIds in DB
     try {
       const response = await fetch('/api/addbrokers', {

@@ -1,38 +1,44 @@
 import React, { useState, useEffect } from 'react';
-
-const BrokerIdForm = ({handleSubmit, menuOpen}) => {
-  // create state variables
+import Button from '../../loginPage/components/Button.jsx';
+import TextField from '../../loginPage/components/TextField.jsx';
+const BrokerIdForm = ({ handleSubmit, menuOpen }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  // update state when called
+  const [promURI, setPromURI] = useState('');
+  const [brokerIds, setBrokerIds] = useState('');
   const toggleExpand = () => {
-    setIsExpanded(prevExpanded => !prevExpanded);
-  }
-  // if expanded - show form to collect brokerIds and location of Prometheus
+    setIsExpanded((prevExpanded) => !prevExpanded);
+  };
   return (
-    <div className='broker-id-form'> 
-      <button 
-        onClick={toggleExpand}
-        
-      >{isExpanded ? 'Hide Form' : 'Connect Cluster'}</button>
-      {isExpanded && (<form onSubmit={handleSubmit}>
-        <label>
-          <input 
-            type='text' 
-            placeholder='Enter Prometheus URI'
-            name='promInput'
+    <div className='broker-id-form'>
+      {isExpanded ? (
+        <>
+          <TextField
+            id='prometheus'
+            label='Prometheus URI'
+            placeholder='ex: http://localhost:9090'
+            onChange={setPromURI}
+            isRequired
           />
-        </label>
-        <label>
-          <input 
-            type='text' 
-            placeholder='Enter Broker IDs, separated by commas'
-            name='idInput'
+          <TextField
+            id='brokers'
+            label='Broker IDs'
+            placeholder='ex: 1, 2, 3'
+            onChange={setBrokerIds}
+            isRequired
           />
-        </label>
-        <button type='submit'>Submit</button> 
-      </form>)}
-      
-    </div>  
+          <div id='buttons'>
+            <Button onPress={() => handleSubmit(promURI, brokerIds)}>
+              Submit
+            </Button>
+            <Button onPress={toggleExpand}>Cancel</Button>
+          </div>
+        </>
+      ) : (
+        <Button onPress={toggleExpand} id='connect-button'>
+          Connect Cluster
+        </Button>
+      )}
+    </div>
   );
 };
 
