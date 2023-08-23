@@ -45,7 +45,6 @@ body {
     width: 100%;
     color: var(--cl-dark);
     min-height: 80px;
-    /* // background-color: var(--cl-medium-light); */
     background-image: linear-gradient(
       90deg,
       var(--cl-accent) 0%,

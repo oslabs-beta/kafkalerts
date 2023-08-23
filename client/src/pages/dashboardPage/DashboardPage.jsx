@@ -3,7 +3,7 @@ import DashNav from './containers/DashNav';
 import BrokersContainer from './containers/BrokersContainer';
 import { v4 as uuidv4 } from 'uuid';
 import Footer from '../landingPage/containers/Footer';
-const Dashboard = () => {
+const DashboardPage = () => {
   const [username, setUsername] = useState('xXGoogleExecXx');
   const [connectionString, setConnectionString] = useState('prometheus:9090');
   let promURI = '';
@@ -92,4 +92,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardPage;

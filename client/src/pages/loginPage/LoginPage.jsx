@@ -4,7 +4,7 @@ import Navbar from './containers/NavBar';
 import LoginBox from './containers/LoginBox';
 import Footer from '../landingPage/containers/Footer';
 
-const Homepage = () => {
+const LoginPage = () => {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
   const [errorDisplay, setErrorDisplay] = useState('none');
@@ -46,4 +46,4 @@ const Homepage = () => {
     </div>
   );
 };
-export default Homepage;
+export default LoginPage;
