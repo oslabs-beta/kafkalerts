@@ -5,7 +5,7 @@ import Footer from './containers/Footer';
 
 const LandingPage = () => {
   return (
-    <div id='landing-page'>
+    <div id='landing-page' className='pages'>
       <Header />
       <Main />
       <Footer />

@@ -27,21 +27,13 @@ const LoginPage = () => {
     }
   };
   return (
-    <div id='homepage' className='pages loginForm'>
+    <div id='login-page' className='pages'>
       <Navbar />
       <LoginBox
         setUsername={setUsername}
         setPassword={setPassword}
         handleSend={handleSend}
       />
-      {/* TO DO: delete this */}
-      <button
-        id='demo-button'
-        style={{ marginTop: '20px' }}
-        onClick={() => navigate('/dashboard')}
-      >
-        See a Demo!
-      </button>
       <Footer />
     </div>
   );

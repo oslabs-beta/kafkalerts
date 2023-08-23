@@ -10,10 +10,10 @@ const AlertsContainer = ({ brokers }) => {
   );
 
   return (
-    <section id='alerts-container' className='container'>
+    <div id='alerts-container'>
       <h2>Alerting Brokers:</h2>
       {alertingBrokers}
-    </section>
+    </div>
   );
 };
 
