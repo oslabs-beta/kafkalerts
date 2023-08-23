@@ -52,6 +52,7 @@
     "postcss-loader": "^7.3.3",
     "postcss-preset-env": "^9.1.1",
     "sass-loader": "^13.2.2",
+    "source-map-loader": "^4.0.1",
     "style-loader": "^3.3.2",
     "supertest": "^6.3.3",
     "webpack": "^5.82.0",

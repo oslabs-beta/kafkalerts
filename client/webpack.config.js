@@ -26,6 +26,11 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.m?js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
+      },
+      {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
