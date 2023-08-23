@@ -32,7 +32,52 @@ button {
   width: 100vw;
   min-height: 100vh;
 }
-
+#header {
+  color: var(--cl-dark);
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--cl-accent);
+  background-image: linear-gradient(
+    to right,
+    var(--cl-accent) 0%,
+    var(--cl-accent-light) 60%
+  );
+  @media (max-width: 700px) {
+    background-image: linear-gradient(
+      to right,
+      var(--cl-accent),
+      var(--cl-accent-light)
+    );
+  }
+  div {
+    margin: 3px 10px 5px 5px;
+    padding: 3px;
+    border-radius: 50%;
+    background-image: linear-gradient(
+      to bottom,
+      var(--cl-accent) 0%,
+      var(--cl-accent-light) 180%
+    );
+    img {
+      width: 50px;
+      @media (max-width: var(--breakpoint-phone)) {
+        width: 30px;
+      }
+    }
+  }
+  @media (max-width: var(--breakpoint-phone)) {
+  }
+}
+@media (max-width: var(--breakpoint-phone)) {
+  #header {
+    img {
+      width: 20px;
+    }
+  }
+}
 #alerts-container {
   color: var(--cl-text);
 }
@@ -43,52 +88,6 @@ button {
   align-items: center;
   color: var(--cl-text);
 
-  #header {
-    color: var(--cl-dark);
-    position: fixed;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: var(--cl-accent);
-    background-image: linear-gradient(
-      to right,
-      var(--cl-accent) 0%,
-      var(--cl-accent-light) 60%
-    );
-    @media (max-width: 700px) {
-      background-image: linear-gradient(
-        to right,
-        var(--cl-accent),
-        var(--cl-accent-light)
-      );
-    }
-    div {
-      margin: 3px 10px 5px 5px;
-      padding: 3px;
-      border-radius: 50%;
-      background-image: linear-gradient(
-        to bottom,
-        var(--cl-accent) 0%,
-        var(--cl-accent-light) 180%
-      );
-      img {
-        width: 50px;
-        @media (max-width: var(--breakpoint-phone)) {
-          width: 30px;
-        }
-      }
-    }
-    @media (max-width: var(--breakpoint-phone)) {
-    }
-  }
-  @media (max-width: var(--breakpoint-phone)) {
-    #header {
-      img {
-        width: 20px;
-      }
-    }
-  }
   #main {
     max-width: 1200px;
     margin-top: 69px;

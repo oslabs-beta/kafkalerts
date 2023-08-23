@@ -1,14 +1,16 @@
 import React from 'react';
-import Header from './containers/Header';
-import Main from './containers/Main';
-import Footer from './containers/Footer';
 
+import Hero from './components/Hero';
+import Features from './components/Features';
+import Team from './components/Team';
 const LandingPage = () => {
   return (
     <div id='landing-page' className='pages'>
-      <Header />
-      <Main />
-      <Footer />
+      <div id='main'>
+        <Hero />
+        <Features />
+        <Team />
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Button from '../../loginPage/components/Button.jsx';
-import TextField from '../../loginPage/components/TextField.jsx';
+import Button from '../../RootPage/components/Button.jsx';
+import TextField from '../../RootPage/components/TextField.jsx';
 const BrokerIdForm = ({ handleSubmit, menuOpen }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [promURI, setPromURI] = useState('');
