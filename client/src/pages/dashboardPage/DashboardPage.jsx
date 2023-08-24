@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import DashNav from './containers/DashNav';
 import BrokersContainer from './containers/BrokersContainer';
 import { v4 as uuidv4 } from 'uuid';
-import Footer from '../landingPage/containers/Footer';
+import Footer from '../RootPage/components/Footer';
 const DashboardPage = () => {
   const [username, setUsername] = useState('Demo User');
   const [connectionString, setConnectionString] = useState('prometheus:9090');
@@ -75,15 +75,17 @@ const DashboardPage = () => {
   }, []);
 
   return (
-    <div id='dashboard-page' className='pages'>
-      <DashNav
-        brokers={brokersAndAlerts}
-        username={username}
-        connectionString={connectionString}
-        handleSubmit={handleSubmit}
-        key={uuidv4()}
-      />
-      <BrokersContainer brokers={brokersAndAlerts} key={uuidv4()} />
+    <div id='wrapper'>
+      <main id='dashboard-page' className='pages'>
+        <DashNav
+          brokers={brokersAndAlerts}
+          username={username}
+          connectionString={connectionString}
+          handleSubmit={handleSubmit}
+          key={uuidv4()}
+        />
+        <BrokersContainer brokers={brokersAndAlerts} key={uuidv4()} />
+      </main>
       <Footer />
     </div>
   );

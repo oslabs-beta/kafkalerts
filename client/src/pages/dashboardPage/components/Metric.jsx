@@ -1,4 +1,3 @@
-import React from 'react';
 import { BytesInChart, BytesOutChart, URPChart } from './Charts';
 
 const Metric = ({ name, result }) => {
