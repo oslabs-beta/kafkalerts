@@ -1,6 +1,5 @@
-import React from 'react';
-import Alert from '../components/Alert';
 import { v4 as uuidv4 } from 'uuid';
+import Alert from '../components/Alert';
 
 const AlertsContainer = ({ brokers }) => {
   const alertingBrokers = brokers.map((broker, index) =>

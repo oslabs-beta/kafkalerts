@@ -1,9 +1,9 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useTextField } from 'react-aria';
 
 export default function TextField(props) {
   let { label } = props;
-  let ref = React.useRef(null);
+  let ref = useRef(null);
   let { labelProps, inputProps, descriptionProps, errorMessageProps } =
     useTextField(props, ref);
 
