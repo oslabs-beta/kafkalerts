@@ -1,5 +1,5 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const SingleFeature = ({ feature }) => {
   const { icon, header, text } = feature;
   return (
