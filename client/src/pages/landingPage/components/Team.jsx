@@ -5,6 +5,7 @@ import ian from '../../../assets/headshots/ian-headshot.jpg';
 import krystal from '../../../assets/headshots/krystal-headshot.jpg';
 import annie from '../../../assets/headshots/annie-headshot.jpg';
 import jeb from '../../../assets/headshots/jeb-headshot.jpg';
+import { v4 as uuid } from 'uuid';
 const Team = () => {
   const team = [
     {
@@ -45,6 +46,7 @@ const Team = () => {
       picSrc={player.src}
       github={player.github}
       linkedIn={player.linkedIn}
+      key={uuid()}
     />
   ));
 

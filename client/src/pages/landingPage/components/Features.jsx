@@ -1,5 +1,6 @@
 import React from 'react';
 import SingleFeature from './SingleFeature';
+import { v4 as uuid } from 'uuid';
 
 const featureObj = [
   {
@@ -34,11 +35,10 @@ const featureObj = [
   },
 ];
 
-const features = featureObj.map((feature) => (
-  <SingleFeature feature={feature} />
-));
-
 const Features = () => {
+  const features = featureObj.map((feature) => (
+    <SingleFeature feature={feature} key={uuid()} />
+  ));
   return (
     <div id='feature-box'>
       <h1>Features</h1>
