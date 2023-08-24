@@ -42,7 +42,9 @@ const Broker = ({ id, alerts }) => {
       }
     } catch (err) {
       console.log('error in bytesIn in broker ', id);
-      return test.bytesIn[(id - 1) % 3];
+
+      //return test.bytesIn[(id - 1) % 3];
+      return test.bytesInAlt();
     }
   };
 

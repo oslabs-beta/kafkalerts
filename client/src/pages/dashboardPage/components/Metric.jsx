@@ -1,6 +1,6 @@
 import React from 'react';
-import { BytesInChart, BytesOutChart, URPChart } from './Charts';
-
+import {  BytesOutChart, URPChart } from './Charts';
+import BytesInChart from './BytesInChart';
 const Metric = ({ name, result }) => {
   let chart = [];
   chart =

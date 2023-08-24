@@ -108,4 +108,13 @@ test.bytesIn = {
     ]
   }
 
+  test.bytesInAlt = () => {
+    const demoData = [];
+    let prev = 1000;
+    for (let i = 0; i < 100; i++) {
+      prev += 5 - Math.random() * 10;
+      demoData.push({x: i, y: prev});
+    }
+    return demoData;
+  }
 export default test;

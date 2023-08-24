@@ -92,3 +92,4 @@ const config = {
     }
   }
 };
+export default animation;
