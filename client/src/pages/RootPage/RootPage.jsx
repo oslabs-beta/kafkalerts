@@ -4,17 +4,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 const RootPage = () => {
-  const location = useLocation();
-  console.log(location.pathname);
-  useEffect(() => {
-    console.log('hello');
-  }, []);
   return (
-    <>
-      {location !== '/dashboard' && <Header />}
+    <div id='wrapper'>
+      <Header />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 

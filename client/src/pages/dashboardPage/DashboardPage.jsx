@@ -75,15 +75,17 @@ const DashboardPage = () => {
   }, []);
 
   return (
-    <div id='dashboard-page' className='pages'>
-      <DashNav
-        brokers={brokersAndAlerts}
-        username={username}
-        connectionString={connectionString}
-        handleSubmit={handleSubmit}
-        key={uuidv4()}
-      />
-      <BrokersContainer brokers={brokersAndAlerts} key={uuidv4()} />
+    <div id='wrapper'>
+      <main id='dashboard-page' className='pages'>
+        <DashNav
+          brokers={brokersAndAlerts}
+          username={username}
+          connectionString={connectionString}
+          handleSubmit={handleSubmit}
+          key={uuidv4()}
+        />
+        <BrokersContainer brokers={brokersAndAlerts} key={uuidv4()} />
+      </main>
       <Footer />
     </div>
   );
