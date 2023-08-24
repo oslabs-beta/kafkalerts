@@ -19,7 +19,7 @@ const App = () => {
           <Route exact path='/' element={<LandingPage />} />
           <Route path='login' element={<LoginPage />} />
         </Route>
-        <Route path='dashboard' element={<DashboardPage />} />
+        <Route path='/dashboard' element={<DashboardPage />} />
       </Routes>
     </BrowserRouter>
   );

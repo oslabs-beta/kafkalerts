@@ -1,4 +1,3 @@
-import React from 'react';
 import Player from './Player';
 import hazel from '../../../assets/headshots/hazel-headshot.jpg';
 import ian from '../../../assets/headshots/ian-headshot.jpg';

@@ -1,4 +1,3 @@
-import React from 'react';
 import SingleFeature from './SingleFeature';
 import { v4 as uuid } from 'uuid';
 

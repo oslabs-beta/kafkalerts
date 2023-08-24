@@ -1,9 +1,7 @@
-import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { useState, useEffect } from 'react';
 import Metric from './Metric';
-import { v4 as uuidv4 } from 'uuid';
-// import test from '../../../assets/testData.js';
-import Button from '../../RootPage/components/Button';
+import Button from '../../RootPage/components/Button.jsx';
 
 const Broker = ({ id, alerts, getBytesIn, getBytesOut, getUrp }) => {
   const [expandedDisplay, setExpandedDisplay] = useState(false);

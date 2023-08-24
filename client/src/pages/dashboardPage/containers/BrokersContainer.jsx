@@ -1,6 +1,5 @@
-import React from 'react';
-import Broker from '../components/Broker';
 import { v4 as uuidv4 } from 'uuid';
+import Broker from '../components/Broker';
 import test from '../../../assets/testData.js';
 
 const BrokersContainer = ({ brokers }) => {

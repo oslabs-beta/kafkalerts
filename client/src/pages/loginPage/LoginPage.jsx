@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TextField from '../RootPage/components/TextField';
 import Button from '../RootPage/components/Button';
