@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'))
   );
 }
-// app.use(express.static(path.join(__dirname, '../index.html')));
+app.use(express.static(path.join(__dirname, '../index.html')));
 
 // LOG IN ROUTE
 app.post(
