@@ -1,102 +1,79 @@
-const db = require('../postgres'); // db module
 const bcrypt = require('bcrypt');
+const { User } = require('../postgres.ts');
 
 const authController = {};
 
 authController.createAccount = async (req, res, next) => {
-  // console.log('inside create account');
-  try {
-    const { username, password } = req.body;
-    const checkQuery = 'SELECT username FROM users WHERE username = $1';
-    await db.query(checkQuery, [username], async (err, user) => {
-      if (user.rowCount > 0) {
-        res.locals.isVerified = false;
-        return next();
-      } else if (err) {
-        return next({
-          log: 'Error occurred during create account.',
-          status: 400,
-          message: { err: 'Error occurred during create account.', err },
-        });
-      } else {
-        const passHash = await bcrypt.hash(password, 10);
-        const newUser =
-          'INSERT INTO users (username, password) VALUES ($1, $2)';
-        await db.query(newUser, [username, passHash], (err, user) => {
-          if (err) {
-            return next({
-              log: 'Error occurred when creating new account.',
-              status: 401,
-              message: {
-                err: 'Error occurred when creating new account.',
-                err,
-              },
-            });
-          } else {
-            res.locals.isVerified = true;
-            res.locals.cookieID = username;
-            return next();
-          }
-        });
-      }
-    });
-  } catch (err) {
-    return next({
-      log: 'Error occurred during create account.',
-      status: 400,
-      message: { err: 'Error occurred during create account.', err },
-    });
+  if (req.body.username && req.body.password) {
+    try {
+      const password = await bcrypt.hash(req.body.password, 10);
+      const { username } = req.body;
+      await User.create({
+        username,
+        password,
+      });
+      return next();
+    } catch (err) {
+      console.log('ERROR: ', err);
+      return next({
+        log: 'Error occurred during create account.',
+        status: 400,
+        message: { err: 'Error occurred during create account.', err },
+      });
+    }
   }
+  return next({
+    log: 'No username/password provided.',
+    status: 400,
+    message: { err: 'No username/password provided.' },
+  });
 };
 
 authController.verifyUser = async (req, res, next) => {
-  try {
-    const { username, password } = req.body;
-    let hashedPassword = await db.query(
-      'SELECT password FROM users WHERE username = $1',
-      [username]
-    );
-    hashedPassword = hashedPassword.rows[0].password;
-    const matched = await bcrypt.compare(password, hashedPassword);
-    if (!matched) {
-      res.locals.isVerified = false;
+  if (req.body.username && req.body.password) {
+    try {
+      const { username, password } = req.body;
+      const user = await User.findOne({ where: { username } });
+      const badInput = {
+        log: 'Incorrect username/password combination.',
+        status: 400,
+        message: { err: 'Incorrect username/password combination.' },
+      };
+      if (!user) return next(badInput);
+      const matched = await bcrypt.compare(password, user.password);
+      if (!matched) return next(badInput);
       return next();
-    } else {
-      res.locals.isVerified = true;
-      res.locals.cookieID = username;
-      return next();
+    } catch (err) {
+      return next({
+        log: 'Error verifying user',
+        status: 400,
+        message: { err: 'Error verifying user', err },
+      });
     }
-  } catch (err) {
-    // console.log('catch in verify user')
-    return next({
-      log: 'Error inside verify user.',
-      status: 401,
-      message: { err: 'Error inside verify user.', err },
-    });
   }
 };
 
 authController.addBrokers = async (req, res, next) => {
-  console.log('inside addBrokers');
-  try {
-    const { idsArray, username } = req.body;
-    console.log('req.body in addBrokers... ', req.body);
-    const queryString = `
-      UPDATE users
-      SET broker_ids = $1
-      WHERE username = $2
-    `;
-    let inserted = await db.query(queryString, [idsArray, username]);
-    console.log('inserted.. ', inserted);
-    return next();
-  } catch (err) {
-    // console.log('catch in verify user')
-    return next({
-      log: 'Error inside add Brokers.',
-      status: 401,
-      message: { err: 'Unable to add brokers to database table users.', err },
-    });
-  }
+  // console.log('inside addBrokers');
+  // try {
+  //   const { idsArray, username } = req.body;
+  //   console.log('req.body in addBrokers... ', req.body);
+  //   const queryString = `
+  //     UPDATE users
+  //     SET broker_ids = $1
+  //     WHERE username = $2
+  //   `;
+  //   let inserted = await db.query(queryString, [idsArray, username]);
+  //   console.log('inserted.. ', inserted);
+  //   return next();
+  // } catch (err) {
+  //   return next({
+  //     log: 'Error inside add Brokers.',
+  //     status: 401,
+  //     message: { err: 'Unable to add brokers to database table users.', err },
+  //   });
+  // }
+  return next();
 };
 
 module.exports = authController;
