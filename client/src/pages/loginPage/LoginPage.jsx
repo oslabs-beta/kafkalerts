@@ -10,7 +10,7 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleSend = async (endpoint) => {
-    //TO DO: fix body so that html injection attacks can't happen
+    //TO DO: fix body so that html injection
     try {
       console.log(username, password, endpoint);
       const response = await fetch(`/api/${endpoint}`, {
@@ -26,7 +26,7 @@ const LoginPage = () => {
     }
   };
   return (
-    <div id='login-page' className='pages'>
+    <main id='login-page' className='pages'>
       <div id='login-container'>
         <TextField
           id='username'
@@ -53,7 +53,7 @@ const LoginPage = () => {
           See a Demo!
         </Button>
       </div>
-    </div>
+    </main>
   );
 };
 export default LoginPage;
