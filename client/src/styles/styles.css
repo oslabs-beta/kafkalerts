@@ -250,6 +250,7 @@ footer {
     display: flex;
     flex-direction: column;
     margin: auto;
+    max-width: 30rem;
     padding: 2rem;
     background-color: color-mix(
       in srgb,
@@ -277,7 +278,12 @@ footer {
         width: 70%;
       }
     }
+    p {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
     #account-buttons {
+      text-align: center;
       margin: 2rem 0;
 
       button {
