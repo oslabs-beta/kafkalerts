@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon server/index.js  --mode=development"
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js "
   },
   "author": "Annie Rosen, Hazel Bolivar, Ian Flynn, Jeb Stone, Krystal Fung",
   "license": "ISC",
