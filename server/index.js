@@ -1,19 +1,28 @@
-const express = require('express');
-const path = require('path');
-const cookieParser = require('cookie-parser');
-const authController = require('./controllers/authController');
-const cookieController = require('./controllers/cookieController');
+import express from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
+import authController from './controllers/authController.js';
+import cookieController from './controllers/cookieController.js';
 const app = express();
-require('dotenv').config();
-// // Set up CORS options to allow passing through cookies to the client server
-// const corsOptions = {
-//   origin: 'http://localhost:8080',
-//   credentials: true,
-//   methods: 'GET, POST, PUT, DELETE, OPTIONS',
-//   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
-// };
+import dotenv from 'dotenv';
+dotenv.config();
+import { fileURLToPath } from 'url';
+import cors from 'cors';
 
-// app.use(cors(corsOptions));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+import models, { sequelize } from './models/index.js';
+
+console.log('ENVIRONMNET: ', process.env.NODE_ENV);
+const corsOptions = {
+  origin: process.env.CLIENT_URL_DEV,
+  credentials: true,
+  methods: 'GET, POST, PUT, DELETE, OPTIONS',
+  allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+};
+app.use(cors(corsOptions));
+
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,17 +34,21 @@ app.use(express.json());
 //     if (err) return res.status(500).send(err);
 //   });
 // });
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'))
-  );
-}
-app.use(express.static(path.join(__dirname, '../index.html')));
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('client/build'));
+//   app.get('*', (req, res) =>
+//     res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'))
+//   );
+// }
+// app.use(express.static(path.join(__dirname, '../index.html')));
 
 // LOG IN ROUTE
 app.post(
   '/api/login',
+  (req, res, next) => {
+    console.log('in the login route');
+    return next();
+  },
   authController.verifyUser,
   cookieController.setCookie,
   (req, res) => {
@@ -54,18 +67,9 @@ app.post(
 );
 
 // ADD BROKER IDS ROUTE
-app.post('/api/addbrokers', authController.addBrokers, (req, res) => {
-  return res.status(200).json('ids added');
-});
-
-// catch-all route handler for any requests to an unknown route
-app.use(function (err, req, res, next) {
-  res.status(500);
-  res.render('error', { error: err });
-});
-
-// handler to send back 404 status code
-app.use((req, res) => res.sendStatus(404));
+// app.post('/api/addbrokers', authController.addBrokers, (req, res) => {
+//   return res.status(200).json('ids added');
+// });
 
 // global error handler
 app.use((err, req, res, next) => {
@@ -79,9 +83,8 @@ app.use((err, req, res, next) => {
   return res.status(errObj.status).json(errObj.message);
 });
 
-const PORT = process.env.PORT || 3000;
-const listener = app.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}`);
+sequelize.sync({ force: true }).then(async () => {
+  app.listen(process.env.PORT, () => {
+    console.log(`Server listening on port: ${process.env.PORT}`);
+  });
 });
-
-module.exports = listener;

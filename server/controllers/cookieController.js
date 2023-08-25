@@ -9,4 +9,5 @@ cookieController.setCookie = (req, res, next) => {
   // }
   return next();
 };
-module.exports = cookieController;
+export default cookieController;
+// module.exports = cookieController;
