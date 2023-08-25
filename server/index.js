@@ -4,8 +4,7 @@ import cookieParser from 'cookie-parser';
 import authController from './controllers/authController.js';
 import cookieController from './controllers/cookieController.js';
 const app = express();
-import dotenv from 'dotenv';
-dotenv.config();
+
 import { fileURLToPath } from 'url';
 import cors from 'cors';
 
@@ -14,7 +13,6 @@ const __dirname = path.dirname(__filename);
 
 import models, { sequelize } from './models/index.js';
 
-console.log('ENVIRONMNET: ', process.env.NODE_ENV);
 const corsOptions = {
   origin: process.env.CLIENT_URL_DEV,
   credentials: true,
