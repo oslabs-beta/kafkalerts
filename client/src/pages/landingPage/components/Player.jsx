@@ -1,6 +1,4 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faGithub } from '';
 
 const Player = ({ name, picSrc, github, linkedIn }) => {
   return (
@@ -20,4 +18,3 @@ const Player = ({ name, picSrc, github, linkedIn }) => {
 };
 
 export default Player;
-// <a href="your link here"> <i class="fa fa-dribbble fa-4x"></i></a>

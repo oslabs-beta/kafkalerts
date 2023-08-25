@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AlertsContainer from './AlertsContainer';
 import UserMenu from '../components/UserMenu';
 import logo from '../../../assets/logo.png';

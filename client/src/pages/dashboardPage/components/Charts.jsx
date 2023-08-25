@@ -1,6 +1,3 @@
-import React from 'react';
-// import animation from '../../../assets/animation';
-
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -145,7 +142,7 @@ export function URPChart(URPData) {
     plugins: {
       legend: {
         // position: 'bottom',
-        position: 'none'
+        position: 'none',
       },
       title: {
         display: true,
@@ -162,7 +159,7 @@ export function URPChart(URPData) {
         },
         ticks: {
           stepSize: 1,
-        }
+        },
       },
       y: {
         display: true,
