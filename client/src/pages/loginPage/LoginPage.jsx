@@ -1,26 +1,33 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TextField from '../RootPage/components/TextField';
 import Button from '../RootPage/components/Button';
 
 const LoginPage = () => {
-  const [username, setUsername] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [errorDisplay, setErrorDisplay] = useState('none');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
-
+  useEffect(() => {
+    console.log(username);
+  }, [username]);
   const handleSend = async (endpoint) => {
-    //TO DO: fix body so that html injection
+    if (!username || !password) {
+      return;
+    }
     try {
       console.log(username, password, endpoint);
-      const response = await fetch(`/api/${endpoint}`, {
+      console.log(process.env.NODE_ENV);
+      const url =
+        process.env.NODE_ENV === 'development'
+          ? `http://localhost:3000/api/${endpoint}`
+          : `/api/${endpoint}`;
+      const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username, password: password }),
       });
-      console.log(response.status);
-      if (response.status === 200) navigate('/dashboard');
-      else setErrorDisplay('block');
+      console.log(response);
+      // if (response.status === 200) navigate('/dashboard');
     } catch (err) {
       console.log(err);
     }
@@ -41,7 +48,7 @@ const LoginPage = () => {
           isRequired
         />
         <div id='account-buttons'>
-          <Button id='login' onPress={() => handleSend('login')}>
+          <Button id='login' onPress={() => handleSend('login')} disabled>
             Login
           </Button>
           <Button id='signup' onPress={() => handleSend('signup')}>
