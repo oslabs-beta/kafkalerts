@@ -21,7 +21,7 @@ ChartJS.register(
   Legend
 );
 
-export default function BytesInChart(bytesIn) {
+export default function BytesOutChart(bytesOut) {
   // Generates Demo Data
   // const demoData = [];
   // let prev = 1000;
@@ -31,7 +31,7 @@ export default function BytesInChart(bytesIn) {
   // }
   const totalDuration = 50000;
   //const duration = (ctx) => easing(ctx.index / data.length) * totalDuration / data.length;
-  const delay = totalDuration / bytesIn.length; //(ctx) => easing(ctx.index / data.length) * totalDuration;
+  const delay = totalDuration / bytesOut.length; //(ctx) => easing(ctx.index / data.length) * totalDuration;
   const previousY = (ctx) =>
     ctx.index === 0
       ? ctx.chart.scales.y.getPixelForValue(100)
@@ -68,7 +68,7 @@ export default function BytesInChart(bytesIn) {
     },
   };
 
-  const bytesInOptions = {
+  const bytesOutOptions = {
     responsive: true,
     maintainAspectRatio: false,
 
@@ -78,7 +78,7 @@ export default function BytesInChart(bytesIn) {
       },
       title: {
         display: true,
-        text: "Kafka Broker Metrics - Bytes In",
+        
       },
     },
     animation,
@@ -103,12 +103,10 @@ export default function BytesInChart(bytesIn) {
       },
     },
   };
-  // console.log('bytesIn... ', bytesIn);
-  // get data
-  // get bytes in/ time from bytes in array
-  const bytesY = bytesIn?.map((tuple) => Number(tuple[1]));
-  const startTime = bytesIn[0][0];
-  const timeX = bytesIn?.map((tuple, idx) => {
+ 
+  const bytesY = bytesOut?.map((tuple) => Number(tuple[1]));
+  const startTime = bytesOut[0][0];
+  const timeX = bytesOut?.map((tuple, idx) => {
     return tuple[0] - startTime;
   });
 
@@ -116,8 +114,8 @@ export default function BytesInChart(bytesIn) {
     labels: timeX,
     datasets: [
       {
-        label: "Bytes In",
-        data: bytesIn,
+        label: "Bytes Out",
+        data: bytesOut,
         borderColor: "rgba(249, 75, 6)",
         backgroundColor: "rgba(249, 75, 6, 0.5)",
         borderWidth: 1,
@@ -126,5 +124,5 @@ export default function BytesInChart(bytesIn) {
     ],
   };
 
-  return <Line options={bytesInOptions} data={data} />;
+  return <Line options={bytesOutOptions} data={data} />;
 }
