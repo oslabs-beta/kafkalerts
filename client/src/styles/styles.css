@@ -548,7 +548,8 @@ footer {
           width: 350px;
           border: 1px solid var(--cl-medium-dark);
           border-radius: 5px;
-          background-color: var(--cl-medium-light);
+  
+          background-color: color-mix(in srgb, var(--cl-accent-light), white 90%);
           padding: 10px;
           margin: 10px 0;
           h2 {

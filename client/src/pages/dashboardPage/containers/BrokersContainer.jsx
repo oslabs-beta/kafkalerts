@@ -36,7 +36,7 @@ const BrokersContainer = ({ brokers }) => {
       }
     } catch (err) {
       console.log('error in bytesIn in broker ', id);
-      return test.bytesIn[(id - 1) % 3];
+      return test.bytesInAlt();
     }
   };
 
@@ -57,7 +57,7 @@ const BrokersContainer = ({ brokers }) => {
       }
     } catch (err) {
       console.log('error getting bytes out in broker', id);
-      return test.bytesOut[(id - 1) % 3];
+      return test.bytesOutAlt();
     }
   };
 
@@ -79,7 +79,7 @@ const BrokersContainer = ({ brokers }) => {
       }
     } catch (err) {
       console.log('error getting URP in broker ', id);
-      return test.urp[(id - 1) % 3];
+      return test.urpAlt();
     }
   };
   const displayBrokers = brokers.map((broker) => {

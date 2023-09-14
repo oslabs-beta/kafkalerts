@@ -24,6 +24,7 @@ export function BytesInChart(bytesIn) {
   const bytesInOptions = {
     responsive: true,
     maintainAspectRatio: false,
+    // animation: animation.bytesIn,
     plugins: {
       legend: {
         position: 'none',
