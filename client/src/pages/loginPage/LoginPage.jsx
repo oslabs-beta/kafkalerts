@@ -23,17 +23,23 @@ const LoginPage = () => {
     return password.length < 8 || password.length > 32;
   };
   const handleSend = async (endpoint) => {
-    setUsernameError('');
-    setPasswordError('');
-    if (checkUsername(username))
+    let shouldIReturn;
+
+    if (checkUsername(username)) {
       setUsernameError(
         'Must only contain letters (a-z, A-Z), numbers (0-9), dashes or underscores (no spaces), periods (.), and be between 4-32 characters long.'
       );
-
-    if (checkPassword(password))
+      shouldIReturn = true;
+    } else {
+      setUsernameError('');
+    }
+    if (checkPassword(password)) {
       setPasswordError('Must be between 8-32 characters long.');
-
-    if (passwordRulesDisplay || usernameRulesDisplay) return;
+      shouldIReturn = true;
+    } else {
+      setPasswordError('');
+    }
+    if (shouldIReturn) return;
 
     try {
       const url =

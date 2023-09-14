@@ -419,10 +419,6 @@ footer {
           width: 100%;
         }
       }
-
-      #logout {
-        /* margin-left: 3px; */
-      }
     }
     .closed {
       right: -50%;
