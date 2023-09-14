@@ -108,4 +108,36 @@ test.bytesIn = {
     ]
   }
 
+  test.bytesInAlt = () => {
+    const demoData = [];
+    let prev = 1000000;
+    for (let i = 0; i < 100; i++) {
+      prev += 5000 - Math.random() * 10000;
+      demoData.push({x: i, y: prev});
+    }
+    return demoData;
+  }
+  test.bytesOutAlt = () => {
+    const demoData = [];
+    let prev = 1000000;
+    for (let i = 0; i < 100; i++) {
+      prev += 4000 - Math.random() * 10000;
+      demoData.push({x: i, y: prev});
+    }
+    return demoData;
+  }
+
+  test.urpAlt = () => {
+    const urpValues = [];
+    let prev = 0;
+    for (let i = 0; i < 100; i++){
+      if (i % 5 === 0) {
+        if (prev >= 3) prev = 0;
+        else prev += Math.floor(Math.random() * 2)
+      }
+      
+      urpValues.push({x: i, y: prev})
+    }
+    return urpValues;
+  }
 export default test;
