@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,8 +8,8 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import { Line } from "react-chartjs-2";
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
 
 ChartJS.register(
   CategoryScale,
@@ -37,16 +37,16 @@ export default function BytesOutChart(bytesOut) {
       ? ctx.chart.scales.y.getPixelForValue(100)
       : ctx.chart
           .getDatasetMeta(ctx.datasetIndex)
-          .data[ctx.index - 1].getProps(["y"], true).y;
+          .data[ctx.index - 1].getProps(['y'], true).y;
 
   const animation = {
     x: {
-      type: "number",
-      easing: "linear",
+      type: 'number',
+      easing: 'linear',
       duration: delay,
       from: NaN, // the point is initially skipped
       delay(ctx) {
-        if (ctx.type !== "data" || ctx.xStarted) {
+        if (ctx.type !== 'data' || ctx.xStarted) {
           return 0;
         }
         ctx.xStarted = true;
@@ -54,12 +54,12 @@ export default function BytesOutChart(bytesOut) {
       },
     },
     y: {
-      type: "number",
-      easing: "linear",
+      type: 'number',
+      easing: 'linear',
       duration: delay,
       from: previousY,
       delay(ctx) {
-        if (ctx.type !== "data" || ctx.yStarted) {
+        if (ctx.type !== 'data' || ctx.yStarted) {
           return 0;
         }
         ctx.yStarted = true;
@@ -74,28 +74,27 @@ export default function BytesOutChart(bytesOut) {
 
     plugins: {
       legend: {
-        position: "none",
+        position: 'none',
       },
       title: {
         display: true,
-        
       },
     },
     animation,
     scales: {
       x: {
-        type: "linear",
+        type: 'linear',
         display: true,
         title: {
           display: true,
-          text: "Time (Seconds)",
+          text: 'Time (Seconds)',
         },
       },
       y: {
         display: true,
         title: {
           display: true,
-          text: "Bytes",
+          text: 'Bytes',
         },
         ticks: {
           stepSize: 10000,
@@ -103,7 +102,7 @@ export default function BytesOutChart(bytesOut) {
       },
     },
   };
- 
+
   const bytesY = bytesOut?.map((tuple) => Number(tuple[1]));
   const startTime = bytesOut[0][0];
   const timeX = bytesOut?.map((tuple, idx) => {
@@ -114,10 +113,10 @@ export default function BytesOutChart(bytesOut) {
     labels: timeX,
     datasets: [
       {
-        label: "Bytes Out",
+        label: 'Bytes Out',
         data: bytesOut,
-        borderColor: "rgba(249, 75, 6)",
-        backgroundColor: "rgba(249, 75, 6, 0.5)",
+        borderColor: 'rgba(249, 75, 6)',
+        backgroundColor: 'rgba(249, 75, 6, 0.5)',
         borderWidth: 1,
         radius: 1,
       },
