@@ -4,7 +4,7 @@
   "description": "Kafka cluster monitoring tool",
   "main": "./server/index.js",
   "scripts": {
-    "start": "cd ./server && node index.js",
+    "start": "cd server && npm run start",
     "client-install": "cd client && npm install",
     "server-install": "cd server && npm install",
     "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\""
