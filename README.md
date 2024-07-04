@@ -3,7 +3,7 @@
 <p align="center">
   <img src="./client/src/assets/orange-logo.png" width=300px />
 </p>
-<h3 align="center">Open source, usability driven web application for monitoring and alerting Apache Kafka broker metrics</h3>
+<h3 align="center">Open source, usability driven web application for monitoring and alerting [Apache Kafka®](http://kafka.apache.org) broker metrics</h3>
 </br>
 
 ---
