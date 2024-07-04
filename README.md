@@ -1,24 +1,10 @@
 # kafkAlerts
 
-<div 
-  style="
-    text-align:center;
-    background: linear-gradient(70deg, rgba(92,77,76,1) 5%, rgba(212,163,115,1) 35%, rgba(254,250,224,1) 100%);
-  "
->
-  <img
-    src="./client/src/assets/logo.png"
-    style="
-      aspect-ratio:1/1;
-      width:100%;
-      max-width:150px;
-    "
-  />
-
+<div style="text-align:center; background: linear-gradient(70deg, rgba(92,77,76,1) 5%, rgba(212,163,115,1) 35%, rgba(254,250,224,1) 100%);">
+  <img src="./client/src/assets/logo.png" style="aspect-ratio:1/1; width:100%; max-width:150px;" />
 </div>
 
-<h3 align="center">Open source, usability driven web application for monitoring and alerting <a href="http://kafka.apache.org">Apache Kafka®</a> broker metrics</h3>
-</br>
+<h3>Open source, usability driven web application for monitoring and alerting <a href="http://kafka.apache.org">Apache Kafka®</a> broker metrics</h3>
 
 ---
 
