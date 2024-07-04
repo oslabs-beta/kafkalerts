@@ -3,19 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "nodemon server/index.js  --mode=development"
+    "dev": "nodemon -r dotenv/config index.js",
+    "start": "node -r dotenv/config index.js "
   },
   "author": "Annie Rosen, Hazel Bolivar, Ian Flynn, Jeb Stone, Krystal Fung",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
-    "concurrently": "^8.0.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "nodemon": "^3.1.0",
-    "pg": "^8.10.0"
+    "pg": "^8.10.0",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
