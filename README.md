@@ -1,8 +1,9 @@
+
 # kafkAlerts
 
-<div style="text-align:center; background: linear-gradient(70deg, rgba(92,77,76,1) 5%, rgba(212,163,115,1) 35%, rgba(254,250,224,1) 100%);">
-  <img src="./client/src/assets/logo.png" style="aspect-ratio:1/1; width:100%; max-width:150px;" />
-</div>
+<picture text-align="center">
+ <img alt="kafkAlerts logo" src="./client/src/assets/logo.png" width="200">
+</picture>
 
 <h3>Open source, usability driven web application for monitoring and alerting <a href="http://kafka.apache.org">Apache Kafka®</a> broker metrics</h3>
 
